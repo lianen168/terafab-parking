@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>terafab.ai</title>
+    <meta name="description" content="terafab.ai — Reserved domain.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: #ffffff;
+            background: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            text-align: center;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* 优化：将光效移到body内，避免移动端性能问题 */
+        .light-effect {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: min(100vw, 800px);
+            height: min(100vh, 800px);
+            background: radial-gradient(
+                circle at center,
+                rgba(255, 255, 255, 0.05) 0%,
+                transparent 60%
+            );
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 720px;
+            width: 100%;
+            padding: 60px 40px;
+            background: rgba(20, 20, 20, 0.8);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            box-shadow: 
+                0 20px 60px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-size: clamp(2.5rem, 8vw, 4.5rem); /* 响应式字体 */
+            font-weight: 300;
+            letter-spacing: 0.2em; /* 改用em单位更精确 */
+            margin-bottom: 30px;
+            opacity: 0.95;
+            text-transform: lowercase;
+            font-feature-settings: "kern" 1;
+        }
+
+        .domain {
+            display: inline-block;
+            transition: opacity 0.3s ease;
+        }
+
+        .domain:hover {
+            opacity: 0.8;
+        }
+
+        p {
+            font-size: clamp(1.1rem, 4vw, 1.5rem);
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            line-height: 1.8;
+        }
+
+        .legal-note {
+            font-size: 0.85rem;
+            opacity: 0.4;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 500px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 30px;
+            font-size: 0.85rem;
+            opacity: 0.4;
+            width: 100%;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 25px;
+                margin: 20px;
+                backdrop-filter: blur(8px);
+            }
+            
+            h1 {
+                letter-spacing: 0.15em;
+            }
+            
+            .light-effect {
+                opacity: 0.7; /* 移动端降低光效强度 */
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                letter-spacing: 0.1em;
+            }
+            
+            body {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="light-effect"></div>
+    
+    <div class="container">
+        <h1><span class="domain">terafab.ai</span></h1>
+        <p>This domain is reserved.<br>Coming soon.</p>
+        
+        <!-- 可选：添加极简法律声明 -->
+        <div class="legal-note">
+            This is a domain parking page. Not associated with any active service.
+        </div>
+    </div>
+
+    <div class="footer">
+        © <span id="currentYear">2026</span> terafab.ai — All rights reserved.
+    </div>
+
+    <script>
+        // 自动更新年份
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // 微交互：点击域名时有轻微反馈
+        document.querySelector('.domain').addEventListener('click', function(e) {
+            e.preventDefault();
+            this.style.transform = 'scale(0.98)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 150);
+        });
+        
+        // 控制光效在移动端的性能
+        if ('matchMedia' in window) {
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+            if (reduceMotion.matches) {
+                document.querySelector('.light-effect').style.opacity = '0.1';
+            }
+        }
+    </script>
+</body>
+</html>
