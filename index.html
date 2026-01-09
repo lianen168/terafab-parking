@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>terafab.ai</title>
-    <meta name="description" content="terafab.ai — Reserved domain.">
+    <meta name="description" content="terafab.ai — Reserved domain. For inquiries: joshua369x@gmail.com">
     <style>
         * {
             margin: 0;
@@ -28,7 +28,6 @@
             overflow-x: hidden;
         }
 
-        /* 优化：将光效移到body内，避免移动端性能问题 */
         .light-effect {
             position: absolute;
             top: 50%;
@@ -61,9 +60,9 @@
         }
 
         h1 {
-            font-size: clamp(2.5rem, 8vw, 4.5rem); /* 响应式字体 */
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
             font-weight: 300;
-            letter-spacing: 0.2em; /* 改用em单位更精确 */
+            letter-spacing: 0.2em;
             margin-bottom: 30px;
             opacity: 0.95;
             text-transform: lowercase;
@@ -85,6 +84,49 @@
             max-width: 600px;
             margin: 0 auto 20px;
             line-height: 1.8;
+        }
+
+        /* 新增：联系区域（保持极简） */
+        .contact-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: rgba(30, 40, 60, 0.3);
+            border-radius: 16px;
+            border: 1px solid rgba(100, 150, 255, 0.15);
+        }
+
+        .contact-title {
+            font-size: 1.1rem;
+            opacity: 0.7;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .email-link {
+            font-size: 1.4rem;
+            color: #64b5f6;
+            text-decoration: none;
+            font-family: 'Courier New', monospace;
+            padding: 10px 20px;
+            background: rgba(100, 181, 246, 0.1);
+            border-radius: 10px;
+            display: inline-block;
+            border: 1px solid rgba(100, 181, 246, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover {
+            background: rgba(100, 181, 246, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(100, 181, 246, 0.1);
+        }
+
+        .contact-note {
+            font-size: 0.9rem;
+            opacity: 0.6;
+            margin-top: 15px;
+            font-style: italic;
         }
 
         .legal-note {
@@ -117,7 +159,12 @@
             }
             
             .light-effect {
-                opacity: 0.7; /* 移动端降低光效强度 */
+                opacity: 0.7;
+            }
+
+            .email-link {
+                font-size: 1.2rem;
+                padding: 8px 16px;
             }
         }
 
@@ -139,7 +186,17 @@
         <h1><span class="domain">terafab.ai</span></h1>
         <p>This domain is reserved.<br>Coming soon.</p>
         
-        <!-- 可选：添加极简法律声明 -->
+        <!-- 新增：联系邮箱区域 -->
+        <div class="contact-section">
+            <div class="contact-title">Inquiries</div>
+            <a href="#" class="email-link" aria-label="Send email">
+                <span id="email-display">joshua369x@gmail.com</span>
+            </a>
+            <div class="contact-note">
+                For serious inquiries only.
+            </div>
+        </div>
+        
         <div class="legal-note">
             This is a domain parking page. Not associated with any active service.
         </div>
@@ -153,7 +210,16 @@
         // 自动更新年份
         document.getElementById('currentYear').textContent = new Date().getFullYear();
         
-        // 微交互：点击域名时有轻微反馈
+        // 邮箱防爬虫（JS 动态生成 mailto）
+        const email = 'joshua369x' + '@' + 'gmail.com';
+        const subject = '?subject=Inquiry: terafab.ai';
+        const mailto = 'mailto:' + email + subject;
+        
+        const link = document.querySelector('.email-link');
+        link.href = mailto;
+        document.getElementById('email-display').textContent = email;
+        
+        // 微交互：点击域名轻微缩放
         document.querySelector('.domain').addEventListener('click', function(e) {
             e.preventDefault();
             this.style.transform = 'scale(0.98)';
@@ -162,7 +228,7 @@
             }, 150);
         });
         
-        // 控制光效在移动端的性能
+        // 尊重用户偏好：减少动画
         if ('matchMedia' in window) {
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
             if (reduceMotion.matches) {
