@@ -6,18 +6,20 @@
     <title>terafab.ai | Premium AI Infrastructure Domain</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #050507;
             --card-bg: #0e0e14;
             --accent-blue: #00f3ff;
-            --accent-silver: #e0e0e0;
+            --accent-hover: #00c2cc;
             --text-primary: #ffffff;
             --text-secondary: #a0a0b0;
-            --warning-bg: rgba(255, 193, 7, 0.1);
+            --border-color: rgba(255, 255, 255, 0.1);
+            --warning-bg: rgba(255, 193, 7, 0.08);
             --warning-border: #ffc107;
             --warning-text: #ffe082;
+            --success-color: #00ff9d;
         }
 
         * {
@@ -35,28 +37,24 @@
             display: flex;
             flex-direction: column;
             overflow-x: hidden;
-            background-image: 
-                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.03) 0%, transparent 20%);
         }
 
-        /* Scanline effect */
-        body::after {
+        /* Ambient Background */
+        body::before {
             content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            background-size: 100% 2px, 3px 100%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 243, 255, 0.08) 0%, transparent 70%);
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: -1;
             pointer-events: none;
-            z-index: 999;
-            opacity: 0.3;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
             padding: 4rem 1.5rem;
             flex-grow: 1;
@@ -67,79 +65,47 @@
 
         header {
             text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
+            margin-bottom: 3.5rem;
         }
 
         h1 {
             font-family: 'Roboto Mono', monospace;
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            font-weight: 800;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
             color: var(--text-primary);
-            letter-spacing: -2px;
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+            letter-spacing: -1.5px;
             margin-bottom: 0.5rem;
-            background: linear-gradient(to right, #fff, var(--accent-silver));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
 
         .tld {
             color: var(--accent-blue);
-            -webkit-text-fill-color: var(--accent-blue);
         }
 
         .subtitle {
             font-size: 1.1rem;
             color: var(--accent-blue);
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 1.5rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 1rem;
             font-weight: 600;
         }
 
-        .description {
-            font-size: 1.25rem;
+        .context-tag {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            font-weight: 300;
-        }
-
-        .highlight {
-            color: var(--accent-silver);
-            font-weight: 400;
-        }
-
-        .grid {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 3rem;
+            border: 1px solid var(--border-color);
         }
 
         .card {
             background: var(--card-bg);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
             padding: 2rem;
-            border-radius: 4px;
-            position: relative;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            border-color: rgba(0, 243, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 2px;
-            height: 100%;
-            background: var(--accent-blue);
-            opacity: 0.5;
+            border-radius: 8px;
+            margin-bottom: 2rem;
         }
 
         .points-list {
@@ -148,44 +114,43 @@
 
         .points-list li {
             position: relative;
-            padding-left: 2rem;
-            margin-bottom: 1rem;
+            padding-left: 1.8rem;
+            margin-bottom: 1.2rem;
             color: var(--text-secondary);
         }
 
+        .points-list li:last-child {
+            margin-bottom: 0;
+        }
+
         .points-list li::before {
-            content: '>';
+            content: '✓';
             position: absolute;
             left: 0;
             color: var(--accent-blue);
-            font-family: 'Roboto Mono', monospace;
             font-weight: bold;
         }
 
         .notice-box {
             background: var(--warning-bg);
-            border: 1px solid var(--warning-border);
-            padding: 1.5rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
+            border-left: 3px solid var(--warning-border);
+            padding: 1.25rem;
+            font-size: 0.85rem;
             color: var(--warning-text);
             margin-bottom: 3rem;
-            display: flex;
-            gap: 1rem;
-            align-items: flex-start;
-        }
-
-        .notice-icon {
-            font-size: 1.2rem;
-            flex-shrink: 0;
+            line-height: 1.5;
         }
 
         .cta-section {
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 100%);
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
             text-align: center;
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
-            padding: 3rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
+        }
+
+        .price-block {
+            margin-bottom: 2rem;
         }
 
         .price {
@@ -193,36 +158,58 @@
             font-size: 2.5rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: 0.5rem;
             display: block;
         }
 
-        .price-label {
-            display: block;
+        .price-sub {
             font-size: 0.9rem;
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
+            color: var(--success-color);
+            font-weight: 500;
+            display: block;
+            margin-top: 0.5rem;
         }
 
-        .button {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--accent-blue);
-            border: 2px solid var(--accent-blue);
-            padding: 1rem 3rem;
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-blue);
+            color: #000;
+            padding: 1rem 2rem;
             font-family: 'Roboto Mono', monospace;
             font-weight: 700;
             text-decoration: none;
+            border-radius: 4px;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-            cursor: pointer;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
         }
 
-        .button:hover {
-            background-color: var(--accent-blue);
-            color: #000;
-            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        .btn-primary:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0, 243, 255, 0.3);
+        }
+
+        .btn-secondary {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            padding: 0.5rem;
+            border-bottom: 1px dotted var(--text-secondary);
+            align-self: center;
+        }
+
+        .btn-secondary:hover {
+            color: var(--text-primary);
+            border-color: var(--text-primary);
         }
 
         footer {
@@ -230,18 +217,10 @@
             padding: 2rem;
             font-size: 0.75rem;
             color: #555;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: auto;
         }
-
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            h1 {
-                font-size: 5rem;
-            }
-        }
+        
+        strong { color: white; }
     </style>
 </head>
 <body>
@@ -249,43 +228,55 @@
     <div class="container">
         <header>
             <h1>terafab<span class="tld">.ai</span></h1>
-            <div class="subtitle">Next-Gen AI Chip Foundry</div>
-            <p class="description">
-                Premium AI Infrastructure Domain — Referenced in <span class="highlight">Elon Musk’s 2023 Vision</span> for Tesla’s In-House AI Chip Manufacturing.
-            </p>
+            <div class="subtitle">Next-Gen AI Infrastructure</div>
+            <!-- 修改：去掉了具体的马斯克名字，改为更宏观的行业叙事，懂的人自然懂 -->
+            <div class="context-tag">
+                Aligned with Global AI Manufacturing Visions (Late 2025)
+            </div>
         </header>
 
         <main>
-            <div class="grid">
-                <div class="card">
-                    <ul class="points-list">
-                        <li><strong>Strategic Relevance:</strong> Perfect for AI chip startups, Dojo-like supercomputing projects, or hardware-software fusion teams.</li>
-                        <li><strong>Tech-Forward:</strong> .ai TLD signals cutting-edge AI/tech focus — ideal for SaaS, APIs, and cloud platforms.</li>
-                        <li><strong>Proven Interest:</strong> High search interest since Elon Musk’s public mention of “TeraFab”.</li>
-                        <li><strong>Clean Slate:</strong> Ready to redirect immediately — no branding lock-in.</li>
-                    </ul>
-                </div>
+            <div class="card">
+                <ul class="points-list">
+                    <!-- 修改：卖点侧重于软件/云平台，符合Class 42 -->
+                    <li><strong>Class 42 Compliant:</strong> Ideal for AI Fabrication Management Software, Cloud EDA Platforms, or Digital Twin Services.</li>
+                    <li><strong>Industry Standard:</strong> "Tera" (Trillion) + "Fab" (Fabrication) — The ultimate terminology for scale-out AI computing.</li>
+                    <li><strong>High Impact:</strong> .ai TLD signals cutting-edge tech focus — ready for SaaS & API integration.</li>
+                    <li><strong>Clean Asset:</strong> Independent domain, ready for immediate transfer.</li>
+                </ul>
             </div>
 
+            <!-- 风险披露保留，但语言更中性 -->
             <div class="notice-box">
-                <span class="notice-icon">⚠️</span>
-                <div>
-                    <strong>NOTICE:</strong> “TERAFAB” is registered in Class 9 (hardware/software) by Terabase Energy, Inc. This domain is suitable for AI/SaaS services (Class 42), where no known conflict exists. Recommended brand usage: “TeraFab AI” or “TeraFab Labs” to avoid confusion.
-                </div>
+                <strong>⚠️ TRADEMARK NOTICE:</strong><br>
+                “TERAFAB” is a registered trademark in Class 9 (Hardware/Energy) by Terabase Energy, Inc. <br>
+                This domain is explicitly marketed for <strong>Class 42 (Software/SaaS)</strong> use only. We recommend branding as "TeraFab AI" or "TeraFab Cloud" to ensure distinctiveness.
             </div>
 
             <div class="cta-section">
-                <span class="price">$18,000 USD</span>
-                <span class="price-label">(or best offer)</span>
-                <a href="mailto:joshua369x@gmail.com?subject=Inquiry%20about%20terafab.ai" class="button">
-                    Acquire Domain
-                </a>
+                <div class="price-block">
+                    <span class="price">$18,000 USD</span>
+                    <span class="price-sub">✓ 3-Month Payment Plan Available</span>
+                </div>
+                
+                <div class="btn-group">
+                    <!-- 直接链接到 Afternic -->
+                    <a href="https://www.afternic.com/domain/terafab.ai/" class="btn-primary" target="_blank">
+                        Buy Now via Afternic
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </a>
+                    
+                    <!-- 邮箱联系 -->
+                    <a href="mailto:joshua369x@gmail.com?subject=Offer%20for%20terafab.ai" class="btn-secondary">
+                        Or contact seller: joshua369x@gmail.com
+                    </a>
+                </div>
             </div>
         </main>
     </div>
 
     <footer>
-        <p>Buyer responsible for trademark due diligence. Seller provides usage guidance upon request.</p>
+        <p>Buyer is responsible for independent due diligence regarding trademark usage.</p>
         <p>&copy; 2026 terafab.ai. All rights reserved.</p>
     </footer>
 
