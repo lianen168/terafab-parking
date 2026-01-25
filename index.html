@@ -3,63 +3,291 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>terafab.ai</title>
-    <meta name="description" content="terafab.ai — Reserved domain. For inquiries only.">
+    <title>terafab.ai | Premium AI Infrastructure Domain</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #ffffff; background: #000000; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 20px; text-align: center; position: relative; overflow-x: hidden; }
-        .light-effect { position: absolute; top: 50%; left: 50%; width: min(100vw, 800px); height: min(100vh, 800px); background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 60%); transform: translate(-50%, -50%); pointer-events: none; z-index: -1; }
-        .container { max-width: 720px; width: 100%; padding: 60px 40px; background: rgba(20, 20, 20, 0.8); backdrop-filter: blur(12px); border-radius: 24px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.08); z-index: 1; }
-        h1 { font-size: clamp(2.5rem, 8vw, 4.5rem); font-weight: 300; letter-spacing: 0.2em; margin-bottom: 30px; opacity: 0.95; text-transform: lowercase; }
-        .domain { display: inline-block; transition: opacity 0.3s ease; }
-        .domain:hover { opacity: 0.8; }
-        p { font-size: clamp(1.1rem, 4vw, 1.5rem); opacity: 0.8; max-width: 600px; margin: 0 auto 40px; line-height: 1.8; }
-        .note-section { background: rgba(40, 40, 40, 0.4); border-radius: 16px; padding: 25px; margin: 40px 0; border: 1px solid rgba(255, 255, 255, 0.08); } /* 低调灰框 */
-        .note-text { font-size: 0.95rem; opacity: 0.7; line-height: 1.7; }
-        .contact-section { margin-top: 40px; }
-        .email-link { font-size: 1.4rem; color: #64b5f6; text-decoration: none; font-family: 'Courier New', monospace; padding: 10px 20px; background: rgba(100, 181, 246, 0.1); border-radius: 10px; display: inline-block; border: 1px solid rgba(100, 181, 246, 0.3); transition: all 0.3s ease; }
-        .email-link:hover { background: rgba(100, 181, 246, 0.2); transform: translateY(-2px); box-shadow: 0 5px 15px rgba(100, 181, 246, 0.1); }
-        .contact-note { font-size: 0.9rem; opacity: 0.6; margin-top: 15px; font-style: italic; }
-        .footer { position: absolute; bottom: 30px; font-size: 0.85rem; opacity: 0.4; width: 100%; text-align: center; }
-        @media (max-width: 768px) { .container { padding: 40px 25px; margin: 20px; } .email-link { font-size: 1.2rem; } }
+        :root {
+            --bg-color: #050507;
+            --card-bg: #0e0e14;
+            --accent-blue: #00f3ff;
+            --accent-silver: #e0e0e0;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0b0;
+            --warning-bg: rgba(255, 193, 7, 0.1);
+            --warning-border: #ffc107;
+            --warning-text: #ffe082;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(0, 243, 255, 0.03) 0%, transparent 20%);
+        }
+
+        /* Scanline effect */
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
+            background-size: 100% 2px, 3px 100%;
+            pointer-events: none;
+            z-index: 999;
+            opacity: 0.3;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        h1 {
+            font-family: 'Roboto Mono', monospace;
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            letter-spacing: -2px;
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(to right, #fff, var(--accent-silver));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .tld {
+            color: var(--accent-blue);
+            -webkit-text-fill-color: var(--accent-blue);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: var(--accent-silver);
+            font-weight: 400;
+        }
+
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 2rem;
+            border-radius: 4px;
+            position: relative;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: rgba(0, 243, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 2px;
+            height: 100%;
+            background: var(--accent-blue);
+            opacity: 0.5;
+        }
+
+        .points-list {
+            list-style: none;
+        }
+
+        .points-list li {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .points-list li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-family: 'Roboto Mono', monospace;
+            font-weight: bold;
+        }
+
+        .notice-box {
+            background: var(--warning-bg);
+            border: 1px solid var(--warning-border);
+            padding: 1.5rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            color: var(--warning-text);
+            margin-bottom: 3rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+        }
+
+        .notice-icon {
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .cta-section {
+            text-align: center;
+            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0) 100%);
+            padding: 3rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .price {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .price-label {
+            display: block;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent-blue);
+            border: 2px solid var(--accent-blue);
+            padding: 1rem 3rem;
+            font-family: 'Roboto Mono', monospace;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .button:hover {
+            background-color: var(--accent-blue);
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.75rem;
+            color: #555;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: auto;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            h1 {
+                font-size: 5rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="light-effect"></div>
+
     <div class="container">
-        <h1><span class="domain">terafab.ai</span></h1>
-        <p>This domain is reserved.<br>Coming soon.</p>
-        
-        <!-- 低调解免责（灰框，不刺眼） -->
-        <div class="note-section">
-            <div class="note-text">
-                This domain is not affiliated with any existing companies, products, or trademarks using similar naming. 
-                The naming is coincidental and this page is for domain management purposes only.
+        <header>
+            <h1>terafab<span class="tld">.ai</span></h1>
+            <div class="subtitle">Next-Gen AI Chip Foundry</div>
+            <p class="description">
+                Premium AI Infrastructure Domain — Referenced in <span class="highlight">Elon Musk’s 2023 Vision</span> for Tesla’s In-House AI Chip Manufacturing.
+            </p>
+        </header>
+
+        <main>
+            <div class="grid">
+                <div class="card">
+                    <ul class="points-list">
+                        <li><strong>Strategic Relevance:</strong> Perfect for AI chip startups, Dojo-like supercomputing projects, or hardware-software fusion teams.</li>
+                        <li><strong>Tech-Forward:</strong> .ai TLD signals cutting-edge AI/tech focus — ideal for SaaS, APIs, and cloud platforms.</li>
+                        <li><strong>Proven Interest:</strong> High search interest since Elon Musk’s public mention of “TeraFab”.</li>
+                        <li><strong>Clean Slate:</strong> Ready to redirect immediately — no branding lock-in.</li>
+                    </ul>
+                </div>
             </div>
-        </div>
-        
-        <!-- 联系方式 -->
-        <div class="contact-section">
-            <a href="#" class="email-link" aria-label="Send email">
-                <span id="email-display">joshua369x@gmail.com</span>
-            </a>
-            <div class="contact-note">
-                For serious inquiries only.
+
+            <div class="notice-box">
+                <span class="notice-icon">⚠️</span>
+                <div>
+                    <strong>NOTICE:</strong> “TERAFAB” is registered in Class 9 (hardware/software) by Terabase Energy, Inc. This domain is suitable for AI/SaaS services (Class 42), where no known conflict exists. Recommended brand usage: “TeraFab AI” or “TeraFab Labs” to avoid confusion.
+                </div>
             </div>
-        </div>
+
+            <div class="cta-section">
+                <span class="price">$18,000 USD</span>
+                <span class="price-label">(or best offer)</span>
+                <a href="mailto:joshua369x@gmail.com?subject=Inquiry%20about%20terafab.ai" class="button">
+                    Acquire Domain
+                </a>
+            </div>
+        </main>
     </div>
 
-    <div class="footer">
-        © <span id="currentYear"></span> terafab.ai — All rights reserved.
-    </div>
+    <footer>
+        <p>Buyer responsible for trademark due diligence. Seller provides usage guidance upon request.</p>
+        <p>&copy; 2026 terafab.ai. All rights reserved.</p>
+    </footer>
 
-    <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        const email = 'joshua369x' + '@' + 'gmail.com';
-        const subject = '?subject=Inquiry: terafab.ai';
-        const mailto = 'mailto:' + email + subject;
-        document.querySelector('.email-link').href = mailto;
-        document.getElementById('email-display').textContent = email;
-    </script>
 </body>
 </html>
