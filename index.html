@@ -6,7 +6,6 @@
     <title>TeraFables | The Narrative Infrastructure of AGI</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Fonts: Orbitron for Sci-Fi Headers, JetBrains Mono for Code/Tech Body -->
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -24,7 +23,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            cursor: default; /* Sci-fi feel */
+            cursor: default;
         }
 
         body {
@@ -39,7 +38,6 @@
             position: relative;
         }
 
-        /* HTML5 Canvas Background */
         #warp-canvas {
             position: fixed;
             top: 0;
@@ -50,7 +48,6 @@
             opacity: 0.6;
         }
 
-        /* Layout */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -62,7 +59,6 @@
             align-items: center;
         }
 
-        /* --- HEADER & LOGO FX --- */
         header {
             text-align: center;
             margin-bottom: 5rem;
@@ -79,7 +75,6 @@
             display: inline-block;
         }
 
-        /* "Tera" - Glitch Effect */
         .tera-part {
             color: white;
             position: relative;
@@ -112,7 +107,6 @@
             animation: glitch-anim-2 3s infinite linear alternate-reverse;
         }
 
-        /* "Fables" - Liquid Gold Effect */
         .fables-part {
             background: linear-gradient(180deg, #FFD700 20%, #ffaa00 100%);
             -webkit-background-clip: text;
@@ -134,7 +128,6 @@
             padding-bottom: 5px;
         }
 
-        /* --- PHILOSOPHICAL THESIS --- */
         .thesis-box {
             max-width: 800px;
             background: rgba(0, 0, 0, 0.6);
@@ -172,11 +165,10 @@
             border-bottom: 1px dashed var(--neon-purple);
         }
 
-        /* --- SECTOR MATRIX (4 PILLARS) --- */
         .matrix-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
+            gap: 2rem;
             width: 100%;
             margin-bottom: 5rem;
         }
@@ -191,10 +183,10 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            min-height: 300px;
+            min-height: 320px;
+            height: 100%;
         }
 
-        /* Hover Effects: Edge Lighting */
         .matrix-card::after {
             content: '';
             position: absolute;
@@ -209,7 +201,6 @@
             background: rgba(255, 255, 255, 0.05);
         }
 
-        /* Specific Card Colors on Hover */
         .card-1:hover::after { border-color: var(--neon-purple); box-shadow: 0 0 20px rgba(188, 19, 254, 0.2) inset; }
         .card-2:hover::after { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 243, 255, 0.2) inset; }
         .card-3:hover::after { border-color: var(--neon-gold); box-shadow: 0 0 20px rgba(255, 215, 0, 0.2) inset; }
@@ -237,14 +228,12 @@
             margin-top: auto;
         }
 
-        /* --- PURE CSS MICRO-ANIMATIONS --- */
         .icon-box {
             width: 40px;
             height: 40px;
             position: relative;
         }
 
-        /* Anim 1: Mythology (Core Pulse) */
         .anim-core div {
             position: absolute;
             top: 50%; left: 50%;
@@ -256,7 +245,6 @@
         .anim-core div:nth-child(2) { width: 20px; height: 20px; animation: scaleUp 2s infinite; opacity: 0; }
         .anim-core div:nth-child(3) { width: 30px; height: 30px; animation: scaleUp 2s infinite 0.5s; opacity: 0; }
 
-        /* Anim 2: Multiverse (Fork) */
         .anim-fork { border-left: 2px solid var(--neon-cyan); height: 100%; left: 18px; position: absolute; }
         .anim-fork::before, .anim-fork::after {
             content: ''; position: absolute; width: 8px; height: 8px; background: var(--neon-cyan); border-radius: 50%;
@@ -265,7 +253,6 @@
         .anim-fork::after { bottom: 10%; left: 15px; animation: moveX 3s infinite alternate; }
         .branch-line { position: absolute; top: 50%; left: 0; width: 15px; height: 2px; background: var(--neon-cyan); }
 
-        /* Anim 3: Oracle (Radar/Eye) */
         .anim-eye {
             width: 100%; height: 100%;
             border: 2px solid var(--neon-gold);
@@ -282,7 +269,6 @@
             box-shadow: 0 0 10px var(--neon-gold);
         }
 
-        /* Anim 4: Quantum (Atom) */
         .anim-atom {
             width: 100%; height: 100%;
             display: flex; align-items: center; justify-content: center;
@@ -297,7 +283,6 @@
         .el-2 { transform: rotate(60deg); animation: rot360 3s linear infinite 0.5s; }
         .el-3 { transform: rotate(-60deg); animation: rot360 3s linear infinite 1s; }
 
-        /* --- ASSET VALUATION (PRICING) --- */
         .valuation-module {
             width: 100%;
             max-width: 600px;
@@ -370,7 +355,27 @@
             transition: opacity 0.3s;
         }
 
-        /* --- FOOTER --- */
+        .disclaimer {
+            max-width: 800px;
+            text-align: center;
+            font-size: 0.75rem;
+            color: #555;
+            margin: 3rem auto;
+            padding: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .disclaimer code {
+            background: rgba(0, 0, 0, 0.4);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: var(--font-code);
+            color: var(--neon-cyan);
+        }
+
         footer {
             border-top: 1px solid #222;
             width: 100%;
@@ -381,7 +386,6 @@
             background: black;
         }
 
-        /* Keyframes */
         @keyframes glitch-anim-1 {
             0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(0); }
             10% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(-2px, 1px); }
@@ -409,12 +413,10 @@
 </head>
 <body>
 
-    <!-- Dynamic Background -->
     <canvas id="warp-canvas"></canvas>
 
     <div class="container">
         
-        <!-- Header -->
         <header>
             <div class="logo-container">
                 <span class="tera-part" data-text="Tera">Tera</span><span class="fables-part">Fables</span>
@@ -423,17 +425,13 @@
             <div class="tagline">Myths Written by AGI · For Civilizations Yet Unborn</div>
         </header>
 
-        <!-- Thesis -->
         <div class="thesis-box">
             <p class="thesis-text">
                 "We are approaching the <span class="thesis-highlight">Narrative Singularity</span>. As intelligence decouples from biology, the stories that shape reality will no longer be written by humans, but by trillions of parameters contemplating existence. Owning this protocol is owning the <span class="thesis-highlight">mythology of the next epoch</span>."
             </p>
         </div>
 
-        <!-- Sector Matrix (The 4 Pillars) -->
         <div class="matrix-grid">
-            
-            <!-- Card 1: AI / Myth -->
             <div class="matrix-card card-1">
                 <div class="card-header">
                     <span class="card-title">Synthetic Mythology</span>
@@ -446,7 +444,6 @@
                 </div>
             </div>
 
-            <!-- Card 2: Multiverse -->
             <div class="matrix-card card-2">
                 <div class="card-header">
                     <span class="card-title">Multiversal Narratives</span>
@@ -459,7 +456,6 @@
                 </div>
             </div>
 
-            <!-- Card 3: Oracle / Wisdom -->
             <div class="matrix-card card-3">
                 <div class="card-header">
                     <span class="card-title">The Oracle Function</span>
@@ -472,7 +468,6 @@
                 </div>
             </div>
 
-            <!-- Card 4: Quantum / Observer -->
             <div class="matrix-card card-4">
                 <div class="card-header">
                     <span class="card-title">Quantum Semantics</span>
@@ -486,37 +481,40 @@
                     Meaning in superposition. Stories that collapse into specific truths only when observed by a conscious agent.
                 </div>
             </div>
-
         </div>
 
-        <!-- Asset Valuation / Pricing -->
         <div class="valuation-module">
             <div class="price-label">Stewardship Inquiry</div>
-            <div class="price-tag">Acquisition / Partnership</div>
-            <div class="finance-option">12-MONTH FINANCING AVAILABLE</div>
+            <div class="price-tag">For Research & Collaboration</div>
+            <div class="finance-option">CONFIDENTIAL CHANNEL</div>
             <button class="action-btn" onclick="copyContact()">
                 Establish Uplink
             </button>
             <div id="feedback-msg">ENCRYPTED ADDRESS COPIED TO CLIPBOARD</div>
         </div>
 
+        <!-- Legal Disclaimer -->
+        <div class="disclaimer">
+            <p>
+                <em>Note:</em> TeraFables is an independent narrative intelligence project. 
+                The domain <code>terafab.ai</code> is used as a technical address only and is not affiliated with, 
+                endorsed by, or sponsored by Terabase Energy, Inc. or any entity holding rights to “TERAFAB” in Class 9.
+            </p>
+        </div>
+
     </div>
 
     <footer>
         <p>© 2026 TERAFABLES. DECENTRALIZED INFRASTRUCTURE.</p>
-        <p style="margin-top: 10px; opacity: 0.5;">TERAFAB.AI // JOSHUA369X@GMAIL.COM</p>
     </footer>
 
     <script>
-        // --- Canvas Animation: Warp Speed Starfield ---
         const canvas = document.getElementById('warp-canvas');
         const ctx = canvas.getContext('2d');
         
         let width, height;
         let stars = [];
         const numStars = 500;
-        const centerX = window.innerWidth / 2;
-        const centerY = window.innerHeight / 2;
 
         function resize() {
             width = window.innerWidth;
@@ -532,11 +530,11 @@
             reset() {
                 this.x = (Math.random() - 0.5) * width;
                 this.y = (Math.random() - 0.5) * height;
-                this.z = Math.random() * width; // Depth
+                this.z = Math.random() * width;
                 this.pz = this.z;
             }
             update() {
-                this.z = this.z - 10; // Speed
+                this.z = this.z - 10;
                 if (this.z < 1) {
                     this.reset();
                     this.z = width;
@@ -544,14 +542,10 @@
                 }
             }
             draw() {
-                // Project 3D to 2D
                 const sx = (this.x / this.z) * width + width / 2;
                 const sy = (this.y / this.z) * height + height / 2;
-                
-                // Previous position for trails (Warp effect)
                 const px = (this.x / this.pz) * width + width / 2;
                 const py = (this.y / this.pz) * height + height / 2;
-                
                 this.pz = this.z;
 
                 if (sx < 0 || sx > width || sy < 0 || sy > height) return;
@@ -577,7 +571,7 @@
         }
 
         function animate() {
-            ctx.fillStyle = "rgba(3, 3, 5, 0.5)"; // Trail fade effect
+            ctx.fillStyle = "rgba(3, 3, 5, 0.5)";
             ctx.fillRect(0, 0, width, height);
             
             stars.forEach(star => {
@@ -590,7 +584,6 @@
         window.addEventListener('resize', resize);
         init();
 
-        // --- Interaction Logic ---
         function copyContact() {
             const email = "joshua369x@gmail.com";
             const feedback = document.getElementById('feedback-msg');
