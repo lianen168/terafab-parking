@@ -1,283 +1,224 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>terafab.ai | Premium AI Infrastructure Domain</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <title>AI 音乐创作平台</title>
     <style>
-        :root {
-            --bg-color: #050507;
-            --card-bg: #0e0e14;
-            --accent-blue: #00f3ff;
-            --accent-hover: #00c2cc;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --warning-bg: rgba(255, 193, 7, 0.08);
-            --warning-border: #ffc107;
-            --warning-text: #ffe082;
-            --success-color: #00ff9d;
-        }
+        /* --- 全局样式 --- */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        :root {
+            --bg-color: #121212;
+            --primary-text-color: #EAEAEA;
+            --secondary-text-color: #B3B3B3;
+            --accent-color: #1DB954; /* 类似Spotify的绿色，很适合音乐主题 */
+            --card-color: #1E1E1E;
+            --border-color: #2c2c2c;
         }
 
         body {
+            font-family: 'Noto Sans SC', sans-serif;
             background-color: var(--bg-color);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
+            color: var(--primary-text-color);
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Ambient Background */
-        body::before {
-            content: "";
-            position: fixed;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(0, 243, 255, 0.08) 0%, transparent 70%);
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-            pointer-events: none;
-        }
-
+        /* --- 容器与布局 --- */
         .container {
-            max-width: 720px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
-            flex-grow: 1;
+            padding: 0 20px;
+        }
+
+        /* --- 头部导航 --- */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .navbar {
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 3.5rem;
-        }
-
-        h1 {
-            font-family: 'Roboto Mono', monospace;
-            font-size: clamp(2.5rem, 8vw, 4rem);
-            font-weight: 700;
-            color: var(--text-primary);
-            letter-spacing: -1.5px;
-            margin-bottom: 0.5rem;
-        }
-
-        .tld {
-            color: var(--accent-blue);
-        }
-
-        .subtitle {
-            font-size: 1.1rem;
-            color: var(--accent-blue);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        .context-tag {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.05);
-            padding: 0.4rem 1rem;
-            border-radius: 50px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            border: 1px solid var(--border-color);
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-        }
-
-        .points-list {
-            list-style: none;
-        }
-
-        .points-list li {
-            position: relative;
-            padding-left: 1.8rem;
-            margin-bottom: 1.2rem;
-            color: var(--text-secondary);
-        }
-
-        .points-list li:last-child {
-            margin-bottom: 0;
-        }
-
-        .points-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent-blue);
-            font-weight: bold;
-        }
-
-        .notice-box {
-            background: var(--warning-bg);
-            border-left: 3px solid var(--warning-border);
-            padding: 1.25rem;
-            font-size: 0.85rem;
-            color: var(--warning-text);
-            margin-bottom: 3rem;
-            line-height: 1.5;
-        }
-
-        .cta-section {
-            background: linear-gradient(180deg, rgba(255,255,255,0.03) 0%, rgba(0,0,0,0) 100%);
-            padding: 2.5rem;
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            text-align: center;
-        }
-
-        .price-block {
-            margin-bottom: 2rem;
-        }
-
-        .price {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            display: block;
-        }
-
-        .price-sub {
-            font-size: 0.9rem;
-            color: var(--success-color);
-            font-weight: 500;
-            display: block;
-            margin-top: 0.5rem;
-        }
-
-        .btn-group {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-blue);
-            color: #000;
-            padding: 1rem 2rem;
-            font-family: 'Roboto Mono', monospace;
-            font-weight: 700;
-            text-decoration: none;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            transition: all 0.2s;
-            display: flex;
+            justify-content: space-between;
             align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
         }
 
-        .btn-primary:hover {
-            background-color: var(--accent-hover);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 20px rgba(0, 243, 255, 0.3);
-        }
-
-        .btn-secondary {
-            color: var(--text-secondary);
+        .logo {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: var(--primary-text-color);
             text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.5rem;
-            border-bottom: 1px dotted var(--text-secondary);
-            align-self: center;
         }
 
-        .btn-secondary:hover {
-            color: var(--text-primary);
-            border-color: var(--text-primary);
+        .nav-links a {
+            color: var(--secondary-text-color);
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        footer {
+        .nav-links a:hover {
+            color: var(--primary-text-color);
+        }
+
+        /* --- 英雄区域 --- */
+        .hero {
             text-align: center;
-            padding: 2rem;
-            font-size: 0.75rem;
-            color: #555;
-            margin-top: auto;
+            padding: 100px 0;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0 0 20px;
+            background: -webkit-linear-gradient(45deg, var(--accent-color), #2d7ded);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            color: var(--secondary-text-color);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 35px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1em;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(29, 185, 84, 0.3);
+        }
+
+        /* --- 特性区域 --- */
+        .features {
+            padding: 80px 0;
+            background-color: var(--bg-color);
         }
         
-        strong { color: white; }
+        .section-title {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 60px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--card-color);
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--secondary-text-color);
+        }
+        
+        .feature-icon {
+            font-size: 3em;
+            color: var(--accent-color);
+        }
+
+        /* --- 页脚 --- */
+        .footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid var(--border-color);
+            color: var(--secondary-text-color);
+        }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>terafab<span class="tld">.ai</span></h1>
-            <div class="subtitle">Next-Gen AI Infrastructure</div>
-            <!-- 修改：去掉了具体的马斯克名字，改为更宏观的行业叙事，懂的人自然懂 -->
-            <div class="context-tag">
-                Aligned with Global AI Manufacturing Visions (Late 2025)
-            </div>
-        </header>
-
-        <main>
-            <div class="card">
-                <ul class="points-list">
-                    <!-- 修改：卖点侧重于软件/云平台，符合Class 42 -->
-                    <li><strong>Class 42 Compliant:</strong> Ideal for AI Fabrication Management Software, Cloud EDA Platforms, or Digital Twin Services.</li>
-                    <li><strong>Industry Standard:</strong> "Tera" (Trillion) + "Fab" (Fabrication) — The ultimate terminology for scale-out AI computing.</li>
-                    <li><strong>High Impact:</strong> .ai TLD signals cutting-edge tech focus — ready for SaaS & API integration.</li>
-                    <li><strong>Clean Asset:</strong> Independent domain, ready for immediate transfer.</li>
-                </ul>
-            </div>
-
-            <!-- 风险披露保留，但语言更中性 -->
-            <div class="notice-box">
-                <strong>⚠️ TRADEMARK NOTICE:</strong><br>
-                “TERAFAB” is a registered trademark in Class 9 (Hardware/Energy) by Terabase Energy, Inc. <br>
-                This domain is explicitly marketed for <strong>Class 42 (Software/SaaS)</strong> use only. We recommend branding as "TeraFab AI" or "TeraFab Cloud" to ensure distinctiveness.
-            </div>
-
-            <div class="cta-section">
-                <div class="price-block">
-                    <span class="price">$18,000 USD</span>
-                    <span class="price-sub">✓ 3-Month Payment Plan Available</span>
+    <!-- 1. 头部导航 -->
+    <header class="header">
+        <div class="container">
+            <nav class="navbar">
+                <!-- 在这里替换您的Logo/品牌名称 -->
+                <a href="#" class="logo">MeloAI</a>
+                <div class="nav-links">
+                    <a href="#">功能</a>
+                    <a href="#">定价</a>
+                    <a href="#">登录</a>
                 </div>
-                
-                <div class="btn-group">
-                    <!-- 直接链接到 Afternic -->
-                    <a href="https://www.afternic.com/domain/terafab.ai/" class="btn-primary" target="_blank">
-                        Buy Now via Afternic
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                    </a>
-                    
-                    <!-- 邮箱联系 -->
-                    <a href="mailto:joshua369x@gmail.com?subject=Offer%20for%20terafab.ai" class="btn-secondary">
-                        Or contact seller: joshua369x@gmail.com
-                    </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 2. 英雄区域 (核心展示) -->
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>释放你的音乐创造力</h1>
+                <p>只需输入一段文字，或哼唱一段旋律，我们的AI就能为您生成独一无二、广播级的完整乐曲。</p>
+                <a href="#" class="cta-button">立即免费体验 →</a>
+            </div>
+        </section>
+
+        <!-- 3. 特性介绍 -->
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">释放无限可能</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎵</div>
+                        <h3>多风格生成</h3>
+                        <p>从古典、爵士到电子、流行，AI掌握上百种音乐风格，满足你的一切想象。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎤</div>
+                        <h3>旋律转乐曲</h3>
+                        <p>哼唱或上传一小段旋律，AI将自动为您扩展、编曲，生成完整的作品。</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✍️</div>
+                        <h3>文本到音乐</h3>
+                        <p>描述你想要的感觉，比如“一个下雨的午后，在咖啡馆里”，AI为你谱写背景音乐。</p>
+                    </div>
                 </div>
             </div>
-        </main>
-    </div>
+        </section>
+    </main>
 
-    <footer>
-        <p>Buyer is responsible for independent due diligence regarding trademark usage.</p>
-        <p>&copy; 2026 terafab.ai. All rights reserved.</p>
+    <!-- 4. 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <!-- 在这里替换您的公司名称 -->
+            <p>&copy; 2024 MeloAI. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
