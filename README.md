@@ -18,3 +18,5 @@ This repository powers the domain **terafab.ai**, operating under the independen
 - The domain `terafab.ai` is used as a technical alias only and does not imply endorsement or association.
 
 > All myths are synthetic. All truths are provisional. All futures are unwritten.
+> 
+- **Public archive**: [https://archive.md/08ed9](https://archive.md/08ed9) (saved on January 26, 2026)
