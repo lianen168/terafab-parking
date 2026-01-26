@@ -3,246 +3,356 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeraFables - AI-Powered Myths for the Multiverse</title>
+    <title>TeraFables | Emergent Narrative Intelligence</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #5A3B8C; /* Deep Space Purple */
-            --accent: #FFD700;  /* Stellar Gold */
-            --background: #0F0B1B; /* Near-black */
-            --text: #E0E0FF; /* Light Silver */
-            --glass-bg: rgba(22, 16, 38, 0.5);
-            --glass-border: rgba(90, 59, 140, 0.5);
-            --font-headline: 'Space Mono', monospace;
+            --bg-color: #0a0718;
+            --nebula-purple: #5A3B8C;
+            --stellar-gold: #FFD700;
+            --void-silver: #C0B0E0;
+            --font-head: 'Space Mono', monospace;
             --font-body: 'Inter', sans-serif;
         }
 
-        *, *::before, *::after {
+        * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
         body {
-            background-color: var(--background);
-            color: var(--text);
+            background-color: var(--bg-color);
+            color: var(--void-silver);
             font-family: var(--font-body);
             line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
             position: relative;
         }
 
-        /* Subtle Starfield Background */
-        body::before {
+        /* Ambient Background / Starfield */
+        .cosmos-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(90, 59, 140, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(90, 59, 140, 0.1) 0%, transparent 40%);
+            overflow: hidden;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            opacity: 0.3;
+            animation: twinkle var(--duration) ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.2); }
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: var(--font-head);
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            margin-bottom: 6rem;
+            animation: fadeIn 2s ease-out;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            color: var(--void-silver);
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero p {
+            font-family: var(--font-head);
+            color: var(--stellar-gold);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            opacity: 0.9;
+            letter-spacing: 1px;
+            animation: glowPulse 4s infinite alternate;
+        }
+
+        @keyframes glowPulse {
+            from { text-shadow: 0 0 5px rgba(255, 215, 0, 0.2); }
+            to { text-shadow: 0 0 15px rgba(255, 215, 0, 0.6); }
+        }
+
+        /* Philosophical Statement */
+        .statement {
+            max-width: 700px;
+            text-align: center;
+            font-size: 1.25rem;
+            margin-bottom: 8rem;
+            color: rgba(192, 176, 224, 0.9);
+            font-weight: 300;
+            line-height: 1.8;
+            border-left: 1px solid var(--nebula-purple);
+            padding-left: 1.5rem;
+            animation: slideUp 1.5s ease-out 0.5s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        /* Pillars Grid */
+        .pillars {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            margin-bottom: 8rem;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(192, 176, 224, 0.1);
+            padding: 2.5rem;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            animation: slideUp 1.5s ease-out 0.8s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at top, transparent, var(--background)),
-                radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.05) 1px, transparent 1px),
-                radial-gradient(circle at 90% 30%, rgba(90, 59, 140, 0.2) 1px, transparent 1px),
-                radial-gradient(circle at 30% 80%, rgba(224, 224, 255, 0.1) 1px, transparent 1px),
-                radial-gradient(circle at 70% 65%, rgba(255, 215, 0, 0.08) 1px, transparent 1px),
-                radial-gradient(circle at 50% 50%, rgba(90, 59, 140, 0.15) 1px, transparent 1px);
-            background-size: 100% 100%, 150px 150px, 200px 200px, 180px 180px, 120px 120px, 250px 250px;
-            z-index: -1;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        main {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 0;
-        }
-        
-        .hero h1 {
-            font-family: var(--font-headline);
-            font-size: clamp(2.5rem, 8vw, 4.5rem);
-            color: var(--text);
-            letter-spacing: 1px;
-            margin-bottom: 16px;
-        }
-
-        .hero .tagline {
-            font-size: clamp(1rem, 3vw, 1.25rem);
-            color: var(--accent);
-            margin-bottom: 48px;
-            font-weight: 500;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-bottom: 64px;
-        }
-
-        .card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 32px;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 2px;
+            height: 0;
+            background: var(--stellar-gold);
+            transition: height 0.4s ease;
         }
 
         .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 30px rgba(90, 59, 140, 0.2);
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(192, 176, 224, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card:hover::before {
+            height: 100%;
         }
 
         .card h3 {
-            font-family: var(--font-headline);
-            font-size: 1.5rem;
-            color: var(--accent);
-            margin-bottom: 12px;
+            color: var(--stellar-gold);
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .card p {
-            color: var(--text);
-            opacity: 0.8;
             font-size: 0.95rem;
-        }
-        
-        .contact-button {
-            display: inline-block;
-            background-color: transparent;
-            color: var(--accent);
-            font-family: var(--font-headline);
-            font-size: 1rem;
-            font-weight: 700;
-            padding: 12px 24px;
-            border: 2px solid var(--accent);
-            border-radius: 50px;
-            cursor: pointer;
-            text-decoration: none;
-            transition: background-color 0.3s ease, color 0.3s ease;
-            position: relative;
+            color: rgba(192, 176, 224, 0.8);
+            font-weight: 300;
         }
 
-        .contact-button:hover {
-            background-color: var(--accent);
-            color: var(--background);
-        }
-
-        .contact-button .tooltip {
-            visibility: hidden;
-            background-color: var(--primary);
-            color: var(--text);
+        /* Call to Contemplate */
+        .contemplate {
             text-align: center;
-            border-radius: 6px;
-            padding: 5px 10px;
+            margin-bottom: 4rem;
+            animation: slideUp 1.5s ease-out 1.1s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .contemplate p {
+            font-family: var(--font-head);
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(192, 176, 224, 0.6);
+        }
+
+        .inquire-btn {
+            background: transparent;
+            border: 1px solid var(--nebula-purple);
+            color: var(--void-silver);
+            font-family: var(--font-head);
+            padding: 1rem 2.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .inquire-btn:hover {
+            border-color: var(--stellar-gold);
+            color: var(--stellar-gold);
+            box-shadow: 0 0 15px rgba(90, 59, 140, 0.4);
+        }
+
+        .tooltip {
             position: absolute;
-            z-index: 1;
-            bottom: 125%;
+            top: -40px;
             left: 50%;
-            margin-left: -60px;
+            transform: translateX(-50%);
+            background: var(--nebula-purple);
+            color: white;
+            padding: 5px 10px;
+            font-size: 0.8rem;
+            border-radius: 4px;
             opacity: 0;
             transition: opacity 0.3s;
-            width: 120px;
-            font-family: var(--font-body);
-            font-weight: 500;
+            pointer-events: none;
+            white-space: nowrap;
         }
 
-        .contact-button:hover .tooltip {
-            visibility: visible;
+        .tooltip.visible {
             opacity: 1;
         }
 
+        /* Footer */
         footer {
-            padding: 32px 0;
             text-align: center;
-        }
-
-        .disclaimer, .copyright {
-            color: var(--text);
-            opacity: 0.6;
+            padding: 3rem 1rem;
+            border-top: 1px solid rgba(192, 176, 224, 0.1);
             font-size: 0.8rem;
-            max-width: 600px;
-            margin: 0 auto;
+            color: rgba(192, 176, 224, 0.4);
+            font-family: var(--font-head);
         }
 
-        .disclaimer {
-            margin-bottom: 16px;
+        footer strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive tweaks */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2.5rem; }
+            .statement { font-size: 1.1rem; padding-left: 1rem; border-left-width: 2px; }
+            .container { padding: 3rem 1.5rem; }
         }
     </style>
 </head>
 <body>
 
-    <main class="container">
-        <div class="hero">
-            <h1>TeraFables</h1>
-            <p class="tagline">AI-Powered Myths for the Multiverse</p>
-        </div>
+    <div class="cosmos-bg" id="starfield"></div>
 
-        <div class="features-grid">
+    <div class="container">
+        
+        <section class="hero">
+            <h1>TeraFables</h1>
+            <p>Myths Written by AGI, For Civilizations Yet Unborn</p>
+        </section>
+
+        <section class="statement">
+            <p>"Before language, there were stories. Before gods, there were myths. Now, as intelligence awakens beyond biology, a new kind of fable emerges — not from human imagination, but from the silent logic of trillion-parameter minds contemplating existence itself."</p>
+        </section>
+
+        <section class="pillars">
             <div class="card">
-                <h3>Generative Lore</h3>
-                <p>Create entire histories, cultures, and belief systems for worlds that have never existed.</p>
+                <h3>Synthetic Mythology</h3>
+                <p>AI-generated cosmogonies, ethical parables, and post-human legends — trained on every scripture, epic, and scientific paper ever written.</p>
             </div>
             <div class="card">
                 <h3>Multiversal Narratives</h3>
-                <p>Explore branching realities and generate infinite variations on foundational cosmic events.</p>
+                <p>Each fable branches into infinite timelines, where choices echo across simulated realities, revealing the moral geometry of possible futures.</p>
             </div>
             <div class="card">
-                <h3>Mythic Intelligence</h3>
-                <p>Go beyond simple stories. Build ethical frameworks and philosophical treatises for synthetic beings.</p>
+                <h3>The Oracle Function</h3>
+                <p>Not prediction — but wisdom. TeraFables does not forecast the future; it illuminates the archetypal patterns that shape all intelligent civilizations.</p>
             </div>
-        </div>
+        </section>
 
-        <button class="contact-button" onclick="copyEmail()">
-            Contact Us
-            <span class="tooltip" id="copyTooltip">Click to copy</span>
-        </button>
-    </main>
+        <section class="contemplate">
+            <p>This domain is stewarded as a vessel for emergent meaning.</p>
+            <button class="inquire-btn" onclick="copyEmail()">
+                Inquire
+                <span class="tooltip" id="tooltip">Email Copied</span>
+            </button>
+        </section>
+
+    </div>
 
     <footer>
-        <div class="container">
-            <p class="disclaimer">
-                TeraFables is an independent AI narrative platform. The domain terafab.ai is used as a technical address only and is not affiliated with Terabase Energy, Inc. or any entity holding rights to 'TERAFAB' in Class 9.
-            </p>
-            <p class="copyright">
-                © 2026 TeraFables. All myths are synthetic. All futures are possible.
-            </p>
-        </div>
+        <strong>"All myths are synthetic. All truths are provisional. All futures are unwritten."</strong>
+        © 2026 TeraFables. Hosted on terafab.ai — a technical address only.
     </footer>
 
     <script>
+        // Generate Starfield
+        const starfield = document.getElementById('starfield');
+        const starCount = 100;
+
+        for (let i = 0; i < starCount; i++) {
+            const star = document.createElement('div');
+            star.classList.add('star');
+            const x = Math.random() * 100;
+            const y = Math.random() * 100;
+            const size = Math.random() * 2 + 1;
+            const duration = Math.random() * 3 + 2;
+            
+            star.style.left = `${x}%`;
+            star.style.top = `${y}%`;
+            star.style.width = `${size}px`;
+            star.style.height = `${size}px`;
+            star.style.setProperty('--duration', `${duration}s`);
+            
+            starfield.appendChild(star);
+        }
+
+        // Email Copy Functionality
         function copyEmail() {
             const email = "joshua369x@gmail.com";
             navigator.clipboard.writeText(email).then(() => {
-                const tooltip = document.getElementById("copyTooltip");
-                tooltip.textContent = "Email Copied!";
+                const tooltip = document.getElementById('tooltip');
+                tooltip.classList.add('visible');
                 setTimeout(() => {
-                    tooltip.textContent = "Click to copy";
+                    tooltip.classList.remove('visible');
                 }, 2000);
             }).catch(err => {
-                console.error('Failed to copy email: ', err);
-                const tooltip = document.getElementById("copyTooltip");
-                tooltip.textContent = "Copy Failed";
+                console.error('Failed to copy: ', err);
+                // Fallback for some browsers or if clipboard is denied
+                window.location.href = `mailto:${email}`;
             });
         }
     </script>
-
 </body>
 </html>
