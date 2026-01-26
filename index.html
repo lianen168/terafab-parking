@@ -1,225 +1,248 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI 音乐创作平台</title>
+    <title>TeraFables - AI-Powered Myths for the Multiverse</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
     <style>
-        /* --- 全局样式 --- */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap');
-
         :root {
-            --bg-color: #121212;
-            --primary-text-color: #EAEAEA;
-            --secondary-text-color: #B3B3B3;
-            --accent-color: #1DB954; /* 类似Spotify的绿色，很适合音乐主题 */
-            --card-color: #1E1E1E;
-            --border-color: #2c2c2c;
+            --primary: #5A3B8C; /* Deep Space Purple */
+            --accent: #FFD700;  /* Stellar Gold */
+            --background: #0F0B1B; /* Near-black */
+            --text: #E0E0FF; /* Light Silver */
+            --glass-bg: rgba(22, 16, 38, 0.5);
+            --glass-border: rgba(90, 59, 140, 0.5);
+            --font-headline: 'Space Mono', monospace;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--primary-text-color);
-            margin: 0;
-            padding: 0;
+            background-color: var(--background);
+            color: var(--text);
+            font-family: var(--font-body);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
         }
 
-        /* --- 容器与布局 --- */
+        /* Subtle Starfield Background */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at top, transparent, var(--background)),
+                radial-gradient(circle at 10% 20%, rgba(255, 215, 0, 0.05) 1px, transparent 1px),
+                radial-gradient(circle at 90% 30%, rgba(90, 59, 140, 0.2) 1px, transparent 1px),
+                radial-gradient(circle at 30% 80%, rgba(224, 224, 255, 0.1) 1px, transparent 1px),
+                radial-gradient(circle at 70% 65%, rgba(255, 215, 0, 0.08) 1px, transparent 1px),
+                radial-gradient(circle at 50% 50%, rgba(90, 59, 140, 0.15) 1px, transparent 1px);
+            background-size: 100% 100%, 150px 150px, 200px 200px, 180px 180px, 120px 120px, 250px 250px;
+            z-index: -1;
+        }
+
         .container {
+            width: 100%;
             max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* --- 头部导航 --- */
-        .header {
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .navbar {
+        main {
+            flex-grow: 1;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8em;
-            font-weight: 700;
-            color: var(--primary-text-color);
-            text-decoration: none;
-        }
-
-        .nav-links a {
-            color: var(--secondary-text-color);
-            text-decoration: none;
-            margin-left: 25px;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-text-color);
-        }
-
-        /* --- 英雄区域 --- */
-        .hero {
+            flex-direction: column;
+            justify-content: center;
             text-align: center;
-            padding: 100px 0;
-        }
-
-        .hero h1 {
-            font-size: 3.5em;
-            margin: 0 0 20px;
-            background: -webkit-linear-gradient(45deg, var(--accent-color), #2d7ded);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .hero p {
-            font-size: 1.2em;
-            color: var(--secondary-text-color);
-            max-width: 600px;
-            margin: 0 auto 40px;
-        }
-
-        .cta-button {
-            background-color: var(--accent-color);
-            color: white;
-            padding: 15px 35px;
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1em;
-            font-weight: 700;
-            cursor: pointer;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.3s ease;
-        }
-
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 20px rgba(29, 185, 84, 0.3);
-        }
-
-        /* --- 特性区域 --- */
-        .features {
             padding: 80px 0;
-            background-color: var(--bg-color);
         }
         
-        .section-title {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 60px;
+        .hero h1 {
+            font-family: var(--font-headline);
+            font-size: clamp(2.5rem, 8vw, 4.5rem);
+            color: var(--text);
+            letter-spacing: 1px;
+            margin-bottom: 16px;
         }
-        
+
+        .hero .tagline {
+            font-size: clamp(1rem, 3vw, 1.25rem);
+            color: var(--accent);
+            margin-bottom: 48px;
+            font-weight: 500;
+        }
+
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 64px;
         }
 
-        .feature-card {
-            background-color: var(--card-color);
-            padding: 30px;
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-            text-align: center;
+        .card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 32px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 30px rgba(90, 59, 140, 0.2);
+        }
+
+        .card h3 {
+            font-family: var(--font-headline);
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: var(--text);
+            opacity: 0.8;
+            font-size: 0.95rem;
+        }
         
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        .contact-button {
+            display: inline-block;
+            background-color: transparent;
+            color: var(--accent);
+            font-family: var(--font-headline);
+            font-size: 1rem;
+            font-weight: 700;
+            padding: 12px 24px;
+            border: 2px solid var(--accent);
+            border-radius: 50px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            position: relative;
         }
 
-        .feature-card h3 {
-            font-size: 1.5em;
-            margin-top: 20px;
-            margin-bottom: 10px;
+        .contact-button:hover {
+            background-color: var(--accent);
+            color: var(--background);
         }
 
-        .feature-card p {
-            color: var(--secondary-text-color);
-        }
-        
-        .feature-icon {
-            font-size: 3em;
-            color: var(--accent-color);
-        }
-
-        /* --- 页脚 --- */
-        .footer {
+        .contact-button .tooltip {
+            visibility: hidden;
+            background-color: var(--primary);
+            color: var(--text);
             text-align: center;
-            padding: 40px 0;
-            border-top: 1px solid var(--border-color);
-            color: var(--secondary-text-color);
+            border-radius: 6px;
+            padding: 5px 10px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            width: 120px;
+            font-family: var(--font-body);
+            font-weight: 500;
+        }
+
+        .contact-button:hover .tooltip {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        footer {
+            padding: 32px 0;
+            text-align: center;
+        }
+
+        .disclaimer, .copyright {
+            color: var(--text);
+            opacity: 0.6;
+            font-size: 0.8rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .disclaimer {
+            margin-bottom: 16px;
         }
     </style>
 </head>
 <body>
 
-    <!-- 1. 头部导航 -->
-    <header class="header">
-        <div class="container">
-            <nav class="navbar">
-                <!-- 在这里替换您的Logo/品牌名称 -->
-                <a href="#" class="logo">MeloAI</a>
-                <div class="nav-links">
-                    <a href="#">功能</a>
-                    <a href="#">定价</a>
-                    <a href="#">登录</a>
-                </div>
-            </nav>
+    <main class="container">
+        <div class="hero">
+            <h1>TeraFables</h1>
+            <p class="tagline">AI-Powered Myths for the Multiverse</p>
         </div>
-    </header>
 
-    <!-- 2. 英雄区域 (核心展示) -->
-    <main>
-        <section class="hero">
-            <div class="container">
-                <h1>释放你的音乐创造力</h1>
-                <p>只需输入一段文字，或哼唱一段旋律，我们的AI就能为您生成独一无二、广播级的完整乐曲。</p>
-                <a href="#" class="cta-button">立即免费体验 →</a>
+        <div class="features-grid">
+            <div class="card">
+                <h3>Generative Lore</h3>
+                <p>Create entire histories, cultures, and belief systems for worlds that have never existed.</p>
             </div>
-        </section>
+            <div class="card">
+                <h3>Multiversal Narratives</h3>
+                <p>Explore branching realities and generate infinite variations on foundational cosmic events.</p>
+            </div>
+            <div class="card">
+                <h3>Mythic Intelligence</h3>
+                <p>Go beyond simple stories. Build ethical frameworks and philosophical treatises for synthetic beings.</p>
+            </div>
+        </div>
 
-        <!-- 3. 特性介绍 -->
-        <section class="features">
-            <div class="container">
-                <h2 class="section-title">释放无限可能</h2>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">🎵</div>
-                        <h3>多风格生成</h3>
-                        <p>从古典、爵士到电子、流行，AI掌握上百种音乐风格，满足你的一切想象。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎤</div>
-                        <h3>旋律转乐曲</h3>
-                        <p>哼唱或上传一小段旋律，AI将自动为您扩展、编曲，生成完整的作品。</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">✍️</div>
-                        <h3>文本到音乐</h3>
-                        <p>描述你想要的感觉，比如“一个下雨的午后，在咖啡馆里”，AI为你谱写背景音乐。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <button class="contact-button" onclick="copyEmail()">
+            Contact Us
+            <span class="tooltip" id="copyTooltip">Click to copy</span>
+        </button>
     </main>
 
-    <!-- 4. 页脚 -->
-    <footer class="footer">
+    <footer>
         <div class="container">
-            <!-- 在这里替换您的公司名称 -->
-            <p>&copy; 2024 MeloAI. All Rights Reserved.</p>
+            <p class="disclaimer">
+                TeraFables is an independent AI narrative platform. The domain terafab.ai is used as a technical address only and is not affiliated with Terabase Energy, Inc. or any entity holding rights to 'TERAFAB' in Class 9.
+            </p>
+            <p class="copyright">
+                © 2026 TeraFables. All myths are synthetic. All futures are possible.
+            </p>
         </div>
     </footer>
+
+    <script>
+        function copyEmail() {
+            const email = "joshua369x@gmail.com";
+            navigator.clipboard.writeText(email).then(() => {
+                const tooltip = document.getElementById("copyTooltip");
+                tooltip.textContent = "Email Copied!";
+                setTimeout(() => {
+                    tooltip.textContent = "Click to copy";
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy email: ', err);
+                const tooltip = document.getElementById("copyTooltip");
+                tooltip.textContent = "Copy Failed";
+            });
+        }
+    </script>
 
 </body>
 </html>
