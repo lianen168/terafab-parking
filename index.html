@@ -186,7 +186,7 @@
         /* Call to Contemplate */
         .contemplate {
             text-align: center;
-            margin-bottom: 4rem;
+            margin-bottom: 2rem;
             animation: slideUp 1.5s ease-out 1.1s forwards;
             opacity: 0;
             transform: translateY(20px);
@@ -238,6 +238,28 @@
             opacity: 1;
         }
 
+        /* Disclaimer */
+        .disclaimer {
+            max-width: 700px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: rgba(192, 176, 224, 0.5);
+            margin: 2rem auto;
+            padding: 1rem;
+            border-top: 1px solid rgba(90, 59, 140, 0.2);
+            border-bottom: 1px solid rgba(90, 59, 140, 0.2);
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        .disclaimer code {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: var(--font-head);
+            color: var(--stellar-gold);
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -268,6 +290,7 @@
             .hero h1 { font-size: 2.5rem; }
             .statement { font-size: 1.1rem; padding-left: 1rem; border-left-width: 2px; }
             .container { padding: 3rem 1.5rem; }
+            .disclaimer { font-size: 0.75rem; padding: 0.8rem; }
         }
     </style>
 </head>
@@ -309,6 +332,10 @@
             </button>
         </section>
 
+        <div class="disclaimer">
+            <p><em>Note:</em> TeraFables is an independent narrative intelligence project. The domain <code>terafab.ai</code> is used as a technical address only and is not affiliated with, endorsed by, or sponsored by Terabase Energy, Inc. or any entity holding rights to “TERAFAB” in Class 9.</p>
+        </div>
+
     </div>
 
     <footer>
@@ -349,7 +376,6 @@
                 }, 2000);
             }).catch(err => {
                 console.error('Failed to copy: ', err);
-                // Fallback for some browsers or if clipboard is denied
                 window.location.href = `mailto:${email}`;
             });
         }
