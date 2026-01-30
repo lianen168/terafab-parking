@@ -7,7 +7,7 @@
     <meta name="description" content="Premium Domain Asset for Sale. The defining brand for Generative Storytelling, AI Mythos, and Infinite Narrative Engines.">
     <meta name="google" content="notranslate">
 
-    <!-- Fonts: Cinzel (Mythic) & Syncopate (Futuristic) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
@@ -18,7 +18,6 @@
             --bg-void: #050508;
             --tech-blue: #00f3ff;
             --myth-gold: #ffd700;
-            --myth-amber: #ffaa00;
             --glass: rgba(255, 255, 255, 0.03);
             --border: rgba(255, 255, 255, 0.08);
         }
@@ -32,19 +31,34 @@
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
+            position: relative;
         }
 
         .notranslate { translate: no; }
 
-        /* --- BACKGROUND --- */
-        #warp-canvas {
+        /* --- DECORATIVE VINES (Cyber-Mythos) --- */
+        .vine-decoration {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            opacity: 0.4;
+            top: 0;
+            height: 100vh;
+            width: 150px;
+            z-index: 0;
+            pointer-events: none;
+            opacity: 0.3;
+            /* Circuit/Vine Pattern */
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='200' viewBox='0 0 100 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0 Q 80 50 20 100 T 50 200' stroke='%2300f3ff' stroke-width='1' fill='none' opacity='0.5'/%3E%3Ccircle cx='20' cy='100' r='2' fill='%23ffd700'/%3E%3Cpath d='M50 0 Q 20 50 80 100 T 50 200' stroke='%23ffd700' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3Ccircle cx='80' cy='100' r='1.5' fill='%2300f3ff'/%3E%3C/svg%3E");
+            background-repeat: repeat-y;
         }
 
-        /* --- LAYOUT --- */
+        .vine-left { left: 0; border-right: 1px solid rgba(0, 243, 255, 0.05); }
+        .vine-right { right: 0; transform: scaleX(-1); border-left: 1px solid rgba(0, 243, 255, 0.05); }
+
+        /* --- CANVAS --- */
+        #warp-canvas {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4;
+        }
+
+        /* --- CONTAINER --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -52,6 +66,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            position: relative;
+            z-index: 1; /* Above vines */
         }
 
         /* --- HEADER & TYPOGRAPHY --- */
@@ -66,7 +82,6 @@
             margin-bottom: 1.5rem;
         }
 
-        /* PART 1: TERA (The Machine / Glitch) */
         .tera-text {
             font-family: 'Syncopate', sans-serif;
             font-weight: 700;
@@ -88,35 +103,25 @@
             animation: glitch-anim 3s infinite linear alternate-reverse;
         }
 
-        /* PART 2: FABLES (The Magic / Flow) */
         .fables-text {
             font-family: 'Cinzel', serif;
-            font-weight: 400; /* Lighter weight for elegance */
+            font-weight: 400;
             font-size: clamp(3rem, 9vw, 6rem);
             color: var(--myth-gold);
             text-transform: uppercase;
             letter-spacing: 0.05em;
             position: relative;
-            
-            /* Liquid Gold Gradient */
             background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 300% 300%;
-            
-            /* Animation: Flowing Light */
             animation: liquid-flow 6s ease infinite;
             filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
         }
 
         .fables-text::after {
-            content: '';
-            position: absolute;
-            top: 50%; left: 0; width: 100%; height: 1px;
-            background: var(--myth-gold);
-            transform: scaleX(0);
-            transform-origin: right;
-            transition: transform 0.5s ease;
+            content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px;
+            background: var(--myth-gold); transform: scaleX(0); transition: transform 0.5s ease;
         }
 
         @keyframes glitch-anim {
@@ -241,19 +246,22 @@
 
         .price-sub { font-size: 0.9rem; color: #888; margin-bottom: 2rem; }
 
+        /* Spaceship Branding Colors */
         .action-btn {
-            display: block; width: 100%;
+            display: flex; align-items: center; justify-content: center; width: 100%;
             background: white; color: black;
             font-family: 'Inter', sans-serif; font-weight: 700;
-            padding: 1rem; border: none;
+            padding: 1.2rem; border: none;
             text-transform: uppercase; letter-spacing: 2px;
             cursor: pointer; transition: all 0.3s;
             text-decoration: none;
+            border-radius: 4px;
         }
 
         .action-btn:hover {
             background: var(--myth-gold);
             box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
+            transform: translateY(-2px);
         }
 
         /* --- DISCLAIMER --- */
@@ -267,10 +275,7 @@
             line-height: 1.6;
         }
 
-        .disclaimer code {
-            color: var(--tech-blue);
-            font-family: monospace;
-        }
+        .disclaimer code { color: var(--tech-blue); font-family: monospace; }
 
         /* --- FOOTER --- */
         footer {
@@ -278,16 +283,22 @@
             width: 100%; padding: 2rem;
             text-align: center; font-size: 0.7rem; color: #555;
             background: #020202; border-top: 1px solid #111;
+            z-index: 10; position: relative;
         }
 
         @media (max-width: 768px) {
             .grid-9 { grid-template-columns: 1fr; }
             .logo-container { gap: 5px; flex-direction: column; align-items: center;}
             .tera-text, .fables-text { line-height: 1; }
+            .vine-decoration { display: none; } /* Hide vines on mobile to save space */
         }
     </style>
 </head>
 <body>
+
+    <!-- DECORATIVE CYBER-VINES (Fixed Sides) -->
+    <div class="vine-decoration vine-left"></div>
+    <div class="vine-decoration vine-right"></div>
 
     <canvas id="warp-canvas"></canvas>
 
@@ -295,9 +306,7 @@
         
         <header>
             <div class="logo-container notranslate">
-                <!-- TERA: The Glitch / Machine -->
                 <span class="tera-text" data-text="TERA">TERA</span>
-                <!-- FABLES: The Magic / Myth -->
                 <span class="fables-text">FABLES</span>
             </div>
             <div class="tagline">Myths Written by AGI · For Civilizations Yet Unborn</div>
@@ -367,14 +376,18 @@
             </div>
         </div>
 
-        <!-- PURCHASE SECTION -->
+        <!-- PURCHASE SECTION (Updated for Spaceship) -->
         <div class="buy-section">
             <span class="status-badge">Available for Acquisition</span>
             <div class="price-tag">$42,000 <span style="font-size: 1rem; color:#666">USD</span></div>
-            <div class="price-sub">Includes domain asset <strong>terafab.ai</strong></div>
+            <div class="price-sub">
+                Includes domain asset <strong>terafab.ai</strong><br>
+                <span style="color: var(--tech-blue); font-size: 0.8rem;">12-Month Financing Available</span>
+            </div>
             
-            <a href="https://www.afternic.com/domain/terafab.ai" target="_blank" class="action-btn">
-                Secure Asset Now <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8em; margin-left:5px;"></i>
+            <!-- Replace the # with your actual Spaceship/Afternic URL -->
+            <a href="https://www.spaceship.com/domain/search/?query=terafab.ai" target="_blank" class="action-btn">
+                Buy on Spaceship <i class="fa-solid fa-rocket" style="font-size:0.9em; margin-left:10px;"></i>
             </a>
             
             <div style="margin-top: 20px; font-size: 0.8rem; color: var(--tech-blue); cursor: pointer;" onclick="copyContact()">
@@ -382,12 +395,12 @@
             </div>
         </div>
 
-        <!-- LEGAL DISCLAIMER (Refined for Safety) -->
+        <!-- LEGAL DISCLAIMER -->
         <div class="disclaimer">
             <p>
                 <strong>DISCLAIMER & INTELLECTUAL PROPERTY NOTICE:</strong><br>
                 "TeraFables" is a conceptual creative project focused on narrative intelligence and AI storytelling. 
-                The domain name <code>terafab.ai</code> is offered for sale primarily as a premium digital asset for the abbreviation of "Tera Fables" (Trillion Stories).<br><br>
+                The domain name <code>terafab.ai</code> is offered for sale primarily as a premium digital asset for the abbreviation of "Tera Fables" (Trillion Stories) or "Tera Fabrication" (Digital Manufacturing).<br><br>
                 This site and the domain <code>terafab.ai</code> are <strong>NOT</strong> affiliated with, endorsed by, or connected to 
                 Terabase Energy, Inc., Terafab™ automated construction systems, or any other entity holding trademarks for "Terafab" in the industrial, construction, or solar sectors. 
                 We expressly disclaim any association with industrial automation. This asset is positioned solely for the Generative AI, Entertainment, and Narrative Technology sectors.
@@ -407,7 +420,7 @@
         
         let width, height;
         let stars = [];
-        const numStars = 200; // Fewer stars for cleaner look
+        const numStars = 200;
 
         function resize() {
             width = window.innerWidth;
@@ -425,7 +438,7 @@
                 this.pz = this.z;
             }
             update() {
-                this.z = this.z - 2; // Slower speed
+                this.z = this.z - 2;
                 if (this.z < 1) {
                     this.reset();
                     this.z = width;
@@ -444,7 +457,7 @@
                 ctx.beginPath();
                 ctx.moveTo(px, py);
                 ctx.lineTo(sx, sy);
-                ctx.strokeStyle = `rgba(100, 200, 255, ${alpha * 0.5})`; // Blueish trail
+                ctx.strokeStyle = `rgba(100, 200, 255, ${alpha * 0.5})`;
                 ctx.lineWidth = 1;
                 ctx.stroke();
             }
@@ -457,7 +470,7 @@
         }
 
         function animate() {
-            ctx.clearRect(0, 0, width, height); // Clear instead of fill for transparency
+            ctx.clearRect(0, 0, width, height); 
             stars.forEach(star => { star.update(); star.draw(); });
             requestAnimationFrame(animate);
         }
@@ -474,3 +487,4 @@
     </script>
 </body>
 </html>
+
