@@ -4,410 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeraFables | The Narrative Infrastructure of AGI</title>
+    <meta name="description" content="Premium Domain Asset for Sale. The defining brand for Generative Storytelling, AI Mythos, and Infinite Narrative Engines.">
+    <meta name="google" content="notranslate">
+
+    <!-- Fonts: Cinzel (Mythic) & Syncopate (Futuristic) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --bg-void: #030305;
-            --neon-cyan: #00f3ff;
-            --neon-purple: #bc13fe;
-            --neon-gold: #FFD700;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --font-head: 'Orbitron', sans-serif;
-            --font-code: 'JetBrains Mono', monospace;
+            --bg-void: #050508;
+            --tech-blue: #00f3ff;
+            --myth-gold: #ffd700;
+            --myth-amber: #ffaa00;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            cursor: default;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--bg-void);
             color: #e0e0e0;
-            font-family: var(--font-code);
+            font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            position: relative;
         }
 
+        .notranslate { translate: no; }
+
+        /* --- BACKGROUND --- */
         #warp-canvas {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             z-index: -1;
-            opacity: 0.6;
+            opacity: 0.4;
         }
 
+        /* --- LAYOUT --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
-            width: 100%;
-            z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        header {
-            text-align: center;
-            margin-bottom: 5rem;
-            padding-top: 2rem;
-        }
+        /* --- HEADER & TYPOGRAPHY --- */
+        header { text-align: center; margin-bottom: 4rem; padding-top: 2rem; }
 
         .logo-container {
-            font-family: var(--font-head);
-            font-size: clamp(3rem, 8vw, 5rem);
-            font-weight: 900;
-            line-height: 1;
-            letter-spacing: -2px;
-            margin-bottom: 1rem;
-            display: inline-block;
+            display: flex;
+            justify-content: center;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 1.5rem;
         }
 
-        .tera-part {
-            color: white;
+        /* PART 1: TERA (The Machine / Glitch) */
+        .tera-text {
+            font-family: 'Syncopate', sans-serif;
+            font-weight: 700;
+            font-size: clamp(3rem, 9vw, 6rem);
+            color: #fff;
             position: relative;
-            display: inline-block;
-            text-shadow: 2px 2px var(--neon-purple), -2px -2px var(--neon-cyan);
-            animation: glitch-skew 3s infinite linear alternate-reverse;
+            text-transform: uppercase;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 0px var(--tech-blue);
         }
 
-        .tera-part::before, .tera-part::after {
+        .tera-text::before {
             content: attr(data-text);
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-void);
+            left: 2px; text-shadow: -1px 0 #ff00c1;
+            top: 0; color: white; background: var(--bg-void);
+            overflow: hidden;
+            clip-path: inset(0 0 0 0);
+            animation: glitch-anim 3s infinite linear alternate-reverse;
         }
 
-        .tera-part::before {
-            left: 2px;
-            text-shadow: -1px 0 var(--neon-cyan);
-            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-            animation: glitch-anim-1 2.5s infinite linear alternate-reverse;
-        }
-
-        .tera-part::after {
-            left: -2px;
-            text-shadow: -1px 0 var(--neon-purple);
-            clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
-            animation: glitch-anim-2 3s infinite linear alternate-reverse;
-        }
-
-        .fables-part {
-            background: linear-gradient(180deg, #FFD700 20%, #ffaa00 100%);
+        /* PART 2: FABLES (The Magic / Flow) */
+        .fables-text {
+            font-family: 'Cinzel', serif;
+            font-weight: 400; /* Lighter weight for elegance */
+            font-size: clamp(3rem, 9vw, 6rem);
+            color: var(--myth-gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            position: relative;
+            
+            /* Liquid Gold Gradient */
+            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            position: relative;
-            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.4));
-            animation: glow-pulse 4s infinite ease-in-out;
+            background-size: 300% 300%;
+            
+            /* Animation: Flowing Light */
+            animation: liquid-flow 6s ease infinite;
+            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+        }
+
+        .fables-text::after {
+            content: '';
+            position: absolute;
+            top: 50%; left: 0; width: 100%; height: 1px;
+            background: var(--myth-gold);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s ease;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 1px); }
+            20% { clip-path: inset(80% 0 10% 0); transform: translate(2px, -1px); }
+            40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
+            60% { clip-path: inset(0 0 0 0); transform: translate(0); }
+            100% { clip-path: inset(0 0 0 0); transform: translate(0); }
+        }
+
+        @keyframes liquid-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; text-shadow: 0 0 25px rgba(255, 215, 0, 0.8); }
+            100% { background-position: 0% 50%; }
         }
 
         .tagline {
-            font-size: 0.8rem;
-            color: var(--neon-cyan);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: var(--tech-blue);
             text-transform: uppercase;
             letter-spacing: 4px;
-            margin-top: 1rem;
             opacity: 0.8;
-            border-bottom: 1px solid var(--neon-cyan);
-            display: inline-block;
-            padding-bottom: 5px;
+            margin-top: 10px;
         }
 
+        /* --- INTRO BOX --- */
         .thesis-box {
             max-width: 800px;
-            background: rgba(0, 0, 0, 0.6);
-            border: 1px solid var(--glass-border);
+            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 100%);
+            border: 1px solid var(--border);
             padding: 2.5rem;
             text-align: center;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
             margin-bottom: 5rem;
             position: relative;
         }
 
         .thesis-box::before {
-            content: "THE THESIS";
-            position: absolute;
-            top: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--bg-void);
-            color: #666;
-            font-size: 0.7rem;
-            padding: 0 10px;
-            letter-spacing: 2px;
-            font-weight: 700;
+            content: "DOMAIN ASSET: TERAFAB.AI";
+            position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
+            background: var(--bg-void); color: #666; font-size: 0.7rem;
+            padding: 0 15px; letter-spacing: 2px; border: 1px solid #333;
         }
 
-        .thesis-text {
-            font-size: 1.1rem;
-            font-weight: 300;
-            color: #ccc;
-        }
+        .thesis-text { font-size: 1.1rem; font-weight: 300; color: #ccc; }
+        .thesis-highlight { color: var(--myth-gold); font-weight: 600; font-family: 'Cinzel', serif; }
 
-        .thesis-highlight {
-            color: white;
-            font-weight: 500;
-            border-bottom: 1px dashed var(--neon-purple);
-        }
-
-        .matrix-grid {
+        /* --- 9 VERTICALS GRID --- */
+        .grid-9 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
             width: 100%;
             margin-bottom: 5rem;
         }
 
-        .matrix-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--border);
             padding: 2rem;
+            transition: all 0.4s ease;
             position: relative;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 320px;
-            height: 100%;
         }
 
-        .matrix-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border: 1px solid transparent;
-            transition: border-color 0.3s;
-            pointer-events: none;
-        }
-
-        .matrix-card:hover {
+        .card:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--myth-gold);
+            box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.15);
         }
 
-        .card-1:hover::after { border-color: var(--neon-purple); box-shadow: 0 0 20px rgba(188, 19, 254, 0.2) inset; }
-        .card-2:hover::after { border-color: var(--neon-cyan); box-shadow: 0 0 20px rgba(0, 243, 255, 0.2) inset; }
-        .card-3:hover::after { border-color: var(--neon-gold); box-shadow: 0 0 20px rgba(255, 215, 0, 0.2) inset; }
-        .card-4:hover::after { border-color: #fff; box-shadow: 0 0 20px rgba(255, 255, 255, 0.2) inset; }
-
-        .card-header {
+        .card h3 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
+            gap: 10px;
         }
 
-        .card-title {
-            font-family: var(--font-head);
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: white;
+        .card h3 i { color: var(--tech-blue); font-size: 1rem; transition: color 0.3s;}
+        .card:hover h3 i { color: var(--myth-gold); }
+
+        .card p { font-size: 0.9rem; color: #999; line-height: 1.5; margin-bottom: 15px; }
+
+        .data-tag {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.6rem;
+            color: var(--tech-blue);
             text-transform: uppercase;
             letter-spacing: 1px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 10px;
+            display: block;
         }
 
-        .card-body {
-            font-size: 0.9rem;
-            color: #aaa;
-            margin-top: auto;
-        }
-
-        .icon-box {
-            width: 40px;
-            height: 40px;
-            position: relative;
-        }
-
-        .anim-core div {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            border: 2px solid var(--neon-purple);
-        }
-        .anim-core div:nth-child(1) { width: 10px; height: 10px; background: var(--neon-purple); }
-        .anim-core div:nth-child(2) { width: 20px; height: 20px; animation: scaleUp 2s infinite; opacity: 0; }
-        .anim-core div:nth-child(3) { width: 30px; height: 30px; animation: scaleUp 2s infinite 0.5s; opacity: 0; }
-
-        .anim-fork { border-left: 2px solid var(--neon-cyan); height: 100%; left: 18px; position: absolute; }
-        .anim-fork::before, .anim-fork::after {
-            content: ''; position: absolute; width: 8px; height: 8px; background: var(--neon-cyan); border-radius: 50%;
-        }
-        .anim-fork::before { top: 10%; left: -5px; animation: moveY 3s infinite alternate; }
-        .anim-fork::after { bottom: 10%; left: 15px; animation: moveX 3s infinite alternate; }
-        .branch-line { position: absolute; top: 50%; left: 0; width: 15px; height: 2px; background: var(--neon-cyan); }
-
-        .anim-eye {
-            width: 100%; height: 100%;
-            border: 2px solid var(--neon-gold);
-            border-radius: 50%;
-            border-top-color: transparent;
-            animation: spin 4s linear infinite;
-        }
-        .eye-pupil {
-            position: absolute; top: 50%; left: 50%;
-            width: 8px; height: 8px;
-            background: var(--neon-gold);
-            transform: translate(-50%, -50%);
-            border-radius: 50%;
-            box-shadow: 0 0 10px var(--neon-gold);
-        }
-
-        .anim-atom {
-            width: 100%; height: 100%;
-            display: flex; align-items: center; justify-content: center;
-        }
-        .electron {
-            position: absolute;
-            width: 40px; height: 10px;
-            border: 1px solid white;
-            border-radius: 50%;
-        }
-        .el-1 { transform: rotate(0deg); animation: rot360 3s linear infinite; }
-        .el-2 { transform: rotate(60deg); animation: rot360 3s linear infinite 0.5s; }
-        .el-3 { transform: rotate(-60deg); animation: rot360 3s linear infinite 1s; }
-
-        .valuation-module {
-            width: 100%;
-            max-width: 600px;
-            background: linear-gradient(145deg, rgba(20, 20, 25, 0.9), rgba(5, 5, 10, 0.9));
-            border: 1px solid #333;
-            padding: 2rem;
+        /* --- BUY SECTION --- */
+        .buy-section {
+            width: 100%; max-width: 600px;
+            background: linear-gradient(145deg, #0a0a0f, #050508);
+            border: 1px solid var(--myth-gold);
+            padding: 3rem;
             text-align: center;
             position: relative;
             margin-bottom: 4rem;
+            box-shadow: 0 0 50px rgba(255, 215, 0, 0.05);
         }
 
-        .valuation-module::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, transparent, var(--neon-gold), transparent);
-        }
-
-        .price-label {
-            font-size: 0.8rem;
-            color: #666;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 0.5rem;
+        .status-badge {
+            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+            background: var(--myth-gold); color: #000;
+            padding: 4px 16px; font-size: 0.8rem; font-weight: 700;
+            text-transform: uppercase; letter-spacing: 1px;
         }
 
         .price-tag {
-            font-family: var(--font-head);
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 2.5rem; color: white; margin: 1.5rem 0 0.5rem;
         }
 
-        .finance-option {
-            font-size: 0.75rem;
-            color: var(--neon-cyan);
-            border: 1px solid rgba(0, 243, 255, 0.3);
-            padding: 4px 8px;
-            border-radius: 2px;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
+        .price-sub { font-size: 0.9rem; color: #888; margin-bottom: 2rem; }
 
         .action-btn {
-            background: white;
-            color: black;
-            font-family: var(--font-head);
-            font-weight: 700;
-            padding: 1rem 3rem;
-            border: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: all 0.2s;
-            display: block;
-            width: 100%;
+            display: block; width: 100%;
+            background: white; color: black;
+            font-family: 'Inter', sans-serif; font-weight: 700;
+            padding: 1rem; border: none;
+            text-transform: uppercase; letter-spacing: 2px;
+            cursor: pointer; transition: all 0.3s;
+            text-decoration: none;
         }
 
         .action-btn:hover {
-            background: var(--neon-gold);
-            box-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+            background: var(--myth-gold);
+            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
         }
 
-        #feedback-msg {
-            margin-top: 1rem;
-            font-size: 0.8rem;
-            color: var(--neon-cyan);
-            height: 1.2em;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
+        /* --- DISCLAIMER --- */
         .disclaimer {
             max-width: 800px;
             text-align: center;
-            font-size: 0.75rem;
-            color: #555;
-            margin: 3rem auto;
-            padding: 1.5rem;
+            font-size: 0.7rem;
+            color: #444;
+            padding: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-            font-style: italic;
             line-height: 1.6;
         }
 
         .disclaimer code {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: var(--font-code);
-            color: var(--neon-cyan);
+            color: var(--tech-blue);
+            font-family: monospace;
         }
 
+        /* --- FOOTER --- */
         footer {
-            border-top: 1px solid #222;
-            width: 100%;
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.7rem;
-            color: #555;
-            background: black;
+            margin-top: auto;
+            width: 100%; padding: 2rem;
+            text-align: center; font-size: 0.7rem; color: #555;
+            background: #020202; border-top: 1px solid #111;
         }
 
-        @keyframes glitch-anim-1 {
-            0% { clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%); transform: translate(0); }
-            10% { clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%); transform: translate(-2px, 1px); }
-            20% { clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%); transform: translate(1px, -1px); }
-            100% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); transform: translate(0); }
-        }
-        @keyframes glitch-anim-2 {
-            0% { clip-path: polygon(0 60%, 100% 60%, 100% 65%, 0 65%); transform: translate(0); }
-            10% { clip-path: polygon(0 85%, 100% 85%, 100% 90%, 0 90%); transform: translate(2px, -1px); }
-            20% { clip-path: polygon(0 50%, 100% 50%, 100% 60%, 0 60%); transform: translate(-1px, 1px); }
-            100% { clip-path: polygon(0 0, 0 0, 0 0, 0 0); transform: translate(0); }
-        }
-        @keyframes scaleUp { 0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; } 100% { transform: translate(-50%, -50%) scale(2); opacity: 0; } }
-        @keyframes moveY { 0% { top: 10%; } 100% { top: 80%; } }
-        @keyframes moveX { 0% { left: 15px; } 100% { left: 30px; } }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        @keyframes rot360 { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        @media (max-width: 600px) {
-            .matrix-grid { grid-template-columns: 1fr; }
-            .logo-container { font-size: 2.5rem; }
-            .action-btn { padding: 1rem; }
+        @media (max-width: 768px) {
+            .grid-9 { grid-template-columns: 1fr; }
+            .logo-container { gap: 5px; flex-direction: column; align-items: center;}
+            .tera-text, .fables-text { line-height: 1; }
         }
     </style>
 </head>
@@ -418,103 +294,120 @@
     <div class="container">
         
         <header>
-            <div class="logo-container">
-                <span class="tera-part" data-text="Tera">Tera</span><span class="fables-part">Fables</span>
+            <div class="logo-container notranslate">
+                <!-- TERA: The Glitch / Machine -->
+                <span class="tera-text" data-text="TERA">TERA</span>
+                <!-- FABLES: The Magic / Myth -->
+                <span class="fables-text">FABLES</span>
             </div>
-            <br>
             <div class="tagline">Myths Written by AGI · For Civilizations Yet Unborn</div>
         </header>
 
         <div class="thesis-box">
             <p class="thesis-text">
-                "We are approaching the <span class="thesis-highlight">Narrative Singularity</span>. As intelligence decouples from biology, the stories that shape reality will no longer be written by humans, but by trillions of parameters contemplating existence. Owning this protocol is owning the <span class="thesis-highlight">mythology of the next epoch</span>."
+                "We are approaching the <span class="thesis-highlight">Narrative Singularity</span>. As intelligence decouples from biology, the stories that shape reality will no longer be written by humans, but by trillions of parameters contemplating existence. <strong>TeraFables</strong> is the infrastructure for the next epoch of mythology."
             </p>
         </div>
 
-        <div class="matrix-grid">
-            <div class="matrix-card card-1">
-                <div class="card-header">
-                    <span class="card-title">Synthetic Mythology</span>
-                    <div class="icon-box anim-core">
-                        <div></div><div></div><div></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    Automated cosmogonies and ethical parables trained on the sum of human spiritual literature.
-                </div>
+        <!-- 9 VERTICALS OF VALUE -->
+        <div class="grid-9">
+            <!-- 1 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-book-open"></i> Generative Lore</h3>
+                <p>AI engines creating infinite, consistent histories for games, metaverses, and IPs. Scaling storytelling from GB to TB.</p>
+                <span class="data-tag">Market: $150B Gaming Industry</span>
             </div>
-
-            <div class="matrix-card card-2">
-                <div class="card-header">
-                    <span class="card-title">Multiversal Narratives</span>
-                    <div class="icon-box anim-fork">
-                        <div class="branch-line"></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    Narrative branches simulating infinite timelines to determine moral geometry in 11D space.
-                </div>
+            <!-- 2 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-vr-cardboard"></i> NPC Intelligence</h3>
+                <p>Giving souls to static characters. TeraFables represents the shift from scripted dialogue to emergent, complex personalities.</p>
+                <span class="data-tag">Tech: Inworld / Convai</span>
             </div>
-
-            <div class="matrix-card card-3">
-                <div class="card-header">
-                    <span class="card-title">The Oracle Function</span>
-                    <div class="icon-box">
-                        <div class="anim-eye"></div><div class="eye-pupil"></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    Not prediction, but pattern recognition. Illuminating archetypes that govern superintelligence.
-                </div>
+            <!-- 3 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-film"></i> Synthetic Cinema</h3>
+                <p>From text to feature film. A platform brand for the new wave of AI-generated movies and immersive experiences.</p>
+                <span class="data-tag">Trend: Sora / Runway Gen-3</span>
             </div>
-
-            <div class="matrix-card card-4">
-                <div class="card-header">
-                    <span class="card-title">Quantum Semantics</span>
-                    <div class="icon-box anim-atom">
-                        <div class="electron el-1"></div>
-                        <div class="electron el-2"></div>
-                        <div class="electron el-3"></div>
-                    </div>
-                </div>
-                <div class="card-body">
-                    Meaning in superposition. Stories that collapse into specific truths only when observed by a conscious agent.
-                </div>
+            <!-- 4 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-globe"></i> World Building</h3>
+                <p>Procedural generation of cultures, languages, and geographies. A tool suite for creators to build universes in seconds.</p>
+                <span class="data-tag">Keyword: Procedural Generation</span>
+            </div>
+            <!-- 5 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-brain"></i> AGI Ethics</h3>
+                <p>Teaching AI morality through fables. Using narrative structures to align superintelligence with human values.</p>
+                <span class="data-tag">Sector: AI Alignment</span>
+            </div>
+            <!-- 6 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Magic Systems</h3>
+                <p>Coding the impossible. Defining the rules of magic in virtual environments using rigid logic (Tera) and fantasy (Fable).</p>
+                <span class="data-tag">Application: MMORPGs</span>
+            </div>
+            <!-- 7 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-scroll"></i> Legacy Preservation</h3>
+                <p>Digitizing human culture. A "Noah's Ark" for preserving folklore and oral traditions in the age of digital amnesia.</p>
+                <span class="data-tag">Value: Cultural Heritage</span>
+            </div>
+            <!-- 8 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-user-astronaut"></i> Digital Avatars</h3>
+                <p>Identity is a story we tell. Branding for the next generation of VTubers and AI influencers who need backstories.</p>
+                <span class="data-tag">Economy: Creator Economy</span>
+            </div>
+            <!-- 9 -->
+            <div class="card">
+                <h3><i class="fa-solid fa-infinity"></i> Infinite Campaigns</h3>
+                <p>D&D without a dungeon master. AI that generates campaigns that never end and adapt to every player choice.</p>
+                <span class="data-tag">Growth: Tabletop Digital</span>
             </div>
         </div>
 
-        <div class="valuation-module">
-            <div class="price-label">Stewardship Inquiry</div>
-            <div class="price-tag">For Research & Collaboration</div>
-            <div class="finance-option">CONFIDENTIAL CHANNEL</div>
-            <button class="action-btn" onclick="copyContact()">
-                Establish Uplink
-            </button>
-            <div id="feedback-msg">ENCRYPTED ADDRESS COPIED TO CLIPBOARD</div>
+        <!-- PURCHASE SECTION -->
+        <div class="buy-section">
+            <span class="status-badge">Available for Acquisition</span>
+            <div class="price-tag">$42,000 <span style="font-size: 1rem; color:#666">USD</span></div>
+            <div class="price-sub">Includes domain asset <strong>terafab.ai</strong></div>
+            
+            <a href="https://www.afternic.com/domain/terafab.ai" target="_blank" class="action-btn">
+                Secure Asset Now <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:0.8em; margin-left:5px;"></i>
+            </a>
+            
+            <div style="margin-top: 20px; font-size: 0.8rem; color: var(--tech-blue); cursor: pointer;" onclick="copyContact()">
+                or contact: joshua369x@gmail.com
+            </div>
         </div>
 
-        <!-- Legal Disclaimer -->
+        <!-- LEGAL DISCLAIMER (Refined for Safety) -->
         <div class="disclaimer">
             <p>
-                <em>Note:</em> TeraFables is an independent narrative intelligence project. 
-                The domain <code>terafab.ai</code> is used as a technical address only and is not affiliated with, 
-                endorsed by, or sponsored by Terabase Energy, Inc. or any entity holding rights to “TERAFAB” in Class 9.
+                <strong>DISCLAIMER & INTELLECTUAL PROPERTY NOTICE:</strong><br>
+                "TeraFables" is a conceptual creative project focused on narrative intelligence and AI storytelling. 
+                The domain name <code>terafab.ai</code> is offered for sale primarily as a premium digital asset for the abbreviation of "Tera Fables" (Trillion Stories) or "Tera Fabrication" (Digital Manufacturing).<br><br>
+                This site and the domain <code>terafab.ai</code> are <strong>NOT</strong> affiliated with, endorsed by, or connected to 
+                Terabase Energy, Inc., Terafab™ automated construction systems, or any other entity holding trademarks for "Terafab" in the industrial, construction, or solar sectors. 
+                We expressly disclaim any association with industrial automation. This asset is positioned solely for the Generative AI, Entertainment, and Narrative Technology sectors.
             </p>
         </div>
 
     </div>
 
     <footer>
-        <p>© 2026 TERAFABLES. DECENTRALIZED INFRASTRUCTURE.</p>
+        <p>© 2026 TERAFABLES CONCEPT. <span style="color:#333">|</span> ASSET: TERAFAB.AI</p>
     </footer>
 
     <script>
+        // Starfield Animation
         const canvas = document.getElementById('warp-canvas');
         const ctx = canvas.getContext('2d');
         
         let width, height;
         let stars = [];
-        const numStars = 500;
+        const numStars = 200; // Fewer stars for cleaner look
 
         function resize() {
             width = window.innerWidth;
@@ -524,9 +417,7 @@
         }
 
         class Star {
-            constructor() {
-                this.reset();
-            }
+            constructor() { this.reset(); }
             reset() {
                 this.x = (Math.random() - 0.5) * width;
                 this.y = (Math.random() - 0.5) * height;
@@ -534,7 +425,7 @@
                 this.pz = this.z;
             }
             update() {
-                this.z = this.z - 10;
+                this.z = this.z - 2; // Slower speed
                 if (this.z < 1) {
                     this.reset();
                     this.z = width;
@@ -547,37 +438,27 @@
                 const px = (this.x / this.pz) * width + width / 2;
                 const py = (this.y / this.pz) * height + height / 2;
                 this.pz = this.z;
-
                 if (sx < 0 || sx > width || sy < 0 || sy > height) return;
-
-                const size = (1 - this.z / width) * 4;
+                
                 const alpha = (1 - this.z / width);
-
                 ctx.beginPath();
                 ctx.moveTo(px, py);
                 ctx.lineTo(sx, sy);
-                ctx.strokeStyle = `rgba(200, 200, 255, ${alpha})`;
-                ctx.lineWidth = size * 0.5;
+                ctx.strokeStyle = `rgba(100, 200, 255, ${alpha * 0.5})`; // Blueish trail
+                ctx.lineWidth = 1;
                 ctx.stroke();
             }
         }
 
         function init() {
             resize();
-            for(let i=0; i<numStars; i++) {
-                stars.push(new Star());
-            }
+            for(let i=0; i<numStars; i++) stars.push(new Star());
             animate();
         }
 
         function animate() {
-            ctx.fillStyle = "rgba(3, 3, 5, 0.5)";
-            ctx.fillRect(0, 0, width, height);
-            
-            stars.forEach(star => {
-                star.update();
-                star.draw();
-            });
+            ctx.clearRect(0, 0, width, height); // Clear instead of fill for transparency
+            stars.forEach(star => { star.update(); star.draw(); });
             requestAnimationFrame(animate);
         }
 
@@ -586,21 +467,8 @@
 
         function copyContact() {
             const email = "joshua369x@gmail.com";
-            const feedback = document.getElementById('feedback-msg');
-            const btn = document.querySelector('.action-btn');
-
             navigator.clipboard.writeText(email).then(() => {
-                feedback.style.opacity = '1';
-                btn.style.background = '#00f3ff';
-                btn.innerText = "LINK ESTABLISHED";
-                
-                setTimeout(() => {
-                    feedback.style.opacity = '0';
-                    btn.style.background = 'white';
-                    btn.innerText = "ESTABLISH UPLINK";
-                }, 2000);
-            }).catch(err => {
-                window.location.href = `mailto:${email}`;
+                alert("Email copied: " + email);
             });
         }
     </script>
