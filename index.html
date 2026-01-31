@@ -3,514 +3,597 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeraFab.ai | Trillion-Scale Intelligence Infrastructure</title>
-    <meta name="description" content="Premium .ai Domain Asset for Next-Generation AI Systems. TeraFab.ai: The Definitive Naming Standard for Trillion-Parameter Intelligence.">
+    <title>TeraFab.ai | Trillion-Scale AGI Infrastructure</title>
+    <meta name="description" content="Premium .ai Domain Asset for Next-Generation Intelligence Systems.">
+    
+    <!-- Google Fonts: Orbitron (Sci-Fi), Rajdhani (Tech UI), Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
     <style>
         :root {
-            --bg-dark: #0a0a0f;
-            --bg-darker: #050508;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --accent-blue: #00f3ff;
-            --accent-purple: #9d50ff;
-            --border-color: rgba(255, 255, 255, 0.08);
-            --card-bg: rgba(255, 255, 255, 0.03);
+            --bg-deep: #030305;
+            --bg-panel: rgba(10, 15, 30, 0.6);
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bc13fe;
+            --core-white: #ffffff;
+            --grid-line: rgba(0, 243, 255, 0.1);
+            --border-glow: rgba(0, 243, 255, 0.3);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
+            background-color: var(--bg-deep);
+            color: #e0e0e0;
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
         }
 
-        /* Particle Background */
-        #particles-js {
+        /* --- BACKGROUND CANVAS (NEURAL NETWORK) --- */
+        #neural-canvas {
             position: fixed;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
             z-index: -1;
-            opacity: 0.15;
+            background: radial-gradient(circle at center, #0b0b15 0%, #000000 100%);
         }
 
+        /* --- CONTAINER --- */
         .container {
-            max-width: 1400px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 6rem 2rem 4rem;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Header */
+        /* --- HERO HEADER SECTION --- */
         header {
+            height: 90vh; /* Full screen impact */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             text-align: center;
-            margin-bottom: 6rem;
+            position: relative;
+            width: 100%;
         }
 
-        .logo {
-            font-family: 'Space Mono', monospace;
-            font-weight: 700;
-            font-size: clamp(4rem, 12vw, 8rem);
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+        /* AGI LOGO TYPOGRAPHY */
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+            transform: perspective(500px) rotateX(0deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .logo-wrapper:hover {
+            transform: perspective(500px) rotateX(5deg);
+        }
+
+        /* TERA: The Heavy Infrastructure */
+        .tera-text {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(4rem, 12vw, 9rem);
+            line-height: 0.9;
+            letter-spacing: -2px;
+            color: transparent;
+            /* Chrome/Liquid Metal Effect */
+            background: linear-gradient(180deg, #fff 0%, #a0a0a0 40%, #404040 50%, #fff 100%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.05em;
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
+            display: block;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* FAB: The Intelligence/Fabrication */
+        .fab-text {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 300; /* Light weight for contrast */
+            font-size: clamp(4rem, 12vw, 9rem);
+            line-height: 0.9;
+            letter-spacing: 10px; /* Airy spacing */
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            display: block;
+            margin-top: -10px;
+            position: relative;
+            z-index: 1;
+            /* Neon Glow */
+            text-shadow: 
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-purple);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        /* Scanline Overlay for "FAB" */
+        .fab-text::after {
+            content: "FAB";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            color: transparent;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 243, 255, 0.5) 3px,
+                transparent 4px
+            );
+            -webkit-background-clip: text;
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        @keyframes pulse-glow {
+            0% { opacity: 0.8; letter-spacing: 10px; }
+            100% { opacity: 1; letter-spacing: 15px; text-shadow: 0 0 20px var(--neon-cyan), 0 0 60px var(--neon-purple); }
         }
 
         .tagline {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: var(--text-secondary);
-            font-weight: 300;
-            margin-top: 1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: #8892b0;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-glow);
+            padding-top: 1rem;
+            font-weight: 500;
         }
+        
+        .tagline strong { color: var(--neon-cyan); }
 
-        /* Thesis */
-        .thesis {
-            max-width: 800px;
-            margin: 0 auto 5rem;
+        /* --- INTRO BOX (Glassmorphism) --- */
+        .thesis-box {
+            max-width: 900px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--neon-cyan);
+            padding: 3rem;
             text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
+            backdrop-filter: blur(10px);
+            margin-bottom: 6rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        .thesis-highlight {
-            color: var(--accent-blue);
-            font-weight: 600;
+        .thesis-text { 
+            font-size: 1.2rem; 
+            font-weight: 300; 
+            color: #b0b0d0; 
+        }
+        
+        .thesis-highlight { 
+            color: var(--neon-cyan); 
+            font-weight: 700; 
+            font-family: 'Orbitron', sans-serif; 
         }
 
-        /* Grid */
-        .grid {
+        /* --- 9 VERTICALS GRID (Cyber Cards) --- */
+        .grid-9 {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
+            gap: 2rem;
+            width: 100%;
             margin-bottom: 6rem;
         }
 
         .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
+            background: rgba(10, 12, 18, 0.7);
+            border: 1px solid rgba(255,255,255,0.05);
             padding: 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-blue);
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
-        }
-
-        .card-title {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .card-icon {
-            font-size: 1.2rem;
-            color: var(--accent-blue);
-        }
-
-        .card-desc {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-
-        .card-tag {
-            display: inline-block;
-            margin-top: 1.25rem;
-            padding: 0.4rem 0.8rem;
-            background: rgba(0, 243, 255, 0.08);
-            color: var(--accent-blue);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-        }
-
-        /* CTA Section */
-        .cta {
-            max-width: 700px;
-            margin: 0 auto 5rem;
-            text-align: center;
-            padding: 4rem;
-            background: linear-gradient(145deg, var(--bg-darker), var(--bg-dark));
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
 
-        .cta::before {
+        .card::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 243, 255, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-
-        .price {
-            font-family: 'Space Mono', monospace;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin: 1.5rem 0 1rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .price-sub {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            color: #000;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 1.25rem 3rem;
-            text-decoration: none;
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 243, 255, 0.4);
-        }
-
-        .contact {
-            margin-top: 1.5rem;
-            color: var(--accent-blue);
-            font-size: 0.9rem;
-            cursor: pointer;
+            top: 0; left: 0; width: 3px; height: 100%;
+            background: linear-gradient(to bottom, var(--neon-cyan), transparent);
+            opacity: 0;
             transition: opacity 0.3s;
         }
 
-        .contact:hover {
-            opacity: 0.7;
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 20, 30, 0.9);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
         }
 
-        /* Disclaimer */
-        .disclaimer {
-            text-align: center;
+        .card:hover::before { opacity: 1; }
+
+        .card h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            letter-spacing: 1px;
+        }
+
+        .card h3 i { 
+            color: var(--neon-purple); 
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px var(--neon-purple);
+        }
+
+        .card p { 
+            font-size: 0.95rem; 
+            color: #8892b0; 
+            line-height: 1.7; 
+            margin-bottom: 20px; 
+        }
+
+        .data-tag {
+            font-family: 'Rajdhani', sans-serif;
             font-size: 0.75rem;
-            color: #666;
-            padding: 3rem 2rem;
-            border-top: 1px solid var(--border-color);
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
+            color: var(--neon-cyan);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            padding: 4px 10px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            background: rgba(0, 243, 255, 0.05);
         }
 
-        .disclaimer strong {
-            color: var(--text-primary);
+        /* --- BUY SECTION (Holographic Interface) --- */
+        .buy-section {
+            width: 100%; 
+            max-width: 650px;
+            background: linear-gradient(160deg, #0a0a12 0%, #050508 100%);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            padding: 4rem 2rem;
+            text-align: center;
+            position: relative;
+            margin-bottom: 5rem;
+            box-shadow: 0 0 80px rgba(0, 243, 255, 0.05);
+            /* Corner Accents */
+            clip-path: polygon(
+                20px 0, 100% 0, 
+                100% calc(100% - 20px), calc(100% - 20px) 100%, 
+                0 100%, 0 20px
+            );
         }
 
-        /* Footer */
+        .status-badge {
+            background: var(--neon-cyan);
+            color: #000;
+            padding: 5px 20px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px var(--neon-cyan);
+        }
+
+        .price-tag {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
+        }
+
+        .price-sub { font-size: 1rem; color: #8892b0; margin-bottom: 3rem; }
+
+        .action-btn {
+            display: flex; align-items: center; justify-content: center;
+            width: 100%;
+            background: transparent;
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1.5rem;
+            border: 2px solid var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--neon-cyan);
+            transition: left 0.4s ease;
+            z-index: -1;
+        }
+
+        .action-btn:hover::before { left: 0; }
+        .action-btn:hover { 
+            color: #000; 
+            box-shadow: 0 0 50px rgba(0, 243, 255, 0.4); 
+        }
+
+        /* --- FOOTER --- */
         footer {
+            padding: 3rem;
             text-align: center;
-            padding: 2rem;
+            font-size: 0.8rem;
             color: #555;
+            background: #020202;
+            border-top: 1px solid #111;
+        }
+        
+        .disclaimer {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
             font-size: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
-            .container {
-                padding: 4rem 1.5rem 3rem;
-            }
-            
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .cta {
-                padding: 3rem 2rem;
-            }
-            
-            .price {
-                font-size: 2.5rem;
-            }
+            header { height: 80vh; }
+            .tera-text { font-size: 16vw; }
+            .fab-text { font-size: 16vw; letter-spacing: 5px; }
+            .grid-9 { grid-template-columns: 1fr; }
+            .buy-section { clip-path: none; border-radius: 10px; }
         }
     </style>
 </head>
 <body>
-    <!-- Particles Background -->
-    <div id="particles-js"></div>
+
+    <!-- AGI NEURAL NETWORK BACKGROUND -->
+    <canvas id="neural-canvas"></canvas>
 
     <div class="container">
+        
+        <!-- HERO SECTION -->
         <header>
-            <div class="logo">TERAFAB</div>
-            <div class="tagline">Trillion-Scale Intelligence · Algorithmic Fabrication</div>
+            <div class="logo-wrapper">
+                <span class="tera-text">TERA</span>
+                <span class="fab-text">FAB</span>
+            </div>
+            
+            <div class="tagline">
+                The Infrastructure of <strong>Trillion-Scale</strong> Intelligence
+            </div>
         </header>
 
-        <div class="thesis">
-            "As artificial intelligence transcends human cognition, the infrastructure that defines these systems becomes paramount. <span class="thesis-highlight">TeraFab.ai</span> represents the convergence of scale and sophistication: the definitive naming standard for platforms that process <strong>tera-scale intelligence</strong> with algorithmic precision."
+        <!-- THESIS -->
+        <div class="thesis-box">
+            <p class="thesis-text">
+                <span class="thesis-highlight">TeraFab.ai</span> defines the era of Automated General Intelligence. 
+                It is the ultimate identifier for the "fabrication" of knowledge at massive scale—where neural architecture meets infinite compute.
+                <br><br>
+                <i class="fa-solid fa-microchip" style="color:var(--neon-purple)"></i> Not just a name. A protocol for the future.
+            </p>
         </div>
 
-        <div class="grid">
+        <!-- 9 VERTICALS -->
+        <div class="grid-9">
+            <!-- 1 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    AI Orchestration
-                </div>
-                <div class="card-desc">
-                    The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.
-                </div>
-                <div class="card-tag">Market: $500B AI Infrastructure</div>
+                <h3><i class="fa-solid fa-diagram-project"></i> AI Orchestration</h3>
+                <p>The seamless integration layer for distributed intelligence systems. Coordinating millions of autonomous agents.</p>
+                <span class="data-tag">Market: $500B Infra</span>
             </div>
-
+            <!-- 2 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Neural Architecture
-                </div>
-                <div class="card-desc">
-                    The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.
-                </div>
-                <div class="card-tag">Tech: Advanced Model Design</div>
+                <h3><i class="fa-solid fa-brain-circuit"></i> Neural Architecture</h3>
+                <p>The definitive platform for designing next-generation AI models. Where architecture meets execution.</p>
+                <span class="data-tag">Tech: Model Design</span>
             </div>
-
+            <!-- 3 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Distributed Intelligence
-                </div>
-                <div class="card-desc">
-                    The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.
-                </div>
-                <div class="card-tag">Trend: Federated Learning</div>
+                <h3><i class="fa-solid fa-network-wired"></i> Distributed Minds</h3>
+                <p>The central naming point for decentralized AI ecosystems across global networks.</p>
+                <span class="data-tag">Trend: Federated Learning</span>
             </div>
-
+            <!-- 4 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Cognitive Fabrication
-                </div>
-                <div class="card-desc">
-                    Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.
-                </div>
-                <div class="card-tag">Application: Knowledge Systems</div>
+                <h3><i class="fa-solid fa-cube"></i> Cognitive Fabrication</h3>
+                <p>Where AI constructs understanding from raw information streams. Fabricating knowledge structures.</p>
+                <span class="data-tag">App: Knowledge Systems</span>
             </div>
-
+            <!-- 5 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Autonomous Systems
-                </div>
-                <div class="card-desc">
-                    The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.
-                </div>
-                <div class="card-tag">Sector: Intelligent Systems</div>
+                <h3><i class="fa-solid fa-robot"></i> Autonomous Foundries</h3>
+                <p>The naming standard for self-optimizing digital factories that produce code and agents.</p>
+                <span class="data-tag">Sector: Agentic AI</span>
             </div>
-
+            <!-- 6 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Intelligence Scaling
-                </div>
-                <div class="card-desc">
-                    The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.
-                </div>
-                <div class="card-tag">Potential: AGI Scaling</div>
+                <h3><i class="fa-solid fa-arrow-up-right-dots"></i> Intelligence Scaling</h3>
+                <p>Managing exponential growth in cognitive capacity. From Mega to Giga to Tera scale.</p>
+                <span class="data-tag">Potential: AGI Scaling</span>
             </div>
-
+            <!-- 7 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Quantum-Inspired AI
-                </div>
-                <div class="card-desc">
-                    For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.
-                </div>
-                <div class="card-tag">Tech: Next-Gen Computation</div>
+                <h3><i class="fa-solid fa-dna"></i> Quantum-Ready</h3>
+                <p>For architectures operating beyond classical computation. Processing information at tera-scale complexity.</p>
+                <span class="data-tag">Tech: Next-Gen Compute</span>
             </div>
-
+            <!-- 8 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Adaptive Systems
-                </div>
-                <div class="card-desc">
-                    Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.
-                </div>
-                <div class="card-tag">Trend: Self-Optimization</div>
+                <h3><i class="fa-solid fa-shuffle"></i> Self-Evolving Systems</h3>
+                <p>Where AI dynamically reconfigures its operational framework. Fabricating its own evolution.</p>
+                <span class="data-tag">Trend: Recursive AI</span>
             </div>
-
+            <!-- 9 -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Workflow Generation
-                </div>
-                <div class="card-desc">
-                    Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.
-                </div>
-                <div class="card-tag">Application: Process Automation</div>
+                <h3><i class="fa-solid fa-bolt"></i> Compute Power</h3>
+                <p>A domain that implies raw power. The engine room of the artificial intelligence revolution.</p>
+                <span class="data-tag">Asset: Hardware/Cloud</span>
             </div>
         </div>
 
-        <div class="cta">
-            <div class="cta-content">
-                <div style="font-size: 0.8rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Premium Domain Asset</div>
-                <div class="price">$42,000 USD</div>
-                <div class="price-sub">
-                    Includes domain asset <strong>terafab.ai</strong><br>
-                    <span style="color: var(--accent-blue); display: block; margin-top: 0.5rem;">12-Month Financing Available</span>
-                </div>
-                <a href="https://www.spaceship.com/s/buy/terafab.ai/ltHRNsr9qLrMnKlN" target="_blank" class="btn">
-                    Acquire Now
-                </a>
-                <div class="contact" onclick="copyEmail()">
-                    Contact: joshua369x@gmail.com
-                </div>
+        <!-- PURCHASE AREA -->
+        <div class="buy-section">
+            <div class="status-badge">Available for Acquisition</div>
+            <div class="price-tag">$42,000</div>
+            <div class="price-sub">USD • Crypto Accepted • Escrow Secured</div>
+            
+            <a href="https://www.spaceship.com/s/buy/terafab.ai/ltHRNsr9qLrMnKlN" target="_blank" class="action-btn">
+                Initialize Purchase <i class="fa-solid fa-chevron-right" style="margin-left:15px; font-size:0.8em;"></i>
+            </a>
+            
+            <div style="margin-top: 30px; font-size: 0.9rem; color: #666; cursor: pointer; font-family:'Rajdhani', sans-serif;" onclick="copyContact()">
+                Direct Inquiry: <span style="color:var(--neon-cyan); border-bottom:1px dashed var(--neon-cyan);">joshua369x@gmail.com</span>
             </div>
         </div>
 
-        <div class="disclaimer">
-            <strong>DISCLAIMER:</strong> TeraFab.ai is a premium domain asset for digital AI systems and computational architecture. It is NOT affiliated with Terabase Energy, Inc. or any entity holding "Terafab" trademarks in industrial automation or physical manufacturing. All references to "fabrication" herein refer exclusively to algorithmic construction of digital intelligence—not physical production. Buyers are responsible for their own trademark clearance prior to use.
-        </div>
+        <!-- FOOTER -->
+        <footer>
+            <div class="disclaimer">
+                <strong>LEGAL NOTICE:</strong> TeraFab.ai is a premium digital asset for the AI industry. It is not affiliated with any physical manufacturing entities. "Tera" denotes scale (10^12); "Fab" denotes digital fabrication/construction.
+            </div>
+            <p>© 2026 TERAFAB.AI | THE INFRASTRUCTURE OF INTELLIGENCE</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>© 2026 PREMIUM DOMAIN ASSET | TERAFAB.AI</p>
-    </footer>
-
-    <!-- Particles.js -->
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 80, density: { enable: true, value_area: 800 } },
-                    color: { value: '#00f3ff' },
-                    shape: { type: 'circle' },
-                    opacity: { value: 0.3, random: true },
-                    size: { value: 2, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 150,
-                        color: '#00f3ff',
-                        opacity: 0.1,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2,
-                        direction: 'none',
-                        random: true,
-                        straight: false,
-                        out_mode: 'out',
-                        bounce: false
-                    }
-                },
-                interactivity: {
-                    detect_on: 'canvas',
-                    events: {
-                        onhover: { enable: true, mode: 'grab' },
-                        onclick: { enable: false },
-                        resize: true
-                    }
-                },
-                retina_detect: true
-            });
-
-            window.addEventListener('resize', function() {
-                if (window.innerWidth < 768) {
-                    // Reduce particles on mobile for performance
-                    particlesJS('particles-js', {
-                        particles: {
-                            number: { value: 30, density: { enable: true, value_area: 800 } },
-                            color: { value: '#00f3ff' },
-                            shape: { type: 'circle' },
-                            opacity: { value: 0.3, random: true },
-                            size: { value: 2, random: true },
-                            line_linked: {
-                                enable: true,
-                                distance: 150,
-                                color: '#00f3ff',
-                                opacity: 0.1,
-                                width: 1
-                            },
-                            move: {
-                                enable: true,
-                                speed: 2,
-                                direction: 'none',
-                                random: true,
-                                straight: false,
-                                out_mode: 'out',
-                                bounce: false
-                            }
-                        },
-                        interactivity: {
-                            detect_on: 'canvas',
-                            events: {
-                                onhover: { enable: true, mode: 'grab' },
-                                onclick: { enable: false },
-                                resize: true
-                            }
-                        },
-                        retina_detect: true
-                    });
-                }
-            });
+        // --- AGI NEURAL NETWORK ANIMATION SCRIPT ---
+        const canvas = document.getElementById('neural-canvas');
+        const ctx = canvas.getContext('2d');
+        
+        let width, height;
+        let particles = [];
+        
+        // Configuration
+        const particleCount = window.innerWidth < 768 ? 40 : 80; // Fewer on mobile
+        const connectionDistance = 150;
+        const mouseDistance = 250;
+        
+        // Mouse State
+        let mouse = { x: null, y: null };
+        
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        
+        // Resize Handler
+        function resize() {
+            width = window.innerWidth;
+            height = window.innerHeight;
+            canvas.width = width;
+            canvas.height = height;
+        }
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
         });
 
-        function copyEmail() {
-            navigator.clipboard.writeText('joshua369x@gmail.com').then(function() {
-                const btn = document.querySelector('.contact');
-                const originalText = btn.textContent;
-                btn.textContent = 'Email copied to clipboard!';
-                btn.style.color = '#9d50ff';
-                setTimeout(function() {
-                    btn.textContent = originalText;
-                    btn.style.color = '';
-                }, 2000);
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5; // Slow movement
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+                // Colors: Mix of Cyan and Purple
+                this.color = Math.random() > 0.5 ? '#00f3ff' : '#bc13fe'; 
+            }
+            
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                // Bounce off edges
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+                
+                // Mouse Interaction (The "Intelligence" reacting)
+                if (mouse.x != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    
+                    if (distance < mouseDistance) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouseDistance - distance) / mouseDistance;
+                        // Gently push away
+                        const directionX = forceDirectionX * force * 2; 
+                        const directionY = forceDirectionY * force * 2;
+                        this.vx -= directionX * 0.05;
+                        this.vy -= directionY * 0.05;
+                    }
+                }
+            }
+            
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
+            }
+        }
+        
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
+        }
+        
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                // Draw Connections (Synapses)
+                for (let j = i; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    
+                    if (distance < connectionDistance) {
+                        ctx.beginPath();
+                        // Opacity based on distance
+                        let opacity = 1 - (distance / connectionDistance);
+                        ctx.strokeStyle = `rgba(0, 243, 255, ${opacity * 0.2})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
+            requestAnimationFrame(animate);
+        }
+        
+        function copyContact() {
+            navigator.clipboard.writeText('joshua369x@gmail.com').then(() => {
+                alert('Email address copied!');
             });
         }
+
+        // Initialize
+        resize();
+        initParticles();
+        animate();
+        
     </script>
 </body>
 </html>
