@@ -3,489 +3,597 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TeraFab.ai | Trillion-Scale AI Infrastructure</title>
-    <meta name="description" content="Premium .ai Domain Asset for Next-Generation Intelligence Systems. TeraFab.ai: Where Scale Meets Precision.">
-    <meta name="google" content="notranslate">
-
-    <!-- Fonts -->
+    <title>TeraFab.ai | Trillion-Scale AGI Infrastructure</title>
+    <meta name="description" content="Premium .ai Domain Asset for Next-Generation Intelligence Systems.">
+    
+    <!-- Google Fonts: Orbitron (Sci-Fi), Rajdhani (Tech UI), Inter (Body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Syncopate:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
         :root {
-            --bg-void: #050508;
-            --tech-blue: #00f3ff;
-            --myth-gold: #ffd700;
-            --glass: rgba(255, 255, 255, 0.03);
-            --border: rgba(255, 255, 255, 0.08);
+            --bg-deep: #030305;
+            --bg-panel: rgba(10, 15, 30, 0.6);
+            --neon-cyan: #00f3ff;
+            --neon-purple: #bc13fe;
+            --core-white: #ffffff;
+            --grid-line: rgba(0, 243, 255, 0.1);
+            --border-glow: rgba(0, 243, 255, 0.3);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            background-color: var(--bg-void);
+            background-color: var(--bg-deep);
             color: #e0e0e0;
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             overflow-x: hidden;
             min-height: 100vh;
-            position: relative;
         }
 
-        .notranslate { translate: no; }
-
-        /* --- EXQUISITE CYBER-VINES --- */
-        .vine-decoration {
+        /* --- BACKGROUND CANVAS (NEURAL NETWORK) --- */
+        #neural-canvas {
             position: fixed;
             top: 0;
-            height: 100vh;
-            width: 120px;
-            z-index: 0;
-            pointer-events: none;
-            opacity: 0.8;
-            background-image: url("data:image/svg+xml,%3Csvg width='120' height='240' viewBox='0 0 120 240' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3Cfilter id='glow'%3E%3CfeGaussianBlur stdDeviation='1.5' result='coloredBlur'/%3E%3CfeMerge%3E%3CfeMergeNode in='coloredBlur'/%3E%3CfeMergeNode in='SourceGraphic'/%3E%3C/feMerge%3E%3C/filter%3E%3C/defs%3E%3C!-- Main S-Curve Stem (Gold) --%3E%3Cpath d='M60 0 Q 100 60 60 120 Q 20 180 60 240' stroke='%23ffd700' stroke-width='1.5' fill='none' filter='url(%23glow)' opacity='0.7'/%3E%3C!-- Intertwining DNA Strand (Faint Blue) --%3E%3Cpath d='M60 0 Q 20 60 60 120 Q 100 180 60 240' stroke='%2300f3ff' stroke-width='0.5' fill='none' opacity='0.3'/%3E%3C!-- Classical Leaves/Thorns --%3E%3Cpath d='M60 60 L 80 50 M60 120 L 40 110 M60 180 L 80 170' stroke='%23ffd700' stroke-width='1' fill='none' opacity='0.6'/%3E%3C!-- Tech Nodes (Cyan Dots) --%3E%3Ccircle cx='80' cy='50' r='2' fill='%2300f3ff' filter='url(%23glow)'/%3E%3Ccircle cx='40' cy='110' r='2' fill='%2300f3ff' filter='url(%23glow)'/%3E%3Ccircle cx='80' cy='170' r='2' fill='%2300f3ff' filter='url(%23glow)'/%3E%3C!-- Diamond Terminals --%3E%3Crect x='58' y='118' width='4' height='4' fill='%23ffd700' transform='rotate(45 60 120)'/%3E%3C/svg%3E");
-            background-repeat: repeat-y;
-            filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.2));
-        }
-
-        .vine-left { 
-            left: 0; 
-            -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-        }
-        
-        .vine-right { 
-            right: 0; 
-            transform: scaleX(-1);
-            -webkit-mask-image: linear-gradient(to right, black 60%, transparent 100%);
-        }
-
-        /* --- CANVAS --- */
-        #warp-canvas {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; opacity: 0.4;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: radial-gradient(circle at center, #0b0b15 0%, #000000 100%);
         }
 
         /* --- CONTAINER --- */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
             display: flex;
             flex-direction: column;
             align-items: center;
-            position: relative;
-            z-index: 1; 
         }
 
-        /* --- HEADER & TYPOGRAPHY --- */
-        header { text-align: center; margin-bottom: 4rem; padding-top: 2rem; }
-
-        .logo-container {
+        /* --- HERO HEADER SECTION --- */
+        header {
+            height: 90vh; /* Full screen impact */
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: baseline;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-bottom: 1.5rem;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            width: 100%;
         }
 
+        /* AGI LOGO TYPOGRAPHY */
+        .logo-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+            transform: perspective(500px) rotateX(0deg);
+            transition: transform 0.5s ease;
+        }
+        
+        .logo-wrapper:hover {
+            transform: perspective(500px) rotateX(5deg);
+        }
+
+        /* TERA: The Heavy Infrastructure */
         .tera-text {
-            font-family: 'Syncopate', sans-serif;
-            font-weight: 700;
-            font-size: clamp(3rem, 9vw, 6rem);
-            color: #fff;
-            position: relative;
-            text-transform: uppercase;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            font-size: clamp(4rem, 12vw, 9rem);
+            line-height: 0.9;
             letter-spacing: -2px;
-            text-shadow: 2px 2px 0px var(--tech-blue);
-        }
-
-        .tera-text::before {
-            content: attr(data-text);
-            position: absolute;
-            left: 2px; text-shadow: -1px 0 #ff00c1;
-            top: 0; color: white; background: var(--bg-void);
-            overflow: hidden;
-            clip-path: inset(0 0 0 0);
-            animation: glitch-anim 3s infinite linear alternate-reverse;
-        }
-
-        .fab-text {
-            font-family: 'Cinzel', serif;
-            font-weight: 400;
-            font-size: clamp(3rem, 9vw, 6rem);
-            color: var(--myth-gold);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            position: relative;
-            background: linear-gradient(135deg, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+            color: transparent;
+            /* Chrome/Liquid Metal Effect */
+            background: linear-gradient(180deg, #fff 0%, #a0a0a0 40%, #404040 50%, #fff 100%);
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 300% 300%;
-            animation: liquid-flow 6s ease infinite;
-            filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.4));
+            filter: drop-shadow(0 0 30px rgba(255,255,255,0.2));
+            display: block;
+            position: relative;
+            z-index: 2;
         }
 
+        /* FAB: The Intelligence/Fabrication */
+        .fab-text {
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 300; /* Light weight for contrast */
+            font-size: clamp(4rem, 12vw, 9rem);
+            line-height: 0.9;
+            letter-spacing: 10px; /* Airy spacing */
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            display: block;
+            margin-top: -10px;
+            position: relative;
+            z-index: 1;
+            /* Neon Glow */
+            text-shadow: 
+                0 0 10px var(--neon-cyan),
+                0 0 20px var(--neon-cyan),
+                0 0 40px var(--neon-purple);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        /* Scanline Overlay for "FAB" */
         .fab-text::after {
-            content: ''; position: absolute; top: 50%; left: 0; width: 100%; height: 1px;
-            background: var(--myth-gold); transform: scaleX(0); transition: transform 0.5s ease;
+            content: "FAB";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            color: transparent;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 243, 255, 0.5) 3px,
+                transparent 4px
+            );
+            -webkit-background-clip: text;
+            opacity: 0.5;
+            pointer-events: none;
         }
 
-        @keyframes glitch-anim {
-            0% { clip-path: inset(10% 0 80% 0); transform: translate(-2px, 1px); }
-            20% { clip-path: inset(80% 0 10% 0); transform: translate(2px, -1px); }
-            40% { clip-path: inset(40% 0 50% 0); transform: translate(-2px, 2px); }
-            60% { clip-path: inset(0 0 0 0); transform: translate(0); }
-            100% { clip-path: inset(0 0 0 0); transform: translate(0); }
-        }
-
-        @keyframes liquid-flow {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; text-shadow: 0 0 25px rgba(255, 215, 0, 0.8); }
-            100% { background-position: 0% 50%; }
+        @keyframes pulse-glow {
+            0% { opacity: 0.8; letter-spacing: 10px; }
+            100% { opacity: 1; letter-spacing: 15px; text-shadow: 0 0 20px var(--neon-cyan), 0 0 60px var(--neon-purple); }
         }
 
         .tagline {
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            color: var(--tech-blue);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: #8892b0;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            opacity: 0.8;
-            margin-top: 10px;
+            letter-spacing: 6px;
+            margin-top: 2rem;
+            border-top: 1px solid var(--border-glow);
+            padding-top: 1rem;
+            font-weight: 500;
         }
+        
+        .tagline strong { color: var(--neon-cyan); }
 
-        /* --- INTRO BOX --- */
+        /* --- INTRO BOX (Glassmorphism) --- */
         .thesis-box {
-            max-width: 800px;
-            background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(0,0,0,0) 100%);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
+            max-width: 900px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-left: 3px solid var(--neon-cyan);
+            padding: 3rem;
             text-align: center;
-            backdrop-filter: blur(5px);
-            margin-bottom: 5rem;
-            position: relative;
+            backdrop-filter: blur(10px);
+            margin-bottom: 6rem;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
-        .thesis-box::before {
-            content: "PREMIUM DOMAIN ASSET";
-            position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-            background: var(--bg-void); color: #666; font-size: 0.7rem;
-            padding: 0 15px; letter-spacing: 2px; border: 1px solid #333;
+        .thesis-text { 
+            font-size: 1.2rem; 
+            font-weight: 300; 
+            color: #b0b0d0; 
+        }
+        
+        .thesis-highlight { 
+            color: var(--neon-cyan); 
+            font-weight: 700; 
+            font-family: 'Orbitron', sans-serif; 
         }
 
-        .thesis-text { font-size: 1.1rem; font-weight: 300; color: #ccc; }
-        .thesis-highlight { color: var(--myth-gold); font-weight: 600; font-family: 'Cinzel', serif; }
-
-        /* --- 9 VERTICALS GRID --- */
+        /* --- 9 VERTICALS GRID (Cyber Cards) --- */
         .grid-9 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
             width: 100%;
-            margin-bottom: 5rem;
+            margin-bottom: 6rem;
         }
 
         .card {
-            background: var(--glass);
-            border: 1px solid var(--border);
-            padding: 2rem;
-            transition: all 0.4s ease;
+            background: rgba(10, 12, 18, 0.7);
+            border: 1px solid rgba(255,255,255,0.05);
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
         }
 
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--myth-gold);
-            box-shadow: 0 10px 30px -10px rgba(255, 215, 0, 0.15);
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 3px; height: 100%;
+            background: linear-gradient(to bottom, var(--neon-cyan), transparent);
+            opacity: 0;
+            transition: opacity 0.3s;
         }
 
+        .card:hover {
+            transform: translateY(-10px);
+            background: rgba(15, 20, 30, 0.9);
+            box-shadow: 0 0 30px rgba(0, 243, 255, 0.1);
+        }
+
+        .card:hover::before { opacity: 1; }
+
         .card h3 {
-            font-family: 'Cinzel', serif;
-            font-size: 1.2rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.1rem;
             color: #fff;
             margin-bottom: 1rem;
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            letter-spacing: 1px;
         }
 
-        .card h3 i { color: var(--tech-blue); font-size: 1rem; transition: color 0.3s;}
-        .card:hover h3 i { color: var(--myth-gold); }
+        .card h3 i { 
+            color: var(--neon-purple); 
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px var(--neon-purple);
+        }
 
-        .card p { font-size: 0.9rem; color: #999; line-height: 1.5; margin-bottom: 15px; }
+        .card p { 
+            font-size: 0.95rem; 
+            color: #8892b0; 
+            line-height: 1.7; 
+            margin-bottom: 20px; 
+        }
 
         .data-tag {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 0.6rem;
-            color: var(--tech-blue);
+            font-family: 'Rajdhani', sans-serif;
+            font-size: 0.75rem;
+            color: var(--neon-cyan);
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 1px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 10px;
-            display: block;
+            display: inline-block;
+            padding: 4px 10px;
+            border: 1px solid rgba(0, 243, 255, 0.2);
+            background: rgba(0, 243, 255, 0.05);
         }
 
-        /* --- BUY SECTION --- */
+        /* --- BUY SECTION (Holographic Interface) --- */
         .buy-section {
-            width: 100%; max-width: 600px;
-            background: linear-gradient(145deg, #0a0a0f, #050508);
-            border: 1px solid var(--myth-gold);
-            padding: 3rem;
+            width: 100%; 
+            max-width: 650px;
+            background: linear-gradient(160deg, #0a0a12 0%, #050508 100%);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            padding: 4rem 2rem;
             text-align: center;
             position: relative;
-            margin-bottom: 4rem;
-            box-shadow: 0 0 50px rgba(255, 215, 0, 0.05);
+            margin-bottom: 5rem;
+            box-shadow: 0 0 80px rgba(0, 243, 255, 0.05);
+            /* Corner Accents */
+            clip-path: polygon(
+                20px 0, 100% 0, 
+                100% calc(100% - 20px), calc(100% - 20px) 100%, 
+                0 100%, 0 20px
+            );
         }
 
         .status-badge {
-            position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
-            background: var(--myth-gold); color: #000;
-            padding: 4px 16px; font-size: 0.8rem; font-weight: 700;
-            text-transform: uppercase; letter-spacing: 1px;
+            background: var(--neon-cyan);
+            color: #000;
+            padding: 5px 20px;
+            font-family: 'Rajdhani', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+            box-shadow: 0 0 20px var(--neon-cyan);
         }
 
         .price-tag {
-            font-family: 'Syncopate', sans-serif;
-            font-size: 2.5rem; color: white; margin: 1.5rem 0 0.5rem;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px rgba(255,255,255,0.5);
         }
 
-        .price-sub { font-size: 0.9rem; color: #888; margin-bottom: 2rem; }
+        .price-sub { font-size: 1rem; color: #8892b0; margin-bottom: 3rem; }
 
-        /* Spaceship Action Button */
         .action-btn {
-            display: flex; align-items: center; justify-content: center; width: 100%;
-            background: white; color: black;
-            font-family: 'Inter', sans-serif; font-weight: 700;
-            padding: 1.2rem; border: none;
-            text-transform: uppercase; letter-spacing: 2px;
-            cursor: pointer; transition: all 0.3s;
+            display: flex; align-items: center; justify-content: center;
+            width: 100%;
+            background: transparent;
+            color: var(--neon-cyan);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            padding: 1.5rem;
+            border: 2px solid var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: all 0.3s;
             text-decoration: none;
-            border-radius: 4px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .action-btn:hover {
-            background: var(--myth-gold);
-            box-shadow: 0 0 30px rgba(255, 215, 0, 0.4);
-            transform: translateY(-2px);
+        .action-btn::before {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%;
+            width: 100%; height: 100%;
+            background: var(--neon-cyan);
+            transition: left 0.4s ease;
+            z-index: -1;
         }
 
-        /* --- DISCLAIMER --- */
-        .disclaimer {
-            max-width: 800px;
-            text-align: center;
-            font-size: 0.7rem;
-            color: #444;
-            padding: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-            line-height: 1.6;
+        .action-btn:hover::before { left: 0; }
+        .action-btn:hover { 
+            color: #000; 
+            box-shadow: 0 0 50px rgba(0, 243, 255, 0.4); 
         }
-
-        .disclaimer code { color: var(--tech-blue); font-family: monospace; }
 
         /* --- FOOTER --- */
         footer {
-            margin-top: auto;
-            width: 100%; padding: 2rem;
-            text-align: center; font-size: 0.7rem; color: #555;
-            background: #020202; border-top: 1px solid #111;
-            z-index: 10; position: relative;
+            padding: 3rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
+            background: #020202;
+            border-top: 1px solid #111;
+        }
+        
+        .disclaimer {
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+            font-size: 0.75rem;
         }
 
+        /* Mobile Adjustments */
         @media (max-width: 768px) {
+            header { height: 80vh; }
+            .tera-text { font-size: 16vw; }
+            .fab-text { font-size: 16vw; letter-spacing: 5px; }
             .grid-9 { grid-template-columns: 1fr; }
-            .logo-container { gap: 5px; flex-direction: column; align-items: center;}
-            .tera-text, .fab-text { line-height: 1; }
-            .vine-decoration { opacity: 0.4; width: 60px; } 
+            .buy-section { clip-path: none; border-radius: 10px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- DECORATIVE VINES -->
-    <div class="vine-decoration vine-left"></div>
-    <div class="vine-decoration vine-right"></div>
-
-    <canvas id="warp-canvas"></canvas>
+    <!-- AGI NEURAL NETWORK BACKGROUND -->
+    <canvas id="neural-canvas"></canvas>
 
     <div class="container">
         
+        <!-- HERO SECTION -->
         <header>
-            <div class="logo-container notranslate">
-                <span class="tera-text" data-text="TERA">TERA</span>
+            <div class="logo-wrapper">
+                <span class="tera-text">TERA</span>
                 <span class="fab-text">FAB</span>
             </div>
-            <div class="tagline">Trillion-Scale Intelligence · Algorithmic Fabrication</div>
+            
+            <div class="tagline">
+                The Infrastructure of <strong>Trillion-Scale</strong> Intelligence
+            </div>
         </header>
 
+        <!-- THESIS -->
         <div class="thesis-box">
             <p class="thesis-text">
-                "As artificial intelligence transcends human cognition, the infrastructure that defines these systems becomes paramount. <span class="thesis-highlight">TeraFab.ai</span> represents the convergence of scale and sophistication: the definitive naming standard for platforms that process <strong>tera-scale intelligence</strong> with algorithmic precision—where 'fab' denotes the computational construction of knowledge structures, not physical manufacturing."
+                <span class="thesis-highlight">TeraFab.ai</span> defines the era of Automated General Intelligence. 
+                It is the ultimate identifier for the "fabrication" of knowledge at massive scale—where neural architecture meets infinite compute.
+                <br><br>
+                <i class="fa-solid fa-microchip" style="color:var(--neon-purple)"></i> Not just a name. A protocol for the future.
             </p>
         </div>
 
-        <!-- 9 VERTICALS OF VALUE -->
+        <!-- 9 VERTICALS -->
         <div class="grid-9">
             <!-- 1 -->
             <div class="card">
                 <h3><i class="fa-solid fa-diagram-project"></i> AI Orchestration</h3>
-                <p>The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.</p>
-                <span class="data-tag">Market: $500B AI Infrastructure</span>
+                <p>The seamless integration layer for distributed intelligence systems. Coordinating millions of autonomous agents.</p>
+                <span class="data-tag">Market: $500B Infra</span>
             </div>
             <!-- 2 -->
             <div class="card">
                 <h3><i class="fa-solid fa-brain-circuit"></i> Neural Architecture</h3>
-                <p>The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.</p>
-                <span class="data-tag">Tech: Advanced Model Design</span>
+                <p>The definitive platform for designing next-generation AI models. Where architecture meets execution.</p>
+                <span class="data-tag">Tech: Model Design</span>
             </div>
             <!-- 3 -->
             <div class="card">
-                <h3><i class="fa-solid fa-network-wired"></i> Distributed Intelligence</h3>
-                <p>The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.</p>
+                <h3><i class="fa-solid fa-network-wired"></i> Distributed Minds</h3>
+                <p>The central naming point for decentralized AI ecosystems across global networks.</p>
                 <span class="data-tag">Trend: Federated Learning</span>
             </div>
             <!-- 4 -->
             <div class="card">
-                <h3><i class="fa-solid fa-code-branch"></i> Cognitive Fabrication</h3>
-                <p>Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.</p>
-                <span class="data-tag">Application: Knowledge Systems</span>
+                <h3><i class="fa-solid fa-cube"></i> Cognitive Fabrication</h3>
+                <p>Where AI constructs understanding from raw information streams. Fabricating knowledge structures.</p>
+                <span class="data-tag">App: Knowledge Systems</span>
             </div>
             <!-- 5 -->
             <div class="card">
-                <h3><i class="fa-solid fa-gears"></i> Autonomous Infrastructure</h3>
-                <p>The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.</p>
-                <span class="data-tag">Sector: Intelligent Systems</span>
+                <h3><i class="fa-solid fa-robot"></i> Autonomous Foundries</h3>
+                <p>The naming standard for self-optimizing digital factories that produce code and agents.</p>
+                <span class="data-tag">Sector: Agentic AI</span>
             </div>
             <!-- 6 -->
             <div class="card">
-                <h3><i class="fa-solid fa-infinity"></i> Intelligence Scaling</h3>
-                <p>The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.</p>
+                <h3><i class="fa-solid fa-arrow-up-right-dots"></i> Intelligence Scaling</h3>
+                <p>Managing exponential growth in cognitive capacity. From Mega to Giga to Tera scale.</p>
                 <span class="data-tag">Potential: AGI Scaling</span>
             </div>
             <!-- 7 -->
             <div class="card">
-                <h3><i class="fa-solid fa-microchip"></i> Quantum-Inspired AI</h3>
-                <p>For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.</p>
-                <span class="data-tag">Tech: Next-Gen Computation</span>
+                <h3><i class="fa-solid fa-dna"></i> Quantum-Ready</h3>
+                <p>For architectures operating beyond classical computation. Processing information at tera-scale complexity.</p>
+                <span class="data-tag">Tech: Next-Gen Compute</span>
             </div>
             <!-- 8 -->
             <div class="card">
-                <h3><i class="fa-solid fa-shuffle"></i> Adaptive Systems</h3>
-                <p>Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.</p>
-                <span class="data-tag">Trend: Self-Optimization</span>
+                <h3><i class="fa-solid fa-shuffle"></i> Self-Evolving Systems</h3>
+                <p>Where AI dynamically reconfigures its operational framework. Fabricating its own evolution.</p>
+                <span class="data-tag">Trend: Recursive AI</span>
             </div>
             <!-- 9 -->
             <div class="card">
-                <h3><i class="fa-solid fa-diagram-successor"></i> Workflow Generation</h3>
-                <p>Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.</p>
-                <span class="data-tag">Application: Process Automation</span>
+                <h3><i class="fa-solid fa-bolt"></i> Compute Power</h3>
+                <p>A domain that implies raw power. The engine room of the artificial intelligence revolution.</p>
+                <span class="data-tag">Asset: Hardware/Cloud</span>
             </div>
         </div>
 
-        <!-- PURCHASE SECTION -->
+        <!-- PURCHASE AREA -->
         <div class="buy-section">
-            <span class="status-badge">Premium Domain Asset</span>
-            <div class="price-tag">$42,000 <span style="font-size: 1rem; color:#666">USD</span></div>
-            <div class="price-sub">
-                Includes domain asset <strong>terafab.ai</strong><br>
-                <span style="color: var(--tech-blue); font-size: 0.8rem; margin-top:5px; display:block;">12-Month Financing Available</span>
-            </div>
+            <div class="status-badge">Available for Acquisition</div>
+            <div class="price-tag">$42,000</div>
+            <div class="price-sub">USD • Crypto Accepted • Escrow Secured</div>
             
-            <!-- Spaceship Link -->
             <a href="https://www.spaceship.com/s/buy/terafab.ai/ltHRNsr9qLrMnKlN" target="_blank" class="action-btn">
-                Buy on Spaceship <i class="fa-solid fa-rocket" style="font-size:0.9em; margin-left:10px;"></i>
+                Initialize Purchase <i class="fa-solid fa-chevron-right" style="margin-left:15px; font-size:0.8em;"></i>
             </a>
             
-            <div style="margin-top: 20px; font-size: 0.8rem; color: var(--tech-blue); cursor: pointer;" onclick="copyContact()">
-                or contact: joshua369x@gmail.com
+            <div style="margin-top: 30px; font-size: 0.9rem; color: #666; cursor: pointer; font-family:'Rajdhani', sans-serif;" onclick="copyContact()">
+                Direct Inquiry: <span style="color:var(--neon-cyan); border-bottom:1px dashed var(--neon-cyan);">joshua369x@gmail.com</span>
             </div>
         </div>
 
-        <!-- LEGAL DISCLAIMER -->
-        <div class="disclaimer">
-            <p>
-                <strong>DISCLAIMER:</strong> TeraFab.ai is a premium domain asset for digital AI systems and computational architecture. It is NOT affiliated with Terabase Energy, Inc. or any entity holding "Terafab" trademarks in industrial automation or physical manufacturing. All references to "fabrication" herein refer exclusively to algorithmic construction of digital intelligence—not physical production. Buyers are responsible for their own trademark clearance prior to use.
-            </p>
-        </div>
-
+        <!-- FOOTER -->
+        <footer>
+            <div class="disclaimer">
+                <strong>LEGAL NOTICE:</strong> TeraFab.ai is a premium digital asset for the AI industry. It is not affiliated with any physical manufacturing entities. "Tera" denotes scale (10^12); "Fab" denotes digital fabrication/construction.
+            </div>
+            <p>© 2026 TERAFAB.AI | THE INFRASTRUCTURE OF INTELLIGENCE</p>
+        </footer>
     </div>
 
-    <footer>
-        <p>© 2026 PREMIUM DOMAIN ASSET. <span style="color:#333">|</span> TERAFAB.AI</p>
-    </footer>
-
     <script>
-        // Starfield Animation
-        const canvas = document.getElementById('warp-canvas');
+        // --- AGI NEURAL NETWORK ANIMATION SCRIPT ---
+        const canvas = document.getElementById('neural-canvas');
         const ctx = canvas.getContext('2d');
         
         let width, height;
-        let stars = [];
-        const numStars = 200;
-
+        let particles = [];
+        
+        // Configuration
+        const particleCount = window.innerWidth < 768 ? 40 : 80; // Fewer on mobile
+        const connectionDistance = 150;
+        const mouseDistance = 250;
+        
+        // Mouse State
+        let mouse = { x: null, y: null };
+        
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
+        });
+        
+        // Resize Handler
         function resize() {
             width = window.innerWidth;
             height = window.innerHeight;
             canvas.width = width;
             canvas.height = height;
         }
+        window.addEventListener('resize', () => {
+            resize();
+            initParticles();
+        });
 
-        class Star {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = (Math.random() - 0.5) * width;
-                this.y = (Math.random() - 0.5) * height;
-                this.z = Math.random() * width;
-                this.pz = this.z;
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.vx = (Math.random() - 0.5) * 0.5; // Slow movement
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = Math.random() * 2 + 1;
+                // Colors: Mix of Cyan and Purple
+                this.color = Math.random() > 0.5 ? '#00f3ff' : '#bc13fe'; 
             }
+            
             update() {
-                this.z = this.z - 2;
-                if (this.z < 1) {
-                    this.reset();
-                    this.z = width;
-                    this.pz = this.z;
+                this.x += this.vx;
+                this.y += this.vy;
+                
+                // Bounce off edges
+                if (this.x < 0 || this.x > width) this.vx *= -1;
+                if (this.y < 0 || this.y > height) this.vy *= -1;
+                
+                // Mouse Interaction (The "Intelligence" reacting)
+                if (mouse.x != null) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    
+                    if (distance < mouseDistance) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouseDistance - distance) / mouseDistance;
+                        // Gently push away
+                        const directionX = forceDirectionX * force * 2; 
+                        const directionY = forceDirectionY * force * 2;
+                        this.vx -= directionX * 0.05;
+                        this.vy -= directionY * 0.05;
+                    }
                 }
             }
+            
             draw() {
-                const sx = (this.x / this.z) * width + width / 2;
-                const sy = (this.y / this.z) * height + height / 2;
-                const px = (this.x / this.pz) * width + width / 2;
-                const py = (this.y / this.pz) * height + height / 2;
-                this.pz = this.z;
-                if (sx < 0 || sx > width || sy < 0 || sy > height) return;
-                
-                const alpha = (1 - this.z / width);
                 ctx.beginPath();
-                ctx.moveTo(px, py);
-                ctx.lineTo(sx, sy);
-                ctx.strokeStyle = `rgba(100, 200, 255, ${alpha * 0.5})`;
-                ctx.lineWidth = 1;
-                ctx.stroke();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = this.color;
+                ctx.fill();
             }
         }
-
-        function init() {
-            resize();
-            for(let i=0; i<numStars; i++) stars.push(new Star());
-            animate();
+        
+        function initParticles() {
+            particles = [];
+            for (let i = 0; i < particleCount; i++) {
+                particles.push(new Particle());
+            }
         }
-
+        
         function animate() {
-            ctx.clearRect(0, 0, width, height); 
-            stars.forEach(star => { star.update(); star.draw(); });
+            ctx.clearRect(0, 0, width, height);
+            
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+                
+                // Draw Connections (Synapses)
+                for (let j = i; j < particles.length; j++) {
+                    let dx = particles[i].x - particles[j].x;
+                    let dy = particles[i].y - particles[j].y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    
+                    if (distance < connectionDistance) {
+                        ctx.beginPath();
+                        // Opacity based on distance
+                        let opacity = 1 - (distance / connectionDistance);
+                        ctx.strokeStyle = `rgba(0, 243, 255, ${opacity * 0.2})`;
+                        ctx.lineWidth = 1;
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                        ctx.stroke();
+                    }
+                }
+            }
             requestAnimationFrame(animate);
         }
-
+        
         function copyContact() {
             navigator.clipboard.writeText('joshua369x@gmail.com').then(() => {
-                alert('Email copied: joshua369x@gmail.com');
+                alert('Email address copied!');
             });
         }
 
-        window.addEventListener('resize', resize);
-        window.addEventListener('load', init);
+        // Initialize
+        resize();
+        initParticles();
+        animate();
+        
     </script>
 </body>
 </html>
