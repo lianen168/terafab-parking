@@ -32,7 +32,36 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-        /* Particle Background */
+        
+        /* MODIFICATION 1: Keyframes for dynamic font effect */
+        @keyframes text-flicker {
+          0% {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 40px rgba(0, 243, 255, 0.2);
+            opacity: 1;
+          }
+          30% {
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.6), 0 0 30px rgba(157, 80, 255, 0.4);
+            opacity: 0.9;
+          }
+          32% {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 50px rgba(157, 80, 255, 0.5);
+            opacity: 1;
+          }
+          70% {
+            text-shadow: 0 0 20px rgba(0, 243, 255, 0.5), 0 0 35px rgba(157, 80, 255, 0.4);
+            opacity: 1;
+          }
+          72% {
+             text-shadow: 0 0 10px rgba(0, 243, 255, 0.3), 0 0 20px rgba(157, 80, 255, 0.2);
+             opacity: 0.8;
+          }
+          100% {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 40px rgba(0, 243, 255, 0.2);
+            opacity: 1;
+          }
+        }
+
+        /* MODIFICATION 3: Particle background is implemented here */
         #particles-js {
             position: fixed;
             width: 100%;
@@ -40,7 +69,6 @@
             top: 0;
             left: 0;
             z-index: -1;
-            /* Slightly increased opacity for more presence */
             opacity: 0.2; 
         }
         .container {
@@ -48,7 +76,6 @@
             margin: 0 auto;
             padding: 6rem 2rem 4rem;
         }
-        /* Header */
         header {
             text-align: center;
             margin-bottom: 6rem;
@@ -64,8 +91,8 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.05em;
-            /* MODIFIED: Added a futuristic glow effect */
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3);
+            /* MODIFICATION 1: Applying the dynamic font animation */
+            animation: text-flicker 4s linear infinite;
         }
         .tagline {
             font-size: clamp(1.2rem, 3vw, 1.8rem);
@@ -76,7 +103,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-        /* Thesis */
         .thesis {
             max-width: 800px;
             margin: 0 auto 5rem;
@@ -89,7 +115,6 @@
             color: var(--accent-blue);
             font-weight: 600;
         }
-        /* Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -140,7 +165,6 @@
             text-transform: uppercase;
             border-radius: 4px;
         }
-        /* CTA Section */
         .cta {
             max-width: 700px;
             margin: 0 auto 5rem;
@@ -211,7 +235,6 @@
         .contact:hover {
             opacity: 0.7;
         }
-        /* Disclaimer */
         .disclaimer {
             text-align: center;
             font-size: 0.75rem;
@@ -225,7 +248,6 @@
         .disclaimer strong {
             color: var(--text-primary);
         }
-        /* Footer */
         footer {
             text-align: center;
             padding: 2rem;
@@ -237,15 +259,12 @@
             .container {
                 padding: 4rem 1.5rem 3rem;
             }
-            
             .grid {
                 grid-template-columns: 1fr;
             }
-            
             .cta {
                 padding: 3rem 2rem;
             }
-            
             .price {
                 font-size: 2.5rem;
             }
@@ -254,7 +273,7 @@
 </head>
 <body>
 
-    <!-- Particles Background -->
+    <!-- MODIFICATION 3: Particles background effect -->
     <div id="particles-js"></div>
 
     <div class="container">
@@ -268,94 +287,50 @@
         </div>
 
         <div class="grid">
+            <!-- Grid cards remain unchanged -->
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    AI Orchestration
-                </div>
-                <div class="card-desc">
-                    The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> AI Orchestration</div>
+                <div class="card-desc">The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.</div>
                 <div class="card-tag">Market: $500B AI Infrastructure</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Neural Architecture
-                </div>
-                <div class="card-desc">
-                    The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Neural Architecture</div>
+                <div class="card-desc">The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.</div>
                 <div class="card-tag">Tech: Advanced Model Design</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Distributed Intelligence
-                </div>
-                <div class="card-desc">
-                    The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Distributed Intelligence</div>
+                <div class="card-desc">The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.</div>
                 <div class="card-tag">Trend: Federated Learning</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Cognitive Fabrication
-                </div>
-                <div class="card-desc">
-                    Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Cognitive Fabrication</div>
+                <div class="card-desc">Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.</div>
                 <div class="card-tag">Application: Knowledge Systems</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Autonomous Systems
-                </div>
-                <div class="card-desc">
-                    The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Autonomous Systems</div>
+                <div class="card-desc">The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.</div>
                 <div class="card-tag">Sector: Intelligent Systems</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Intelligence Scaling
-                </div>
-                <div class="card-desc">
-                    The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Intelligence Scaling</div>
+                <div class="card-desc">The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.</div>
                 <div class="card-tag">Potential: AGI Scaling</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Quantum-Inspired AI
-                </div>
-                <div class="card-desc">
-                    For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Quantum-Inspired AI</div>
+                <div class="card-desc">For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.</div>
                 <div class="card-tag">Tech: Next-Gen Computation</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Adaptive Systems
-                </div>
-                <div class="card-desc">
-                    Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Adaptive Systems</div>
+                <div class="card-desc">Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.</div>
                 <div class="card-tag">Trend: Self-Optimization</div>
             </div>
             <div class="card">
-                <div class="card-title">
-                    <span class="card-icon">◉</span>
-                    Workflow Generation
-                </div>
-                <div class="card-desc">
-                    Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.
-                </div>
+                <div class="card-title"><span class="card-icon">◉</span> Workflow Generation</div>
+                <div class="card-desc">Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.</div>
                 <div class="card-tag">Application: Process Automation</div>
             </div>
         </div>
@@ -368,7 +343,8 @@
                     Includes domain asset <strong>terafab.ai</strong><br>
                     <span style="color: var(--accent-blue); display: block; margin-top: 0.5rem;">12-Month Financing Available</span>
                 </div>
-                <a href="https://www.spaceship.com/s/buy/terafab.ai/ltHRNsr9qLrMnKlN" target="\_blank" class="btn">
+                <!-- MODIFICATION 2: Purchase link updated -->
+                <a href="https://www.spaceship.com/s/buy/terafab.ai/1r2sYEXia9Tjn8st" target="\_blank" class="btn">
                     Acquire Now
                 </a>
                 <div class="contact" onclick="copyEmail()">
@@ -386,29 +362,29 @@
         <p>© 2026 PREMIUM DOMAIN ASSET | TERAFAB.AI</p>
     </footer>
 
-    <!-- Particles.js -->
+    <!-- MODIFICATION 3: particles.js library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
-    <!-- MODIFIED: Updated particles.js configuration for a more futuristic feel -->
+    <!-- MODIFICATION 3: Updated particles.js configuration script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 particles: {
                     number: { value: 100, density: { enable: true, value_area: 800 } },
-                    color: { value: ['#00f3ff', '#9d50ff'] }, // Array of colors
+                    color: { value: ['#00f3ff', '#9d50ff'] },
                     shape: { type: 'circle' },
                     opacity: { value: 0.4, random: true },
                     size: { value: 2.5, random: true },
                     line_linked: {
                         enable: true,
                         distance: 120,
-                        color: '#9d50ff', // Changed line color
+                        color: '#9d50ff',
                         opacity: 0.1,
                         width: 1
                     },
                     move: {
                         enable: true,
-                        speed: 2.5, // Increased speed
+                        speed: 2.5,
                         direction: 'none',
                         random: true,
                         straight: false,
@@ -419,7 +395,7 @@
                 interactivity: {
                     detect_on: 'canvas',
                     events: {
-                        onhover: { enable: true, mode: 'bubble' }, // Changed to bubble effect
+                        onhover: { enable: true, mode: 'bubble' },
                         onclick: { enable: false },
                         resize: true
                     },
@@ -464,7 +440,7 @@
                         interactivity: {
                             detect_on: 'canvas',
                             events: {
-                                onhover: { enable: false }, // Disabled for mobile performance
+                                onhover: { enable: false },
                                 onclick: { enable: false },
                                 resize: true
                             }
