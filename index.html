@@ -19,13 +19,11 @@
             --border-color: rgba(255, 255, 255, 0.08);
             --card-bg: rgba(255, 255, 255, 0.03);
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             background-color: var(--bg-dark);
             color: var(--text-primary);
@@ -34,7 +32,6 @@
             overflow-x: hidden;
             min-height: 100vh;
         }
-
         /* Particle Background */
         #particles-js {
             position: fixed;
@@ -43,21 +40,19 @@
             top: 0;
             left: 0;
             z-index: -1;
-            opacity: 0.15;
+            /* Slightly increased opacity for more presence */
+            opacity: 0.2; 
         }
-
         .container {
             max-width: 1400px;
             margin: 0 auto;
             padding: 6rem 2rem 4rem;
         }
-
         /* Header */
         header {
             text-align: center;
             margin-bottom: 6rem;
         }
-
         .logo {
             font-family: 'Space Mono', monospace;
             font-weight: 700;
@@ -69,8 +64,9 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             letter-spacing: -0.05em;
+            /* MODIFIED: Added a futuristic glow effect */
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3);
         }
-
         .tagline {
             font-size: clamp(1.2rem, 3vw, 1.8rem);
             color: var(--text-secondary);
@@ -80,7 +76,6 @@
             margin-left: auto;
             margin-right: auto;
         }
-
         /* Thesis */
         .thesis {
             max-width: 800px;
@@ -90,12 +85,10 @@
             color: var(--text-secondary);
             line-height: 1.8;
         }
-
         .thesis-highlight {
             color: var(--accent-blue);
             font-weight: 600;
         }
-
         /* Grid */
         .grid {
             display: grid;
@@ -103,7 +96,6 @@
             gap: 2.5rem;
             margin-bottom: 6rem;
         }
-
         .card {
             background: var(--card-bg);
             border: 1px solid var(--border-color);
@@ -111,13 +103,11 @@
             border-radius: 12px;
             transition: all 0.3s ease;
         }
-
         .card:hover {
             transform: translateY(-5px);
             border-color: var(--accent-blue);
             box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
         }
-
         .card-title {
             font-family: 'Space Mono', monospace;
             font-size: 1.3rem;
@@ -128,18 +118,15 @@
             align-items: center;
             gap: 0.75rem;
         }
-
         .card-icon {
             font-size: 1.2rem;
             color: var(--accent-blue);
         }
-
         .card-desc {
             font-size: 0.95rem;
             color: var(--text-secondary);
             line-height: 1.7;
         }
-
         .card-tag {
             display: inline-block;
             margin-top: 1.25rem;
@@ -153,7 +140,6 @@
             text-transform: uppercase;
             border-radius: 4px;
         }
-
         /* CTA Section */
         .cta {
             max-width: 700px;
@@ -166,7 +152,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .cta::before {
             content: '';
             position: absolute;
@@ -177,12 +162,10 @@
             background: radial-gradient(circle, rgba(0, 243, 255, 0.05) 0%, transparent 70%);
             z-index: 0;
         }
-
         .cta-content {
             position: relative;
             z-index: 1;
         }
-
         .price {
             font-family: 'Space Mono', monospace;
             font-size: 3.5rem;
@@ -193,13 +176,11 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
         .price-sub {
             color: var(--text-secondary);
             font-size: 1rem;
             margin-bottom: 2rem;
         }
-
         .btn {
             display: inline-block;
             background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
@@ -216,12 +197,10 @@
             border: none;
             cursor: pointer;
         }
-
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 20px rgba(0, 243, 255, 0.4);
         }
-
         .contact {
             margin-top: 1.5rem;
             color: var(--accent-blue);
@@ -229,11 +208,9 @@
             cursor: pointer;
             transition: opacity 0.3s;
         }
-
         .contact:hover {
             opacity: 0.7;
         }
-
         /* Disclaimer */
         .disclaimer {
             text-align: center;
@@ -245,11 +222,9 @@
             max-width: 800px;
             margin: 0 auto;
         }
-
         .disclaimer strong {
             color: var(--text-primary);
         }
-
         /* Footer */
         footer {
             text-align: center;
@@ -258,7 +233,6 @@
             font-size: 0.75rem;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
         }
-
         @media (max-width: 768px) {
             .container {
                 padding: 4rem 1.5rem 3rem;
@@ -279,6 +253,7 @@
     </style>
 </head>
 <body>
+
     <!-- Particles Background -->
     <div id="particles-js"></div>
 
@@ -303,7 +278,6 @@
                 </div>
                 <div class="card-tag">Market: $500B AI Infrastructure</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -314,7 +288,6 @@
                 </div>
                 <div class="card-tag">Tech: Advanced Model Design</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -325,7 +298,6 @@
                 </div>
                 <div class="card-tag">Trend: Federated Learning</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -336,7 +308,6 @@
                 </div>
                 <div class="card-tag">Application: Knowledge Systems</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -347,7 +318,6 @@
                 </div>
                 <div class="card-tag">Sector: Intelligent Systems</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -358,7 +328,6 @@
                 </div>
                 <div class="card-tag">Potential: AGI Scaling</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -369,7 +338,6 @@
                 </div>
                 <div class="card-tag">Tech: Next-Gen Computation</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -380,7 +348,6 @@
                 </div>
                 <div class="card-tag">Trend: Self-Optimization</div>
             </div>
-
             <div class="card">
                 <div class="card-title">
                     <span class="card-icon">◉</span>
@@ -401,7 +368,7 @@
                     Includes domain asset <strong>terafab.ai</strong><br>
                     <span style="color: var(--accent-blue); display: block; margin-top: 0.5rem;">12-Month Financing Available</span>
                 </div>
-                <a href="https://www.spaceship.com/s/buy/terafab.ai/ltHRNsr9qLrMnKlN" target="_blank" class="btn">
+                <a href="https://www.spaceship.com/s/buy/terafab.ai/ltHRNsr9qLrMnKlN" target="\_blank" class="btn">
                     Acquire Now
                 </a>
                 <div class="contact" onclick="copyEmail()">
@@ -421,25 +388,27 @@
 
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- MODIFIED: Updated particles.js configuration for a more futuristic feel -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             particlesJS('particles-js', {
                 particles: {
-                    number: { value: 80, density: { enable: true, value_area: 800 } },
-                    color: { value: '#00f3ff' },
+                    number: { value: 100, density: { enable: true, value_area: 800 } },
+                    color: { value: ['#00f3ff', '#9d50ff'] }, // Array of colors
                     shape: { type: 'circle' },
-                    opacity: { value: 0.3, random: true },
-                    size: { value: 2, random: true },
+                    opacity: { value: 0.4, random: true },
+                    size: { value: 2.5, random: true },
                     line_linked: {
                         enable: true,
-                        distance: 150,
-                        color: '#00f3ff',
+                        distance: 120,
+                        color: '#9d50ff', // Changed line color
                         opacity: 0.1,
                         width: 1
                     },
                     move: {
                         enable: true,
-                        speed: 2,
+                        speed: 2.5, // Increased speed
                         direction: 'none',
                         random: true,
                         straight: false,
@@ -450,9 +419,17 @@
                 interactivity: {
                     detect_on: 'canvas',
                     events: {
-                        onhover: { enable: true, mode: 'grab' },
+                        onhover: { enable: true, mode: 'bubble' }, // Changed to bubble effect
                         onclick: { enable: false },
                         resize: true
+                    },
+                    modes: {
+                        bubble: {
+                            distance: 200,
+                            size: 4,
+                            duration: 2,
+                            opacity: 0.8
+                        }
                     }
                 },
                 retina_detect: true
@@ -460,19 +437,18 @@
 
             window.addEventListener('resize', function() {
                 if (window.innerWidth < 768) {
-                    // Reduce particles on mobile for performance
                     particlesJS('particles-js', {
                         particles: {
-                            number: { value: 30, density: { enable: true, value_area: 800 } },
-                            color: { value: '#00f3ff' },
+                            number: { value: 40, density: { enable: true, value_area: 800 } },
+                            color: { value: ['#00f3ff', '#9d50ff'] },
                             shape: { type: 'circle' },
-                            opacity: { value: 0.3, random: true },
+                            opacity: { value: 0.4, random: true },
                             size: { value: 2, random: true },
                             line_linked: {
                                 enable: true,
-                                distance: 150,
-                                color: '#00f3ff',
-                                opacity: 0.1,
+                                distance: 120,
+                                color: '#9d50ff',
+                                opacity: 0.15,
                                 width: 1
                             },
                             move: {
@@ -488,7 +464,7 @@
                         interactivity: {
                             detect_on: 'canvas',
                             events: {
-                                onhover: { enable: true, mode: 'grab' },
+                                onhover: { enable: false }, // Disabled for mobile performance
                                 onclick: { enable: false },
                                 resize: true
                             }
