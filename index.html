@@ -4,278 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeraFab.ai | Trillion-Scale Intelligence Infrastructure</title>
-    <meta name="description" content="Premium .ai Domain Asset for Next-Generation AI Systems. TeraFab.ai: The Definitive Naming Standard for Trillion-Parameter Intelligence.">
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="TeraFab.ai is the premium .ai domain asset for trillion-scale AI, representing the convergence of tera-scale intelligence and algorithmic fabrication.">
+    <meta name="keywords" content="TeraFab.ai, tera-scale, trillion parameter model, AI infrastructure, premium .ai domain, federated learning, AGI scaling, computational architecture">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.terafab.ai/"> <!-- Replace with final URL -->
+    <meta property="og:title" content="TeraFab.ai | Trillion-Scale Intelligence Infrastructure">
+    <meta property="og:description" content="The Definitive Naming Standard for Trillion-Parameter Intelligence.">
+    <meta property="og:image" content="https://www.terafab.ai/social-preview.jpg"> <!-- Replace with a URL to a preview image -->
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://www.terafab.ai/"> <!-- Replace with final URL -->
+    <meta name="twitter:title" content="TeraFab.ai | Trillion-Scale Intelligence Infrastructure">
+    <meta name="twitter:description" content="The Definitive Naming Standard for Trillion-Parameter Intelligence.">
+    <meta name="twitter:image" content="https://www.terafab.ai/social-preview.jpg"> <!-- Replace with a URL to a preview image -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #0a0a0f;
-            --bg-darker: #050508;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0b0;
-            --accent-blue: #00f3ff;
-            --accent-purple: #9d50ff;
-            --border-color: rgba(255, 255, 255, 0.08);
+            --bg-dark: #0a0a0f; --bg-darker: #050508; --text-primary: #ffffff; --text-secondary: #a0a0b0;
+            --accent-blue: #00f3ff; --accent-purple: #9d50ff; --border-color: rgba(255, 255, 255, 0.08);
             --card-bg: rgba(255, 255, 255, 0.03);
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            overflow-x: hidden;
-            min-height: 100vh;
-        }
-        
-        /* MODIFICATION 1: Keyframes for dynamic font effect */
-        @keyframes text-flicker {
-          0% {
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 40px rgba(0, 243, 255, 0.2);
-            opacity: 1;
-          }
-          30% {
-            text-shadow: 0 0 15px rgba(0, 243, 255, 0.6), 0 0 30px rgba(157, 80, 255, 0.4);
-            opacity: 0.9;
-          }
-          32% {
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 50px rgba(157, 80, 255, 0.5);
-            opacity: 1;
-          }
-          70% {
-            text-shadow: 0 0 20px rgba(0, 243, 255, 0.5), 0 0 35px rgba(157, 80, 255, 0.4);
-            opacity: 1;
-          }
-          72% {
-             text-shadow: 0 0 10px rgba(0, 243, 255, 0.3), 0 0 20px rgba(157, 80, 255, 0.2);
-             opacity: 0.8;
-          }
-          100% {
-            text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 40px rgba(0, 243, 255, 0.2);
-            opacity: 1;
-          }
-        }
-
-        /* MODIFICATION 3: Particle background is implemented here */
-        #particles-js {
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            opacity: 0.2; 
-        }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 6rem 2rem 4rem;
-        }
-        header {
-            text-align: center;
-            margin-bottom: 6rem;
-        }
-        .logo {
-            font-family: 'Space Mono', monospace;
-            font-weight: 700;
-            font-size: clamp(4rem, 12vw, 8rem);
-            line-height: 1;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -0.05em;
-            /* MODIFICATION 1: Applying the dynamic font animation */
-            animation: text-flicker 4s linear infinite;
-        }
-        .tagline {
-            font-size: clamp(1.2rem, 3vw, 1.8rem);
-            color: var(--text-secondary);
-            font-weight: 300;
-            margin-top: 1rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        .thesis {
-            max-width: 800px;
-            margin: 0 auto 5rem;
-            text-align: center;
-            font-size: 1.2rem;
-            color: var(--text-secondary);
-            line-height: 1.8;
-        }
-        .thesis-highlight {
-            color: var(--accent-blue);
-            font-weight: 600;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin-bottom: 6rem;
-        }
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            padding: 2.5rem;
-            border-radius: 12px;
-            transition: all 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent-blue);
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
-        }
-        .card-title {
-            font-family: 'Space Mono', monospace;
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        .card-icon {
-            font-size: 1.2rem;
-            color: var(--accent-blue);
-        }
-        .card-desc {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.7;
-        }
-        .card-tag {
-            display: inline-block;
-            margin-top: 1.25rem;
-            padding: 0.4rem 0.8rem;
-            background: rgba(0, 243, 255, 0.08);
-            color: var(--accent-blue);
-            font-family: 'Space Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            border-radius: 4px;
-        }
-        .cta {
-            max-width: 700px;
-            margin: 0 auto 5rem;
-            text-align: center;
-            padding: 4rem;
-            background: linear-gradient(145deg, var(--bg-darker), var(--bg-dark));
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            position: relative;
-            overflow: hidden;
-        }
-        .cta::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 243, 255, 0.05) 0%, transparent 70%);
-            z-index: 0;
-        }
-        .cta-content {
-            position: relative;
-            z-index: 1;
-        }
-        .price {
-            font-family: 'Space Mono', monospace;
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin: 1.5rem 0 1rem;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .price-sub {
-            color: var(--text-secondary);
-            font-size: 1rem;
-            margin-bottom: 2rem;
-        }
-        .btn {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
-            color: #000;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 1.25rem 3rem;
-            text-decoration: none;
-            border-radius: 8px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 20px rgba(0, 243, 255, 0.4);
-        }
-        .contact {
-            margin-top: 1.5rem;
-            color: var(--accent-blue);
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-        .contact:hover {
-            opacity: 0.7;
-        }
-        .disclaimer {
-            text-align: center;
-            font-size: 0.75rem;
-            color: #666;
-            padding: 3rem 2rem;
-            border-top: 1px solid var(--border-color);
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        .disclaimer strong {
-            color: var(--text-primary);
-        }
-        footer {
-            text-align: center;
-            padding: 2rem;
-            color: #555;
-            font-size: 0.75rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
-        }
-        @media (max-width: 768px) {
-            .container {
-                padding: 4rem 1.5rem 3rem;
-            }
-            .grid {
-                grid-template-columns: 1fr;
-            }
-            .cta {
-                padding: 3rem 2rem;
-            }
-            .price {
-                font-size: 2.5rem;
-            }
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background-color: var(--bg-dark); color: var(--text-primary); font-family: 'Inter', sans-serif; line-height: 1.6; overflow-x: hidden; min-height: 100vh; }
+        @keyframes text-flicker { 0%, 100% { text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 40px rgba(0, 243, 255, 0.2); opacity: 1; } 30% { text-shadow: 0 0 15px rgba(0, 243, 255, 0.6), 0 0 30px rgba(157, 80, 255, 0.4); opacity: 0.9; } 32% { text-shadow: 0 0 10px rgba(0, 243, 255, 0.4), 0 0 25px rgba(157, 80, 255, 0.3), 0 0 50px rgba(157, 80, 255, 0.5); opacity: 1; } 70% { text-shadow: 0 0 20px rgba(0, 243, 255, 0.5), 0 0 35px rgba(157, 80, 255, 0.4); opacity: 1; } 72% { text-shadow: 0 0 10px rgba(0, 243, 255, 0.3), 0 0 20px rgba(157, 80, 255, 0.2); opacity: 0.8; } }
+        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; opacity: 0.2; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 6rem 2rem 4rem; }
+        header { text-align: center; margin-bottom: 6rem; }
+        .logo { font-family: 'Space Mono', monospace; font-weight: 700; font-size: clamp(4rem, 12vw, 8rem); line-height: 1; margin-bottom: 1.5rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; letter-spacing: -0.05em; animation: text-flicker 4s linear infinite; }
+        .tagline { font-size: clamp(1.2rem, 3vw, 1.8rem); color: var(--text-secondary); font-weight: 300; margin-top: 1rem; max-width: 800px; margin-left: auto; margin-right: auto; }
+        .thesis { max-width: 800px; margin: 0 auto 5rem; text-align: center; font-size: 1.2rem; color: var(--text-secondary); line-height: 1.8; }
+        .thesis-highlight { color: var(--accent-blue); font-weight: 600; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-bottom: 6rem; }
+        .card { background: var(--card-bg); border: 1px solid var(--border-color); padding: 2.5rem; border-radius: 12px; transition: all 0.3s ease; }
+        .card:hover { transform: translateY(-5px); border-color: var(--accent-blue); box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1); }
+        .card-title { font-family: 'Space Mono', monospace; font-size: 1.3rem; font-weight: 700; margin-bottom: 1rem; color: var(--text-primary); display: flex; align-items: center; gap: 0.75rem; }
+        .card-icon { font-size: 1.2rem; color: var(--accent-blue); }
+        .card-desc { font-size: 0.95rem; color: var(--text-secondary); line-height: 1.7; }
+        .card-tag { display: inline-block; margin-top: 1.25rem; padding: 0.4rem 0.8rem; background: rgba(0, 243, 255, 0.08); color: var(--accent-blue); font-family: 'Space Mono', monospace; font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; border-radius: 4px; }
+        .cta, .offer-cta { max-width: 700px; margin: 0 auto 5rem; text-align: center; padding: 4rem; background: linear-gradient(145deg, var(--bg-darker), var(--bg-dark)); border: 1px solid var(--border-color); border-radius: 16px; position: relative; overflow: hidden; }
+        .cta::before, .offer-cta::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(0, 243, 255, 0.05) 0%, transparent 70%); z-index: 0; }
+        .cta-content, .offer-content { position: relative; z-index: 1; }
+        .price { font-family: 'Space Mono', monospace; font-size: 3.5rem; font-weight: 700; margin: 1.5rem 0 1rem; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .price-sub { color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem; }
+        .btn { display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: #000; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 1rem; padding: 1.25rem 3rem; text-decoration: none; border-radius: 8px; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s ease; border: none; cursor: pointer; }
+        .btn:hover { transform: translateY(-2px); box-shadow: 0 5px 20px rgba(0, 243, 255, 0.4); }
+        .btn:disabled { background: #555; color: #aaa; cursor: not-allowed; box-shadow: none; }
+        .contact { margin-top: 1.5rem; color: var(--accent-blue); font-size: 0.9rem; cursor: pointer; transition: opacity 0.3s; }
+        .contact:hover { opacity: 0.7; }
+        .disclaimer { text-align: center; font-size: 0.75rem; color: #666; padding: 3rem 2rem; border-top: 1px solid var(--border-color); line-height: 1.6; max-width: 800px; margin: 0 auto; }
+        .disclaimer strong { color: var(--text-primary); }
+        footer { text-align: center; padding: 2rem; color: #555; font-size: 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+        .offer-cta { margin-top: -2rem; }
+        .offer-cta h2 { font-family: 'Space Mono', monospace; font-size: 2rem; margin-bottom: 2rem; }
+        #offerForm input, #offerForm textarea { width: 100%; padding: 1rem; margin-bottom: 1rem; background: var(--bg-darker); border: 1px solid var(--border-color); color: var(--text-primary); font-family: 'Inter', sans-serif; border-radius: 6px; }
+        #offerForm input:focus, #offerForm textarea:focus { border-color: var(--accent-blue); outline: none; }
+        #form-status { height: 20px; margin-top: 1.5rem; font-family: 'Space Mono', monospace; color: var(--accent-blue); }
+        @media (max-width: 768px) { .container { padding: 4rem 1.5rem 3rem; } .grid { grid-template-columns: 1fr; } .cta, .offer-cta { padding: 3rem 2rem; } .price { font-size: 2.5rem; } }
     </style>
 </head>
 <body>
-
-    <!-- MODIFICATION 3: Particles background effect -->
     <div id="particles-js"></div>
-
     <div class="container">
         <header>
             <div class="logo">TERAFAB</div>
@@ -287,69 +83,42 @@
         </div>
 
         <div class="grid">
-            <!-- Grid cards remain unchanged -->
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> AI Orchestration</div>
-                <div class="card-desc">The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.</div>
-                <div class="card-tag">Market: $500B AI Infrastructure</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Neural Architecture</div>
-                <div class="card-desc">The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.</div>
-                <div class="card-tag">Tech: Advanced Model Design</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Distributed Intelligence</div>
-                <div class="card-desc">The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.</div>
-                <div class="card-tag">Trend: Federated Learning</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Cognitive Fabrication</div>
-                <div class="card-desc">Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.</div>
-                <div class="card-tag">Application: Knowledge Systems</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Autonomous Systems</div>
-                <div class="card-desc">The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.</div>
-                <div class="card-tag">Sector: Intelligent Systems</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Intelligence Scaling</div>
-                <div class="card-desc">The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.</div>
-                <div class="card-tag">Potential: AGI Scaling</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Quantum-Inspired AI</div>
-                <div class="card-desc">For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.</div>
-                <div class="card-tag">Tech: Next-Gen Computation</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Adaptive Systems</div>
-                <div class="card-desc">Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.</div>
-                <div class="card-tag">Trend: Self-Optimization</div>
-            </div>
-            <div class="card">
-                <div class="card-title"><span class="card-icon">◉</span> Workflow Generation</div>
-                <div class="card-desc">Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.</div>
-                <div class="card-tag">Application: Process Automation</div>
-            </div>
+             <div class="card"><div class="card-title"><span class="card-icon">◉</span> AI Orchestration</div><div class="card-desc">The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.</div><div class="card-tag">Market: $500B AI Infrastructure</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Neural Architecture</div><div class="card-desc">The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.</div><div class="card-tag">Tech: Advanced Model Design</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Distributed Intelligence</div><div class="card-desc">The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.</div><div class="card-tag">Trend: Federated Learning</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Cognitive Fabrication</div><div class="card-desc">Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.</div><div class="card-tag">Application: Knowledge Systems</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Autonomous Systems</div><div class="card-desc">The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.</div><div class="card-tag">Sector: Intelligent Systems</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Intelligence Scaling</div><div class="card-desc">The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.</div><div class="card-tag">Potential: AGI Scaling</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Quantum-Inspired AI</div><div class="card-desc">For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.</div><div class="card-tag">Tech: Next-Gen Computation</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Adaptive Systems</div><div class="card-desc">Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.</div><div class="card-tag">Trend: Self-Optimization</div></div>
+            <div class="card"><div class="card-title"><span class="card-icon">◉</span> Workflow Generation</div><div class="card-desc">Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.</div><div class="card-tag">Application: Process Automation</div></div>
         </div>
 
         <div class="cta">
             <div class="cta-content">
                 <div style="font-size: 0.8rem; color: var(--accent-blue); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Premium Domain Asset</div>
-                <div class="price">$70,000 USD</div>
+                <div class="price">$42,000 USD</div>
                 <div class="price-sub">
                     Includes domain asset <strong>terafab.ai</strong><br>
-                    <span style="color: var(--accent-blue); display: block; margin-top: 0.5rem;">14-Month Financing Available</span>
+                    <span style="color: var(--accent-blue); display: block; margin-top: 0.5rem;">12-Month Financing Available</span>
                 </div>
-                <!-- MODIFICATION 2: Purchase link updated -->
-                <a href="https://www.spaceship.com/s/buy/terafab.ai/wKWdQvEbaHTSSnzd" target="\_blank" class="btn">
-                    Acquire Now
-                </a>
-                <div class="contact" onclick="copyEmail()">
-                    Contact: joshua369x@gmail.com
-                </div>
+                <a href="https://www.spaceship.com/s/buy/terafab.ai/8NoraCZE7AgiQ2tW" target="_blank" class="btn">Acquire Now</a>
+                <div class="contact" onclick="copyEmail()">Contact: joshua369x@gmail.com</div>
+            </div>
+        </div>
+
+        <!-- OFFER FORM SECTION -->
+        <div class="offer-cta">
+            <div class="offer-content">
+                <h2>Submit a Private Offer</h2>
+                <form id="offerForm" action="https://formspree.io/f/xgollnpw" method="POST">
+                    <input type="text" name="name" placeholder="Your Name / Company" required>
+                    <input type="email" name="email" placeholder="Your Contact Email" required>
+                    <input type="text" name="offer_amount" placeholder="Offer Amount (USD) (Optional)">
+                    <textarea name="message" rows="4" placeholder="Your Message (Optional)"></textarea>
+                    <button type="submit" class="btn">Submit Offer</button>
+                    <div id="form-status"></div>
+                </form>
             </div>
         </div>
 
@@ -362,100 +131,46 @@
         <p>© 2026 PREMIUM DOMAIN ASSET | TERAFAB.AI</p>
     </footer>
 
-    <!-- MODIFICATION 3: particles.js library -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
-    <!-- MODIFICATION 3: Updated particles.js configuration script -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            particlesJS('particles-js', {
-                particles: {
-                    number: { value: 100, density: { enable: true, value_area: 800 } },
-                    color: { value: ['#00f3ff', '#9d50ff'] },
-                    shape: { type: 'circle' },
-                    opacity: { value: 0.4, random: true },
-                    size: { value: 2.5, random: true },
-                    line_linked: {
-                        enable: true,
-                        distance: 120,
-                        color: '#9d50ff',
-                        opacity: 0.1,
-                        width: 1
-                    },
-                    move: {
-                        enable: true,
-                        speed: 2.5,
-                        direction: 'none',
-                        random: true,
-                        straight: false,
-                        out_mode: 'out',
-                        bounce: false
-                    }
-                },
-                interactivity: {
-                    detect_on: 'canvas',
-                    events: {
-                        onhover: { enable: true, mode: 'bubble' },
-                        onclick: { enable: false },
-                        resize: true
-                    },
-                    modes: {
-                        bubble: {
-                            distance: 200,
-                            size: 4,
-                            duration: 2,
-                            opacity: 0.8
-                        }
-                    }
-                },
-                retina_detect: true
-            });
+            function initParticles(isMobile) {
+                const particleCount = isMobile ? 40 : 100;
+                const particleSpeed = isMobile ? 2 : 2.5;
+                const hoverEnable = !isMobile;
 
-            window.addEventListener('resize', function() {
-                if (window.innerWidth < 768) {
-                    particlesJS('particles-js', {
-                        particles: {
-                            number: { value: 40, density: { enable: true, value_area: 800 } },
-                            color: { value: ['#00f3ff', '#9d50ff'] },
-                            shape: { type: 'circle' },
-                            opacity: { value: 0.4, random: true },
-                            size: { value: 2, random: true },
-                            line_linked: {
-                                enable: true,
-                                distance: 120,
-                                color: '#9d50ff',
-                                opacity: 0.15,
-                                width: 1
-                            },
-                            move: {
-                                enable: true,
-                                speed: 2,
-                                direction: 'none',
-                                random: true,
-                                straight: false,
-                                out_mode: 'out',
-                                bounce: false
-                            }
-                        },
-                        interactivity: {
-                            detect_on: 'canvas',
-                            events: {
-                                onhover: { enable: false },
-                                onclick: { enable: false },
-                                resize: true
-                            }
-                        },
-                        retina_detect: true
-                    });
-                }
-            });
+                particlesJS('particles-js', {
+                    particles: {
+                        number: { value: particleCount, density: { enable: true, value_area: 800 } },
+                        color: { value: ['#00f3ff', '#9d50ff'] },
+                        shape: { type: 'circle' },
+                        opacity: { value: 0.4, random: true },
+                        size: { value: isMobile ? 2 : 2.5, random: true },
+                        line_linked: { enable: true, distance: 120, color: '#9d50ff', opacity: 0.1, width: 1 },
+                        move: { enable: true, speed: particleSpeed, direction: 'none', random: true, straight: false, out_mode: 'out', bounce: false }
+                    },
+                    interactivity: {
+                        detect_on: 'canvas',
+                        events: { onhover: { enable: hoverEnable, mode: 'bubble' }, onclick: { enable: false }, resize: true },
+                        modes: { bubble: { distance: 200, size: 4, duration: 2, opacity: 0.8 } }
+                    },
+                    retina_detect: true
+                });
+            }
+
+            const isMobile = window.innerWidth < 768;
+            initParticles(isMobile);
+
+            // Optional: Re-init on resize if needed, though particles.js handles some resizing.
+            // window.addEventListener('resize', () => initParticles(window.innerWidth < 768));
         });
 
         function copyEmail() {
             navigator.clipboard.writeText('joshua369x@gmail.com').then(function() {
                 const btn = document.querySelector('.contact');
                 const originalText = btn.textContent;
-                btn.textContent = 'Email copied to clipboard!';
+                btn.textContent = 'Email copied!';
                 btn.style.color = '#9d50ff';
                 setTimeout(function() {
                     btn.textContent = originalText;
@@ -463,6 +178,50 @@
                 }, 2000);
             });
         }
+        
+        // AJAX Form Submission
+        const form = document.getElementById('offerForm');
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const statusDiv = document.getElementById('form-status');
+            const submitBtn = form.querySelector('.btn');
+            const formData = new FormData(form);
+
+            statusDiv.textContent = 'Submitting...';
+            statusDiv.style.color = 'var(--accent-blue)';
+            submitBtn.disabled = true;
+
+            fetch(form.action, {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    statusDiv.textContent = 'Offer Sent! We will be in touch shortly.';
+                    statusDiv.style.color = 'var(--accent-purple)';
+                    submitBtn.textContent = 'Success';
+                    form.reset();
+                } else {
+                    response.json().then(data => {
+                        statusDiv.textContent = data.errors ? data.errors.map(error => error.message).join(', ') : 'An error occurred. Please try again.';
+                        statusDiv.style.color = '#ff4d4d';
+                        submitBtn.disabled = false;
+                    });
+                }
+            }).catch(error => {
+                statusDiv.textContent = 'Network error. Please try again later.';
+                statusDiv.style.color = '#ff4d4d';
+                submitBtn.disabled = false;
+            }).finally(() => {
+                setTimeout(() => {
+                    if(!submitBtn.disabled || submitBtn.textContent === 'Success') {
+                        statusDiv.textContent = '';
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit Offer';
+                    }
+                }, 5000);
+            });
+        });
     </script>
 </body>
 </html>
