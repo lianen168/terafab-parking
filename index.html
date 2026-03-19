@@ -4,23 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeraFab.ai | Trillion-Scale Intelligence Infrastructure</title>
-
     <!-- SEO Meta Tags -->
     <meta name="description" content="TeraFab.ai is the premium .ai domain asset for trillion-scale AI, representing the convergence of tera-scale intelligence and algorithmic fabrication.">
     <meta name="keywords" content="TeraFab.ai, tera-scale, trillion parameter model, AI infrastructure, premium .ai domain, federated learning, AGI scaling, computational architecture">
-
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.terafab.ai/"> 
     <meta property="og:title" content="TeraFab.ai | Trillion-Scale Intelligence Infrastructure">
     <meta property="og:description" content="The Definitive Naming Standard for Trillion-Parameter Intelligence.">
     <meta name="twitter:card" content="summary_large_image">
-
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <!-- 引入等宽科技字体 Share Tech Mono 和 科幻正文字体 Rajdhani -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
-
     <style>
         :root {
             --bg-base: #020204; /* 更深的纯黑背景 */
@@ -32,9 +28,7 @@
             --border-color: rgba(0, 243, 255, 0.15);
             --card-bg: rgba(2, 2, 4, 0.6);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body { 
             background-color: var(--bg-base);
             /* 科幻网格背景 */
@@ -49,7 +43,6 @@
             overflow-x: hidden; 
             min-height: 100vh; 
         }
-
         /* 背景粒子层 */
         #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; opacity: 0.3; pointer-events: none;}
         
@@ -65,11 +58,10 @@
             display: inline-block;
             margin-bottom: 1.5rem;
         }
-
         .logo { 
             font-family: 'Share Tech Mono', monospace; /* 等宽科技美学 */
             font-weight: 400; 
-            font-size: clamp(3.5rem, 10vw, 8.5rem); 
+            font-size: clamp(3rem, 12vw, 6rem); 
             line-height: 1.1;
             color: #fff;
             text-transform: uppercase;
@@ -82,7 +74,6 @@
                 0 0 50px rgba(0, 243, 255, 0.5);
             animation: energy-pulse 4s infinite alternate;
         }
-
         /* 全息色差与数字伪影 (Holographic Chromatic Aberration & Glitch) */
         .logo::before, .logo::after {
             content: attr(data-text);
@@ -95,26 +86,22 @@
             color: #fff;
             overflow: hidden;
         }
-
         .logo::before {
             left: 4px;
             text-shadow: -3px 0 var(--neon-magenta);
             animation: glitch-anim-1 3s infinite linear alternate-reverse;
             z-index: -1;
         }
-
         .logo::after {
             left: -4px;
             text-shadow: 3px 0 var(--neon-cyan);
             animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
             z-index: -2;
         }
-
         @keyframes energy-pulse {
             0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-cyan), 0 0 20px rgba(0, 243, 255, 0.6); opacity: 1; }
             50% { text-shadow: 0 0 2px #fff, 0 0 25px var(--neon-cyan), 0 0 45px var(--neon-magenta), 0 0 60px rgba(255, 0, 234, 0.4); opacity: 0.9; }
         }
-
         @keyframes glitch-anim-1 {
             0% { clip-path: inset(20% 0 80% 0); }
             20% { clip-path: inset(60% 0 10% 0); transform: translate(-2px, 1px); }
@@ -123,7 +110,6 @@
             80% { clip-path: inset(10% 0 70% 0); }
             100% { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 1px); }
         }
-
         @keyframes glitch-anim-2 {
             0% { clip-path: inset(10% 0 60% 0); }
             20% { clip-path: inset(30% 0 20% 0); transform: translate(2px, -1px); }
@@ -132,9 +118,7 @@
             80% { clip-path: inset(50% 0 30% 0); }
             100% { clip-path: inset(5% 0 80% 0); transform: translate(2px, -1px); }
         }
-
         /* --------------------------------------------------- */
-
         .tagline { 
             font-family: 'Share Tech Mono', monospace;
             font-size: clamp(0.9rem, 2vw, 1.2rem); 
@@ -146,6 +130,7 @@
         }
         
         .thesis { max-width: 800px; margin: 0 auto 5rem; text-align: center; font-size: 1.25rem; color: var(--text-secondary); line-height: 1.8; font-weight: 500;}
+        .thesis p { margin-bottom: 1.5rem; }
         .thesis-highlight { color: #fff; font-weight: 700; text-shadow: 0 0 8px var(--neon-magenta); letter-spacing: 1px;}
         
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 6rem; }
@@ -194,8 +179,10 @@
         .cta::after, .offer-cta::after { content: ''; position: absolute; bottom: -1px; right: -1px; width: 20px; height: 20px; border-bottom: 2px solid var(--neon-magenta); border-right: 2px solid var(--neon-magenta); }
         
         .price { font-family: 'Share Tech Mono', monospace; font-size: 3.5rem; margin: 1.5rem 0 1rem; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.3); }
-        .price-sub { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem; font-weight: 600;}
-        
+        .price-sub { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;}
+        .price-sub:last-of-type { margin-bottom: 2.5rem; }
+        .price-notice { font-family: 'Share Tech Mono', monospace; color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 2.5rem; letter-spacing: 1px; text-transform: uppercase;}
+
         /* Cyber 按钮 */
         .btn { 
             display: inline-block; 
@@ -228,8 +215,9 @@
         footer { text-align: center; padding: 2rem; color: #444; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.02); font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;}
         
         .offer-cta { margin-top: -2rem; }
-        .offer-cta h2 { font-family: 'Share Tech Mono', monospace; font-size: 1.8rem; margin-bottom: 2rem; color: #fff; text-transform: uppercase; letter-spacing: 1px;}
-        
+        .offer-cta h2 { font-family: 'Share Tech Mono', monospace; font-size: 1.8rem; margin-bottom: 1rem; color: #fff; text-transform: uppercase; letter-spacing: 1px;}
+        .form-privacy-notice { font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 2rem; letter-spacing: 1px; }
+
         #offerForm input, #offerForm textarea { 
             width: 100%; padding: 1rem; margin-bottom: 1rem; 
             background: rgba(0,0,0,0.6); 
@@ -248,17 +236,16 @@
         #form-status { height: 20px; margin-top: 1.5rem; font-family: 'Share Tech Mono', monospace; color: var(--neon-cyan); font-size: 0.9rem;}
         
         @media (max-width: 768px) { 
-            .container { padding: 4rem 1.5rem 3rem; } 
+            .container { padding: 3rem 1rem; } 
             .grid { grid-template-columns: 1fr; } 
-            .cta, .offer-cta { padding: 3rem 2rem; } 
-            .price { font-size: 2.8rem; } 
+            .cta, .offer-cta { padding: 3rem 1.5rem; } 
+            .price { font-size: 2.2rem; } 
+            .btn { padding: 1rem 2.5rem; }
         }
     </style>
 </head>
 <body>
-
     <div id="particles-js"></div>
-
     <div class="container">
         <header>
             <!-- Data-text attribute is crucial for the CSS Glitch effect -->
@@ -267,11 +254,10 @@
             </div>
             <div class="tagline">Trillion-Scale Intelligence // Algorithmic Fabrication</div>
         </header>
-
         <div class="thesis">
-            "As artificial intelligence transcends human cognition, the infrastructure that defines these systems becomes paramount. <span class="thesis-highlight">TeraFab.ai</span> represents the convergence of scale and sophistication: the definitive naming standard for platforms that process <strong>tera-scale intelligence</strong> with algorithmic precision."
+            <p>"As artificial intelligence transcends human cognition, the infrastructure that defines these systems becomes paramount. <span class="thesis-highlight">TeraFab.ai</span> represents the convergence of scale and sophistication: the definitive naming standard for platforms that process <strong>tera-scale intelligence</strong> with algorithmic precision."</p>
+            <p>Perfect alignment with emerging tera-scale fabrication initiatives in autonomous systems and next-gen compute.</p>
         </div>
-
         <div class="grid">
              <div class="card"><div class="card-title"><span class="card-icon">►</span> AI Orchestration</div><div class="card-desc">The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.</div><div class="card-tag">SYS.REQ // $500B Infrastructure</div></div>
             <div class="card"><div class="card-title"><span class="card-icon">►</span> Neural Architecture</div><div class="card-desc">The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.</div><div class="card-tag">TECH // Advanced Model Design</div></div>
@@ -283,24 +269,28 @@
             <div class="card"><div class="card-title"><span class="card-icon">►</span> Adaptive Systems</div><div class="card-desc">Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.</div><div class="card-tag">TREND // Self-Optimization</div></div>
             <div class="card"><div class="card-title"><span class="card-icon">►</span> Workflow Generation</div><div class="card-desc">Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.</div><div class="card-tag">APP // Process Automation</div></div>
         </div>
-
         <div class="cta">
             <div class="cta-content">
-                <div style="font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; color: var(--neon-magenta); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">[ Premium Domain Asset ]</div>
-                <div class="price">$70,000 USD</div>
+                <div style="font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; color: var(--neon-magenta); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">\[ Premium Domain Asset \]</div>
+                <div class="price">$120,000 USD</div>
+                <div class="price-sub">
+                    Comparable .ai assets: lotus.ai $400,000 | wisdom.ai $741,000 | bot.ai $1.2M+<br>
+                    <span style="color: var(--neon-cyan); display: block; margin-top: 0.5rem;">terafab.ai — exact match to trillion-scale AI fab keyword</span>
+                </div>
+                <div class="price-notice">Note: The price of this domain will be adjusted in real time based on traffic.</div>
                 <div class="price-sub">
                     Includes domain asset <strong style="color: #fff;">terafab.ai</strong><br>
-                    <span style="color: var(--neon-cyan); display: block; margin-top: 0.5rem; font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">> 10-Month Financing Available_</span>
+                    <span style="color: var(--neon-cyan); display: block; margin-top: 0.5rem; font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">> 12-Month Financing Available\_</span>
                 </div>
-                <a href="https://www.spaceship.com/s/buy/terafab.ai/4YlfpKwiUwxbjAzC" target="_blank" class="btn">Acquire Node</a>
-                <div class="contact" onclick="copyEmail()">[ INIT_CONTACT: joshua369x@gmail.com ]</div>
+                <a href="https://www.spaceship.com/s/buy/terafab.ai/BBqe0k7za8rSxjI2" target="\_blank" class="btn">Acquire Node</a>
+                <div class="contact" onclick="copyEmail()">\[ INIT_CONTACT: joshua369x@gmail.com \]</div>
             </div>
         </div>
-
         <!-- OFFER FORM SECTION -->
         <div class="offer-cta">
             <div class="offer-content">
                 <h2>Submit a Private Offer</h2>
+                <div class="form-privacy-notice">All submissions encrypted • Private & Confidential • No public disclosure</div>
                 <form id="offerForm" action="https://formspree.io/f/xgollnpw" method="POST">
                     <input type="text" name="name" placeholder="Entity Name / Company" required>
                     <input type="email" name="email" placeholder="Secure Contact Email" required>
@@ -311,29 +301,26 @@
                 </form>
             </div>
         </div>
-
         <div class="disclaimer">
             DISCLAIMER: TeraFab.ai is a premium domain asset for digital AI systems and computational architecture. It is NOT affiliated with Terabase Energy, Inc.
         </div>
     </div>
-
     <footer>
         <p>© 2026 PREMIUM DOMAIN ASSET // TERAFAB.AI // SYS.ONLINE</p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             function initParticles(isMobile) {
-                const particleCount = isMobile ? 30 : 80;
-                const particleSpeed = isMobile ? 1.5 : 2;
+                const particleCount = isMobile ? 25 : 80;
+                const particleSpeed = isMobile ? 1 : 2;
                 
                 particlesJS('particles-js', {
                     particles: {
                         number: { value: particleCount, density: { enable: true, value_area: 800 } },
                         // 赛博朋克粒子颜色：青色与洋红
-                        color: { value: ['#00f3ff', '#ff00ea'] },
+                        color: { value: \['#00f3ff', '#ff00ea'\] },
                         shape: { type: 'circle' },
                         opacity: { value: 0.6, random: true },
                         size: { value: isMobile ? 1.5 : 2.5, random: true },
@@ -348,16 +335,14 @@
                     retina_detect: true
                 });
             }
-
             const isMobile = window.innerWidth < 768;
             initParticles(isMobile);
         });
-
         function copyEmail() {
             navigator.clipboard.writeText('joshua369x@gmail.com').then(function() {
                 const btn = document.querySelector('.contact');
                 const originalText = btn.textContent;
-                btn.textContent = '[ EMAIL COPIED TO CLIPBOARD ]';
+                btn.textContent = '\[ EMAIL COPIED TO CLIPBOARD \]';
                 btn.style.color = '#00f3ff';
                 setTimeout(function() {
                     btn.textContent = originalText;
@@ -373,11 +358,9 @@
             const statusDiv = document.getElementById('form-status');
             const submitBtn = form.querySelector('.btn');
             const formData = new FormData(form);
-
             statusDiv.textContent = '> Transmitting data...';
             statusDiv.style.color = 'var(--neon-cyan)';
             submitBtn.disabled = true;
-
             fetch(form.action, {
                 method: 'POST',
                 body: formData,
