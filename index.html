@@ -4,34 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeraFab.ai | Trillion-Scale Intelligence Infrastructure</title>
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="TeraFab.ai is the premium .ai domain asset for trillion-scale AI, representing the convergence of tera-scale intelligence and algorithmic fabrication.">
-    <meta name="keywords" content="TeraFab.ai, tera-scale, trillion parameter model, AI infrastructure, premium .ai domain, federated learning, AGI scaling, computational architecture">
+    <meta name="keywords" content="TeraFab.ai, tera-scale, trillion parameter model, AI infrastructure, premium .ai domain, federated learning, AGI scaling, computational architecture, tesla terafab, ai chip fabrication">
+
     <!-- Open Graph / Twitter -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.terafab.ai/"> 
+    <meta property="og:url" content="https://www.terafab.ai/">
     <meta property="og:title" content="TeraFab.ai | Trillion-Scale Intelligence Infrastructure">
     <meta property="og:description" content="The Definitive Naming Standard for Trillion-Parameter Intelligence.">
     <meta name="twitter:card" content="summary_large_image">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- 引入等宽科技字体 Share Tech Mono 和 科幻正文字体 Rajdhani -->
+    <!-- Import futuristic fonts: Share Tech Mono and Rajdhani -->
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+
     <style>
         :root {
-            --bg-base: #020204; /* 更深的纯黑背景 */
+            --bg-base: #020204;
             --grid-color: rgba(0, 243, 255, 0.04);
-            --text-primary: #f0f4f8; 
+            --text-primary: #f0f4f8;
             --text-secondary: #8c9bb0;
-            --neon-cyan: #00f3ff; 
-            --neon-magenta: #ff00ea; /* 赛博朋克洋红 */
+            --neon-cyan: #00f3ff;
+            --neon-magenta: #ff00ea;
             --border-color: rgba(0, 243, 255, 0.15);
             --card-bg: rgba(2, 2, 4, 0.6);
         }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body { 
             background-color: var(--bg-base);
-            /* 科幻网格背景 */
             background-image: 
                 linear-gradient(var(--grid-color) 1px, transparent 1px),
                 linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
@@ -43,30 +48,48 @@
             overflow-x: hidden; 
             min-height: 100vh; 
         }
-        /* 背景粒子层 */
-        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; opacity: 0.3; pointer-events: none;}
+
+        #particles-js { 
+            position: fixed; 
+            width: 100%; 
+            height: 100%; 
+            top: 0; 
+            left: 0; 
+            z-index: -1; 
+            opacity: 0.3; 
+            pointer-events: none;
+        }
         
-        .container { max-width: 1400px; margin: 0 auto; padding: 6rem 2rem 4rem; position: relative; z-index: 1; }
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+            padding: 6rem 2rem 4rem; 
+            position: relative; 
+            z-index: 1; 
+        }
         
-        header { text-align: center; margin-bottom: 6rem; display: flex; flex-direction: column; align-items: center; }
+        header { 
+            text-align: center; 
+            margin-bottom: 6rem; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
         
-        /* ---------------------------------------------------
-           CYBERPUNK GLITCH LOGO (AI DIGITAL ARTIFACT STYLE)
-           --------------------------------------------------- */
         .logo-wrapper {
             position: relative;
             display: inline-block;
             margin-bottom: 1.5rem;
         }
+
         .logo { 
-            font-family: 'Share Tech Mono', monospace; /* 等宽科技美学 */
+            font-family: 'Share Tech Mono', monospace;
             font-weight: 400; 
             font-size: clamp(3rem, 12vw, 6rem); 
             line-height: 1.1;
             color: #fff;
             text-transform: uppercase;
             letter-spacing: 0.02em;
-            /* 高对比度发光边缘与能量脉冲 */
             text-shadow: 
                 0 0 5px #fff,
                 0 0 15px var(--neon-cyan),
@@ -74,7 +97,7 @@
                 0 0 50px rgba(0, 243, 255, 0.5);
             animation: energy-pulse 4s infinite alternate;
         }
-        /* 全息色差与数字伪影 (Holographic Chromatic Aberration & Glitch) */
+
         .logo::before, .logo::after {
             content: attr(data-text);
             position: absolute;
@@ -82,26 +105,30 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--bg-base); /* 遮挡底部文字以产生错位感 */
+            background: var(--bg-base);
             color: #fff;
             overflow: hidden;
         }
+
         .logo::before {
             left: 4px;
             text-shadow: -3px 0 var(--neon-magenta);
             animation: glitch-anim-1 3s infinite linear alternate-reverse;
             z-index: -1;
         }
+
         .logo::after {
             left: -4px;
             text-shadow: 3px 0 var(--neon-cyan);
             animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
             z-index: -2;
         }
+
         @keyframes energy-pulse {
             0%, 100% { text-shadow: 0 0 5px #fff, 0 0 10px var(--neon-cyan), 0 0 20px rgba(0, 243, 255, 0.6); opacity: 1; }
             50% { text-shadow: 0 0 2px #fff, 0 0 25px var(--neon-cyan), 0 0 45px var(--neon-magenta), 0 0 60px rgba(255, 0, 234, 0.4); opacity: 0.9; }
         }
+
         @keyframes glitch-anim-1 {
             0% { clip-path: inset(20% 0 80% 0); }
             20% { clip-path: inset(60% 0 10% 0); transform: translate(-2px, 1px); }
@@ -110,6 +137,7 @@
             80% { clip-path: inset(10% 0 70% 0); }
             100% { clip-path: inset(30% 0 50% 0); transform: translate(-2px, 1px); }
         }
+
         @keyframes glitch-anim-2 {
             0% { clip-path: inset(10% 0 60% 0); }
             20% { clip-path: inset(30% 0 20% 0); transform: translate(2px, -1px); }
@@ -118,7 +146,7 @@
             80% { clip-path: inset(50% 0 30% 0); }
             100% { clip-path: inset(5% 0 80% 0); transform: translate(2px, -1px); }
         }
-        /* --------------------------------------------------- */
+
         .tagline { 
             font-family: 'Share Tech Mono', monospace;
             font-size: clamp(0.9rem, 2vw, 1.2rem); 
@@ -129,24 +157,36 @@
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
         }
         
-        .thesis { max-width: 800px; margin: 0 auto 5rem; text-align: center; font-size: 1.25rem; color: var(--text-secondary); line-height: 1.8; font-weight: 500;}
+        .thesis { 
+            max-width: 800px; 
+            margin: 0 auto 5rem; 
+            text-align: center; 
+            font-size: 1.25rem; 
+            color: var(--text-secondary); 
+            line-height: 1.8; 
+            font-weight: 500;
+        }
         .thesis p { margin-bottom: 1.5rem; }
         .thesis-highlight { color: #fff; font-weight: 700; text-shadow: 0 0 8px var(--neon-magenta); letter-spacing: 1px;}
         
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin-bottom: 6rem; }
+        .grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+            gap: 2rem; 
+            margin-bottom: 6rem; 
+        }
         
-        /* Cyber UI 卡片设计 */
         .card { 
             background: var(--card-bg); 
             border: 1px solid rgba(255,255,255,0.05); 
-            border-left: 3px solid var(--border-color); /* 赛博朋克左侧硬边 */
+            border-left: 3px solid var(--border-color);
             padding: 2.5rem; 
             transition: all 0.3s ease; 
             backdrop-filter: blur(10px);
             position: relative;
             overflow: hidden;
         }
-        .card::after { /* 扫描线反光效果 */
+        .card::after { 
             content: '';
             position: absolute;
             top: 0; left: -100%; width: 50%; height: 100%;
@@ -160,30 +200,81 @@
         }
         .card:hover::after { left: 100%; }
         
-        .card-title { font-family: 'Share Tech Mono', monospace; font-size: 1.3rem; margin-bottom: 1rem; color: #fff; display: flex; align-items: center; gap: 0.75rem; letter-spacing: 1px;}
+        .card-title { 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 1.3rem; 
+            margin-bottom: 1rem; 
+            color: #fff; 
+            display: flex; 
+            align-items: center; 
+            gap: 0.75rem; 
+            letter-spacing: 1px;
+        }
         .card-icon { color: var(--neon-magenta); text-shadow: 0 0 8px var(--neon-magenta); font-size: 1rem;}
         .card-desc { font-size: 1.05rem; color: var(--text-secondary); line-height: 1.7; font-weight: 500;}
         
-        .card-tag { display: inline-block; margin-top: 1.25rem; padding: 0.3rem 0.6rem; background: rgba(0, 243, 255, 0.05); border: 1px solid rgba(0, 243, 255, 0.2); color: var(--neon-cyan); font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; letter-spacing: 1px; text-transform: uppercase; }
+        .card-tag { 
+            display: inline-block; 
+            margin-top: 1.25rem; 
+            padding: 0.3rem 0.6rem; 
+            background: rgba(0, 243, 255, 0.05); 
+            border: 1px solid rgba(0, 243, 255, 0.2); 
+            color: var(--neon-cyan); 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 0.75rem; 
+            letter-spacing: 1px; 
+            text-transform: uppercase; 
+        }
         
-        /* 交互区域 (购买/表单) */
         .cta, .offer-cta { 
-            max-width: 700px; margin: 0 auto 5rem; text-align: center; padding: 4rem; 
+            max-width: 700px; 
+            margin: 0 auto 5rem; 
+            text-align: center; 
+            padding: 4rem; 
             background: rgba(0,0,0,0.5); 
             border: 1px solid var(--border-color); 
             position: relative; 
             backdrop-filter: blur(10px);
         }
-        /* 角落的科幻UI装饰 */
-        .cta::before, .offer-cta::before { content: ''; position: absolute; top: -1px; left: -1px; width: 20px; height: 20px; border-top: 2px solid var(--neon-cyan); border-left: 2px solid var(--neon-cyan); }
-        .cta::after, .offer-cta::after { content: ''; position: absolute; bottom: -1px; right: -1px; width: 20px; height: 20px; border-bottom: 2px solid var(--neon-magenta); border-right: 2px solid var(--neon-magenta); }
+        .cta::before, .offer-cta::before { 
+            content: ''; 
+            position: absolute; 
+            top: -1px; left: -1px; 
+            width: 20px; height: 20px; 
+            border-top: 2px solid var(--neon-cyan); 
+            border-left: 2px solid var(--neon-cyan); 
+        }
+        .cta::after, .offer-cta::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -1px; right: -1px; 
+            width: 20px; height: 20px; 
+            border-bottom: 2px solid var(--neon-magenta); 
+            border-right: 2px solid var(--neon-magenta); 
+        }
         
-        .price { font-family: 'Share Tech Mono', monospace; font-size: 3.5rem; margin: 1.5rem 0 1rem; color: #fff; text-shadow: 0 0 15px rgba(255,255,255,0.3); }
-        .price-sub { color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600;}
-        .price-sub:last-of-type { margin-bottom: 2.5rem; }
-        .price-notice { font-family: 'Share Tech Mono', monospace; color: var(--text-secondary); font-size: 0.8rem; margin-bottom: 2.5rem; letter-spacing: 1px; text-transform: uppercase;}
+        .price { 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 3.5rem; 
+            margin: 1.5rem 0 1rem; 
+            color: #fff; 
+            text-shadow: 0 0 15px rgba(255,255,255,0.3); 
+        }
+        .price-sub { 
+            color: var(--text-secondary); 
+            font-size: 1.1rem; 
+            margin-bottom: 1rem; 
+            font-weight: 600;
+        }
+        .price-notice { 
+            font-family: 'Share Tech Mono', monospace; 
+            color: var(--text-secondary); 
+            font-size: 0.85rem; 
+            margin-bottom: 2.5rem; 
+            letter-spacing: 1px; 
+            text-transform: uppercase;
+        }
 
-        /* Cyber 按钮 */
         .btn { 
             display: inline-block; 
             background: transparent; 
@@ -207,19 +298,62 @@
             box-shadow: 0 0 25px var(--neon-cyan); 
         }
         
-        .contact { margin-top: 2rem; color: var(--text-secondary); font-family: 'Share Tech Mono', monospace; font-size: 0.95rem; cursor: pointer; transition: color 0.3s; text-transform: uppercase;}
-        .contact:hover { color: var(--neon-magenta); text-shadow: 0 0 8px var(--neon-magenta);}
+        .contact { 
+            margin-top: 2rem; 
+            color: var(--text-secondary); 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 0.95rem; 
+            cursor: pointer; 
+            transition: color 0.3s; 
+            text-transform: uppercase;
+        }
+        .contact:hover { 
+            color: var(--neon-magenta); 
+            text-shadow: 0 0 8px var(--neon-magenta);
+        }
         
-        .disclaimer { text-align: center; font-size: 0.85rem; color: #555; padding: 3rem 2rem; border-top: 1px solid rgba(255,255,255,0.05); line-height: 1.6; max-width: 800px; margin: 0 auto; }
+        .disclaimer { 
+            text-align: center; 
+            font-size: 0.85rem; 
+            color: #555; 
+            padding: 3rem 2rem; 
+            border-top: 1px solid rgba(255,255,255,0.05); 
+            line-height: 1.6; 
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
         
-        footer { text-align: center; padding: 2rem; color: #444; font-size: 0.85rem; border-top: 1px solid rgba(255, 255, 255, 0.02); font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;}
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            color: #444; 
+            font-size: 0.85rem; 
+            border-top: 1px solid rgba(255, 255, 255, 0.02); 
+            font-family: 'Share Tech Mono', monospace; 
+            letter-spacing: 1px;
+        }
         
         .offer-cta { margin-top: -2rem; }
-        .offer-cta h2 { font-family: 'Share Tech Mono', monospace; font-size: 1.8rem; margin-bottom: 1rem; color: #fff; text-transform: uppercase; letter-spacing: 1px;}
-        .form-privacy-notice { font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; color: var(--text-secondary); margin-bottom: 2rem; letter-spacing: 1px; }
+        .offer-cta h2 { 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 1.8rem; 
+            margin-bottom: 1rem; 
+            color: #fff; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+        }
+        .form-privacy-notice { 
+            font-family: 'Share Tech Mono', monospace; 
+            font-size: 0.8rem; 
+            color: var(--text-secondary); 
+            margin-bottom: 2rem; 
+            letter-spacing: 1px; 
+        }
 
         #offerForm input, #offerForm textarea { 
-            width: 100%; padding: 1rem; margin-bottom: 1rem; 
+            width: 100%; 
+            padding: 1rem; 
+            margin-bottom: 1rem; 
             background: rgba(0,0,0,0.6); 
             border: 1px solid rgba(255,255,255,0.1); 
             color: #fff; 
@@ -233,7 +367,13 @@
             box-shadow: inset 0 0 5px rgba(0,243,255,0.2); 
         }
         
-        #form-status { height: 20px; margin-top: 1.5rem; font-family: 'Share Tech Mono', monospace; color: var(--neon-cyan); font-size: 0.9rem;}
+        #form-status { 
+            height: 20px; 
+            margin-top: 1.5rem; 
+            font-family: 'Share Tech Mono', monospace; 
+            color: var(--neon-cyan); 
+            font-size: 0.9rem;
+        }
         
         @media (max-width: 768px) { 
             .container { padding: 3rem 1rem; } 
@@ -245,52 +385,94 @@
     </style>
 </head>
 <body>
+
     <div id="particles-js"></div>
+
     <div class="container">
         <header>
-            <!-- Data-text attribute is crucial for the CSS Glitch effect -->
             <div class="logo-wrapper">
                 <div class="logo" data-text="TERAFAB">TERAFAB</div>
             </div>
             <div class="tagline">Trillion-Scale Intelligence // Algorithmic Fabrication</div>
         </header>
+
         <div class="thesis">
             <p>"As artificial intelligence transcends human cognition, the infrastructure that defines these systems becomes paramount. <span class="thesis-highlight">TeraFab.ai</span> represents the convergence of scale and sophistication: the definitive naming standard for platforms that process <strong>tera-scale intelligence</strong> with algorithmic precision."</p>
-            <p>Perfect alignment with emerging tera-scale fabrication initiatives in autonomous systems and next-gen compute.</p>
+            <p>Strong alignment with emerging tera-scale fabrication trends in autonomous systems and next-generation compute.</p>
         </div>
+
         <div class="grid">
-             <div class="card"><div class="card-title"><span class="card-icon">►</span> AI Orchestration</div><div class="card-desc">The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.</div><div class="card-tag">SYS.REQ // $500B Infrastructure</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Neural Architecture</div><div class="card-desc">The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.</div><div class="card-tag">TECH // Advanced Model Design</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Distributed Intelligence</div><div class="card-desc">The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.</div><div class="card-tag">PROTOCOL // Federated Learning</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Cognitive Fabrication</div><div class="card-desc">Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.</div><div class="card-tag">CORE // Knowledge Systems</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Autonomous Systems</div><div class="card-desc">The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.</div><div class="card-tag">SECTOR // Intelligent Systems</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Intelligence Scaling</div><div class="card-desc">The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.</div><div class="card-tag">TARGET // AGI Scaling</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Quantum-Inspired AI</div><div class="card-desc">For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.</div><div class="card-tag">TECH // Next-Gen Computation</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Adaptive Systems</div><div class="card-desc">Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.</div><div class="card-tag">TREND // Self-Optimization</div></div>
-            <div class="card"><div class="card-title"><span class="card-icon">►</span> Workflow Generation</div><div class="card-desc">Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.</div><div class="card-tag">APP // Process Automation</div></div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> AI Orchestration</div>
+                <div class="card-desc">The seamless integration layer for distributed intelligence systems. A naming standard for platforms that coordinate millions of autonomous agents across digital ecosystems.</div>
+                <div class="card-tag">SYS.REQ // AI Infrastructure</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Neural Architecture</div>
+                <div class="card-desc">The definitive platform for designing and deploying next-generation AI models. Where architecture meets execution in a single naming convention.</div>
+                <div class="card-tag">TECH // Advanced Model Design</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Distributed Intelligence</div>
+                <div class="card-desc">The central naming point for decentralized AI ecosystems. For platforms that coordinate intelligence across global networks with tera-scale precision.</div>
+                <div class="card-tag">PROTOCOL // Federated Learning</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Cognitive Fabrication</div>
+                <div class="card-desc">Where AI constructs understanding from raw information streams. The domain for systems that fabricate knowledge structures at unprecedented scale.</div>
+                <div class="card-tag">CORE // Knowledge Systems</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Autonomous Systems</div>
+                <div class="card-desc">The naming standard for self-optimizing digital ecosystems. Where systems evolve their own operational parameters through continuous learning.</div>
+                <div class="card-tag">SECTOR // Intelligent Systems</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Intelligence Scaling</div>
+                <div class="card-desc">The definitive naming convention for systems that scale intelligence across dimensions. For platforms that manage exponential growth in cognitive capacity.</div>
+                <div class="card-tag">TARGET // AGI Scaling</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Quantum-Inspired AI</div>
+                <div class="card-desc">For architectures operating beyond classical computation. The naming standard for systems that process information at tera-scale complexity.</div>
+                <div class="card-tag">TECH // Next-Gen Computation</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Adaptive Systems</div>
+                <div class="card-desc">Where AI dynamically reconfigures its operational framework. The standard for systems that fabricate their own evolution pathways.</div>
+                <div class="card-tag">TREND // Self-Optimization</div>
+            </div>
+            <div class="card">
+                <div class="card-title"><span class="card-icon">►</span> Workflow Generation</div>
+                <div class="card-desc">Where algorithms don't just predict—they construct. The domain for next-generation AI that builds operational frameworks from abstract concepts.</div>
+                <div class="card-tag">APP // Process Automation</div>
+            </div>
         </div>
+
         <div class="cta">
             <div class="cta-content">
-                <div style="font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; color: var(--neon-magenta); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">\[ Premium Domain Asset \]</div>
+                <div style="font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; color: var(--neon-magenta); text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">[ Premium Domain Asset ]</div>
                 <div class="price">$120,000 USD</div>
                 <div class="price-sub">
                     Comparable .ai assets: lotus.ai $400,000 | wisdom.ai $741,000 | bot.ai $1.2M+<br>
-                    <span style="color: var(--neon-cyan); display: block; margin-top: 0.5rem;">terafab.ai — exact match to trillion-scale AI fab keyword</span>
+                    <span style="color: var(--neon-cyan); display: block; margin-top: 0.5rem;">
+                        terafab.ai — precise keyword match for tera-scale AI fabrication &amp; infrastructure
+                    </span>
                 </div>
-                <div class="price-notice">Note: The price of this domain will be adjusted in real time based on traffic.</div>
+                <div class="price-notice">Note: Domain price may be adjusted in real time based on market demand and traffic.</div>
                 <div class="price-sub">
                     Includes domain asset <strong style="color: #fff;">terafab.ai</strong><br>
-                    <span style="color: var(--neon-cyan); display: block; margin-top: 0.5rem; font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">> 12-Month Financing Available\_</span>
+                    <span style="color: var(--neon-cyan); display: block; margin-top: 0.5rem; font-family: 'Share Tech Mono', monospace; letter-spacing: 1px;">&gt; 12-Month Financing Available_</span>
                 </div>
-                <a href="https://www.spaceship.com/s/buy/terafab.ai/BBqe0k7za8rSxjI2" target="\_blank" class="btn">Acquire Node</a>
-                <div class="contact" onclick="copyEmail()">\[ INIT_CONTACT: joshua369x@gmail.com \]</div>
+                <a href="https://www.spaceship.com/s/buy/terafab.ai/BBqe0k7za8rSxjI2" target="_blank" class="btn">Acquire Domain</a>
+                <div class="contact" onclick="copyEmail()">[ INIT_CONTACT: joshua369x@gmail.com ]</div>
             </div>
         </div>
-        <!-- OFFER FORM SECTION -->
+
         <div class="offer-cta">
             <div class="offer-content">
                 <h2>Submit a Private Offer</h2>
-                <div class="form-privacy-notice">All submissions encrypted • Private & Confidential • No public disclosure</div>
+                <div class="form-privacy-notice">All submissions encrypted • Private &amp; Confidential • No public disclosure</div>
                 <form id="offerForm" action="https://formspree.io/f/xgollnpw" method="POST">
                     <input type="text" name="name" placeholder="Entity Name / Company" required>
                     <input type="email" name="email" placeholder="Secure Contact Email" required>
@@ -301,13 +483,17 @@
                 </form>
             </div>
         </div>
+
         <div class="disclaimer">
-            DISCLAIMER: TeraFab.ai is a premium domain asset for digital AI systems and computational architecture. It is NOT affiliated with Terabase Energy, Inc.
+            DISCLAIMER: TeraFab.ai is a premium domain asset for digital AI systems and computational architecture. 
+            It is NOT affiliated with Terabase Energy, Inc., Tesla, Inc., or any related projects or entities.
         </div>
     </div>
+
     <footer>
         <p>© 2026 PREMIUM DOMAIN ASSET // TERAFAB.AI // SYS.ONLINE</p>
     </footer>
+
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
     <script>
@@ -319,8 +505,7 @@
                 particlesJS('particles-js', {
                     particles: {
                         number: { value: particleCount, density: { enable: true, value_area: 800 } },
-                        // 赛博朋克粒子颜色：青色与洋红
-                        color: { value: \['#00f3ff', '#ff00ea'\] },
+                        color: { value: ['#00f3ff', '#ff00ea'] },
                         shape: { type: 'circle' },
                         opacity: { value: 0.6, random: true },
                         size: { value: isMobile ? 1.5 : 2.5, random: true },
@@ -335,14 +520,16 @@
                     retina_detect: true
                 });
             }
+
             const isMobile = window.innerWidth < 768;
             initParticles(isMobile);
         });
+
         function copyEmail() {
             navigator.clipboard.writeText('joshua369x@gmail.com').then(function() {
                 const btn = document.querySelector('.contact');
                 const originalText = btn.textContent;
-                btn.textContent = '\[ EMAIL COPIED TO CLIPBOARD \]';
+                btn.textContent = '[ EMAIL COPIED TO CLIPBOARD ]';
                 btn.style.color = '#00f3ff';
                 setTimeout(function() {
                     btn.textContent = originalText;
@@ -351,16 +538,17 @@
             });
         }
         
-        // AJAX Form Submission
         const form = document.getElementById('offerForm');
         form.addEventListener('submit', function(e) {
             e.preventDefault();
             const statusDiv = document.getElementById('form-status');
             const submitBtn = form.querySelector('.btn');
             const formData = new FormData(form);
+
             statusDiv.textContent = '> Transmitting data...';
             statusDiv.style.color = 'var(--neon-cyan)';
             submitBtn.disabled = true;
+
             fetch(form.action, {
                 method: 'POST',
                 body: formData,
@@ -384,7 +572,7 @@
                 submitBtn.disabled = false;
             }).finally(() => {
                 setTimeout(() => {
-                    if(!submitBtn.disabled || submitBtn.textContent === 'SUCCESS') {
+                    if (!submitBtn.disabled || submitBtn.textContent === 'SUCCESS') {
                         statusDiv.textContent = '';
                         submitBtn.disabled = false;
                         submitBtn.textContent = 'Transmit Offer';
